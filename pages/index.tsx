@@ -1,15 +1,3 @@
-import Link from 'next/link';
-import Layout from '../components/Layout';
-
-const IndexPage = () => (
-  <Layout title='Home | Next.js + TypeScript Example'>
-    <h1>Hello Next.js and Chakra UI👋</h1>
-    <p>
-      <Link href='/about'>
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-);
+const IndexPage = () => <h1>Hello Next.js and Chakra UI👋</h1>;
 
 export default IndexPage;
