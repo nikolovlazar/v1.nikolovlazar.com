@@ -42,17 +42,24 @@ const socialLinks: SocialLink[] = [
 ];
 
 const IndexPage = () => (
-  <VStack spacing={20}>
+  <VStack spacing={20} w='full'>
     <Stack
       alignItems='center'
       spacing={12}
       direction={{ base: 'column-reverse', md: 'row' }}
+      w='full'
     >
-      <VStack spacing={3} alignItems='flex-start'>
-        <HStack spacing={3}>
+      <VStack spacing={3} alignItems='flex-start' w='full'>
+        <Stack
+          spacing={3}
+          w='full'
+          direction={{ base: 'column', md: 'row' }}
+          justifyContent={{ base: 'center', md: 'flex-start' }}
+          alignItems='center'
+        >
           <Heading size='lg'>Hi, I’m Lazar Nikolov.</Heading>
           <HeroPlay />
-        </HStack>
+        </Stack>
         <Text lineHeight='175%'>
           I’m a full-stack engineer, a designer, and a content creator. I work
           at <ExternalLink href='https://codechem.com'>CodeChem</ExternalLink>{' '}
@@ -63,7 +70,7 @@ const IndexPage = () => (
           <ExternalLink href='https://egghead.io'>egghead.io</ExternalLink>{' '}
           <strong>instructor</strong>.
         </Text>
-        <HStack spacing={3}>
+        <Stack spacing={3} direction={{ base: 'column', md: 'row' }}>
           {socialLinks.map(({ href, label, color }) => (
             <Button
               key={href}
@@ -72,12 +79,14 @@ const IndexPage = () => (
               color={color}
               href={href}
               target='_blank'
+              px={{ base: 0, md: 4 }}
+              justifyContent={{ base: 'flex-start', md: 'center' }}
               rightIcon={<Icon as={FiArrowUpRight} />}
             >
               {label}
             </Button>
           ))}
-        </HStack>
+        </Stack>
       </VStack>
       <HeroImage />
     </Stack>
