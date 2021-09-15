@@ -1,0 +1,19 @@
+{
+  "videos": [
+    {
+      "title": "Getting Started with Chakra UI",
+      "description": "",
+      "url": "https://www.youtube.com/watch?v=wI2vqXsjsIo"
+    },
+    {
+      "title": "Design vs Dev Challenge #2 - Afrosonic Dashboard Concept",
+      "description": "Welcome to the second Design vs Dev Challenge video! Since a lot of you loved the previous challenge, I decided to make this one a bit more complex and fun!",
+      "url": "https://www.youtube.com/watch?v=l30P02RZ7Dk"
+    },
+    {
+      "title": "Design vs Dev Challenge #1 - Chat App",
+      "description": "Welcome to the first Design vs Dev Challenge video! In this series we're going to rebuild various Dribbble shots using Chakra UI. If you want to see a certain Dribbble shot rebuilt, share the link in the comments below.",
+      "url": "https://www.youtube.com/watch?v=wGhZMOInL18"
+    }
+  ]
+}

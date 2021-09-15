@@ -1,0 +1,9 @@
+{
+  "courses": [
+    {
+      "title": "Build a Modern User Interface with Chakra UI ⚡️",
+      "url": "https://egghead.io/courses/build-a-modern-user-interface-with-chakra-ui-fac68106",
+      "description": "In this course, you will learn how to create a flexible user interface using Chakra UI. You will learn to use Chakra UI's default style props and components to easily build out your application, but you will also see how you can easily override the defaults or even create custom components to suit the needs of your application."
+    }
+  ]
+}
