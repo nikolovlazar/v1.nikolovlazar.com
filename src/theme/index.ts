@@ -2,6 +2,9 @@ import { extendTheme, theme as base } from '@chakra-ui/react';
 import { mode } from '@chakra-ui/theme-tools';
 
 const theme = extendTheme({
+  sizes: {
+    18: '4.5rem',
+  },
   components: {
     Heading: {
       baseStyle: (props) => ({

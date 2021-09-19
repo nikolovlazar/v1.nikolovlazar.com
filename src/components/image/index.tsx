@@ -5,7 +5,7 @@ type Props = NextImageProps & Omit<ChakraImageProps, 'src'>;
 
 const MagicImage = chakra(NextImage, {
   shouldForwardProp: (prop) =>
-    ['layout', 'src', 'alt', 'placeholder'].includes(prop),
+    ['layout', 'src', 'alt', 'placeholder', 'width', 'height'].includes(prop),
 });
 
 const Image = (props: Props) => <MagicImage {...props} />;

@@ -1,0 +1,74 @@
+{
+  "gear": [
+    {
+      "title": "Rode NT-USB",
+      "description": "A great beginner USB microphone. Mounted it on the cheapest boom arm. No issues at all.",
+      "url": "http://www.rode.com/microphones/nt-usb",
+      "image": "/assets/images/rode.png",
+      "category": "audio"
+    },
+    {
+      "title": "Audio Technica ATR2100X-USB",
+      "description": "A welcoming gift from egghead.io. Those guys care so much ❤️",
+      "url": "https://www.audio-technica.com/en-us/atr2100x-usb",
+      "image": "/assets/images/atr2100x.png",
+      "category": "audio"
+    },
+    {
+      "title": "SteelSeries Arctis 3 Bluetooth",
+      "description": "One of my favorite headphones. So comfortable, I can wear them all day.",
+      "url": "https://steelseries.com/gaming-headsets/arctis-3-bluetooth",
+      "image": "/assets/images/arctis-3.png",
+      "category": "audio"
+    },
+    {
+      "title": "27” iMac 2020",
+      "description": "3.8 GHz 8-Core Intel Core i7 | 32 GB RAM | AMD Radeon Pro 5500 XT 8 GB",
+      "url": "https://www.apple.com/imac-27/",
+      "image": "/assets/images/imac.png",
+      "category": "computing"
+    },
+    {
+      "title": "24” Dell P2414H",
+      "description": "Nothing fancy, but it does the job well.",
+      "url": "https://www.dell.com/ae/business/p/dell-p2414h/pd",
+      "image": "/assets/images/dell-monitor.png",
+      "category": "computing"
+    },
+    {
+      "title": "Sony a6300",
+      "description": "An industry standard. It shoots 6k and then it downscales it to 4k. You get sharper 4k that way.",
+      "url": "https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6400m-b",
+      "image": "/assets/images/a6300.png",
+      "category": "video"
+    },
+    {
+      "title": "Sigma 16mm f1.4",
+      "description": "Also an industry standard. One of the best lenses out there.",
+      "url": "https://www.sigma-global.com/en/lenses/c017_16_14/",
+      "image": "/assets/images/sigma16mm.png",
+      "category": "video"
+    },
+    {
+      "title": "Elgato Camlink 4k",
+      "description": "This connects my Sony a6400 to my iMac, so I can use it as a webcam.",
+      "url": "https://www.elgato.com/en/cam-link-4k",
+      "image": "/assets/images/elgato-camlink.png",
+      "category": "video"
+    },
+    {
+      "title": "2 x Cheap Ringlights",
+      "description": "Didn’t want to spend 💰 on lights, but these turned out pretty nice actually.",
+      "url": "https://www.amazon.com/Dimmable-Ringlight-Photography-Compatible-UPGRADED/dp/B07W66QFPR/ref=sr_1_4?dchild=1&keywords=ring+light&qid=1632076717&sr=8-4",
+      "image": "/assets/images/ringlights.png",
+      "category": "video"
+    },
+    {
+      "title": "Subtel PW20 7.3 V Power Adapter",
+      "description": "This is a phantom battery adapter for my a6400. It makes it think that it’s a battery, so you can use it for longer time.",
+      "url": "https://www.subtel.de/en/Power-supply-for-Sony-Alpha-A6000-A6300-A6500-A5000-A5100-Alpha-7-A7-A7s-A7II-Sony-RX10-III-915664.html",
+      "image": "/assets/images/subtel-power-adapter.png",
+      "category": "video"
+    }
+  ]
+}

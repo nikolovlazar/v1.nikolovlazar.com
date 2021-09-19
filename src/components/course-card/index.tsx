@@ -14,7 +14,7 @@ import ExternalLink from '../external-link';
 type Props = Course;
 
 const CourseCard = ({ title, description, url }: Props) => {
-  const courseDomain = url.split('/')[2];
+  const courseDomain = new URL(url).host;
   return (
     <LinkBox as='article'>
       <VStack

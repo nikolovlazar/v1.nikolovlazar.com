@@ -1,12 +1,10 @@
 import { GetStaticProps } from 'next';
-
-import { VStack, Heading, List, ListItem } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 
 import { Course } from '@/types/course';
-import CourseCard from '@/components/course-card';
 import Hero from '@/components/hero';
 import CoursesSection from '@/components/courses-section';
-import { readData } from 'src/utils/read-data';
+import { readData } from '@/utils/read-data';
 import { Video } from '@/types/video';
 import VideosSection from '@/components/videos-section';
 

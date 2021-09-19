@@ -1,0 +1,53 @@
+{
+  "tools": [
+    {
+      "title": "Visual Studio Code",
+      "description": "VSC is a go-to when it comes to web development.",
+      "url": "https://code.visualstudio.com/",
+      "image": "/assets/images/vsc.svg",
+      "category": "development"
+    },
+    {
+      "title": "Brave",
+      "description": "Brave is a chromium web browser with built-in privacy settings. Blocks ads and trackers!",
+      "url": "https://brave.com/",
+      "image": "/assets/images/brave.svg",
+      "category": "development"
+    },
+    {
+      "title": "Figma",
+      "description": "My #1 design tool. I do all my UI design in Figma.",
+      "url": "https://figma.com/",
+      "image": "/assets/images/figma.svg",
+      "category": "design"
+    },
+    {
+      "title": "ColorSlurp",
+      "description": "This is the coolest color picker. It “slurps” when you pick a color 😂",
+      "url": "https://colorslurp.com/",
+      "image": "/assets/images/color-slurp.png",
+      "category": "design"
+    },
+    {
+      "title": "Notion",
+      "description": "I believe it’s the most popular note taking app right now.",
+      "url": "https://notion.so/",
+      "image": "/assets/images/notion.svg",
+      "category": "productivity"
+    },
+    {
+      "title": "Obsidian",
+      "description": "Obsidian is your Notion alternative, but with more privacy and no backend.",
+      "url": "https://obsidian.md/",
+      "image": "/assets/images/obsidian.svg",
+      "category": "productivity"
+    },
+    {
+      "title": "Screenflow",
+      "description": "Making screencasts in Screenflow is super easy!",
+      "url": "http://www.telestream.net/screenflow/overview.htm",
+      "image": "/assets/images/screenflow.png",
+      "category": "video"
+    }
+  ]
+}
