@@ -13,7 +13,7 @@ type Props = {
 
 const Uses = ({ tools, categories }: Props) => {
   return (
-    <VStack spacing={16} alignItems='stretch'>
+    <>
       <VStack spacing={3} alignItems='flex-start'>
         <Heading size='md'>Software tools.</Heading>
         <Text>
@@ -36,7 +36,7 @@ const Uses = ({ tools, categories }: Props) => {
           </VStack>
         ))}
       </VStack>
-    </VStack>
+    </>
   );
 };
 

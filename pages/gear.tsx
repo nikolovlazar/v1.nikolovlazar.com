@@ -13,7 +13,7 @@ type Props = {
 
 const GearPage = ({ gear, categories }: Props) => {
   return (
-    <VStack spacing={16} alignItems='stretch'>
+    <>
       <VStack spacing={3} alignItems='flex-start'>
         <Heading size='md'>Gear.</Heading>
         <Text>
@@ -35,7 +35,7 @@ const GearPage = ({ gear, categories }: Props) => {
           </VStack>
         ))}
       </VStack>
-    </VStack>
+    </>
   );
 };
 

@@ -15,11 +15,11 @@ type Props = {
 
 const IndexPage = ({ courses, videos }: Props) => {
   return (
-    <VStack spacing={20} w='full'>
+    <>
       <Hero />
       <CoursesSection courses={courses} />
       <VideosSection videos={videos} />
-    </VStack>
+    </>
   );
 };
 
