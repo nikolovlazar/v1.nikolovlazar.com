@@ -7,21 +7,11 @@ import ToolCard from '@/components/tool-card';
 import { readData } from '@/utils/read-data';
 
 type Props = {
-  tools: Tool[];
+  tools: { [key: string]: Tool[] };
+  categories: string[];
 };
 
-const Uses = ({ tools }: Props) => {
-  const data: Map<string, Tool[]> = new Map();
-
-  tools.forEach((tool) => {
-    if (!data.get(tool.category)) {
-      data.set(tool.category, []);
-    }
-    data.set(tool.category, [...data.get(tool.category), tool]);
-  });
-
-  const categories = Array.from(data.keys());
-
+const Uses = ({ tools, categories }: Props) => {
   return (
     <VStack spacing={16} alignItems='stretch'>
       <VStack spacing={3} alignItems='flex-start'>
@@ -39,7 +29,7 @@ const Uses = ({ tools }: Props) => {
               {category}.
             </Heading>
             <VStack alignItems='stretch' w='full'>
-              {data.get(category).map((tool) => (
+              {tools[category].map((tool) => (
                 <ToolCard key={tool.url} {...tool} />
               ))}
             </VStack>
@@ -51,11 +41,22 @@ const Uses = ({ tools }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { tools } = await readData<{ tools: Tool[] }>(
+  const { tools: toolsData } = await readData<{ tools: Tool[] }>(
     'data/software-tools.json'
   );
 
-  const props: Props = { tools };
+  const tools: { [key: string]: Tool[] } = {};
+
+  toolsData.forEach((tool) => {
+    if (!tools[tool.category]) {
+      tools[tool.category] = [];
+    }
+    tools[tool.category] = [...tools[tool.category], tool];
+  });
+
+  const categories = Object.keys(tools);
+
+  const props: Props = { tools, categories };
 
   return {
     props,

@@ -7,21 +7,11 @@ import GearCard from '@/components/gear-card';
 import { readData } from '@/utils/read-data';
 
 type Props = {
-  gear: Gear[];
+  gear: { [key: string]: Gear[] };
+  categories: string[];
 };
 
-const GearPage = ({ gear }: Props) => {
-  const data: Map<string, Gear[]> = new Map();
-
-  gear.forEach((tool) => {
-    if (!data.get(tool.category)) {
-      data.set(tool.category, []);
-    }
-    data.set(tool.category, [...data.get(tool.category), tool]);
-  });
-
-  const categories = Array.from(data.keys());
-
+const GearPage = ({ gear, categories }: Props) => {
   return (
     <VStack spacing={16} alignItems='stretch'>
       <VStack spacing={3} alignItems='flex-start'>
@@ -38,7 +28,7 @@ const GearPage = ({ gear }: Props) => {
               {category}.
             </Heading>
             <VStack alignItems='stretch' w='full'>
-              {data.get(category).map((gear) => (
+              {gear[category].map((gear) => (
                 <GearCard key={gear.url} {...gear} />
               ))}
             </VStack>
@@ -50,9 +40,20 @@ const GearPage = ({ gear }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { gear } = await readData<{ gear: Gear[] }>('data/gear.json');
+  const { gear: gearData } = await readData<{ gear: Gear[] }>('data/gear.json');
 
-  const props: Props = { gear };
+  const gear: { [key: string]: Gear[] } = {};
+
+  gearData.forEach((tool) => {
+    if (!gear[tool.category]) {
+      gear[tool.category] = [];
+    }
+    gear[tool.category] = [...gear[tool.category], tool];
+  });
+
+  const categories = Object.keys(gear);
+
+  const props: Props = { gear, categories };
 
   return {
     props,
