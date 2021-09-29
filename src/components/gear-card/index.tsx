@@ -26,7 +26,7 @@ const GearCard = ({ image, title, description, url }: Gear) => {
         alignItems='center'
       >
         <AspectRatio ratio={1} w={36} h={36}>
-          <Image src={image} layout='fill' />
+          <Image alt={title} src={image} layout='fill' />
         </AspectRatio>
         <VStack spacing={0} alignItems='flex-start' flex={1}>
           <LinkOverlay href={url} isExternal>

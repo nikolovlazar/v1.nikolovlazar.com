@@ -26,7 +26,7 @@ const ToolCard = ({ image, title, description, url }: Tool) => {
         alignItems='center'
       >
         <AspectRatio ratio={1} w={18} h={18}>
-          <Image src={image} layout='fill' />
+          <Image alt={`Thumbnail of ${title}`} src={image} layout='fill' />
         </AspectRatio>
         <VStack spacing={0} alignItems='flex-start' flex={1}>
           <LinkOverlay href={url} isExternal>

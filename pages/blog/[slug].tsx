@@ -27,7 +27,7 @@ const BlogPostPage = ({ title, date, source }: Props) => {
     if (slug) {
       increment();
     }
-  }, [slug]);
+  }, [slug, increment]);
 
   return (
     <VStack spacing={8} w='full' alignItems='stretch'>

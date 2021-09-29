@@ -75,7 +75,7 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i });
                 return (
-                  <chakra.div {...lineProps} display='table-row'>
+                  <chakra.div {...lineProps} display='table-row' key={i}>
                     <chakra.span
                       w={8}
                       display='table-cell'
@@ -87,7 +87,12 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
                       {i + 1}
                     </chakra.span>
                     {line.map((token, key) => {
-                      return <chakra.span {...getTokenProps({ token, key })} />;
+                      return (
+                        <chakra.span
+                          {...getTokenProps({ token, key })}
+                          key={key}
+                        />
+                      );
                     })}
                   </chakra.div>
                 );

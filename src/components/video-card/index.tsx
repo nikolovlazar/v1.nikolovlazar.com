@@ -21,7 +21,7 @@ const VideoCard = ({ title, description, url }: Props) => {
     const queryParams = url.split('?')[1];
     const params = new URLSearchParams(queryParams);
     setVideoId(params.get('v'));
-  }, []);
+  }, [url]);
 
   if (!videoId) return <Spinner />;
   return (
@@ -29,6 +29,7 @@ const VideoCard = ({ title, description, url }: Props) => {
       <VStack spacing={4} alignItems='flex-start'>
         <AspectRatio ratio={16 / 9} w='full'>
           <Image
+            alt={`Thumbnail of ${title}`}
             src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
             fallbackSrc={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
             layout='fill'
