@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import useSWR, { mutate } from 'swr';
 
 const API_URL = '/api/views/';
@@ -27,9 +27,9 @@ async function updatePostViews(slug: string): Promise<ViewsPayload> {
 const usePostViews = (slug: string) => {
   const { data } = useSWR(slug ?? null, getPostViews);
 
-  const increment = () => {
+  const increment = useCallback(() => {
     mutate(slug, updatePostViews(slug));
-  };
+  }, [slug]);
 
   return { views: data?.views ?? 0, increment };
 };
