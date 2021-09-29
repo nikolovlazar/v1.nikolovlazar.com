@@ -9,12 +9,26 @@ import { BlogPost } from '@/types/blog-post';
 import { getBlogPosts } from '@/utils/get-blog-posts';
 import { readBlogPost } from '@/utils/read-blog-post';
 import MDXComponents from '@/components/mdx-components';
+import { useRouter } from 'next/router';
+import usePostViews from 'src/hooks/use-post-views';
+import { useEffect } from 'react';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
 };
 
 const BlogPostPage = ({ title, date, source }: Props) => {
+  const { query } = useRouter();
+  const slug = query.slug as string;
+
+  const { views, increment } = usePostViews(slug);
+
+  useEffect(() => {
+    if (slug) {
+      increment();
+    }
+  }, [slug]);
+
   return (
     <VStack spacing={8} w='full' alignItems='stretch'>
       <VStack spacing={3} alignItems='flex-start'>
@@ -32,7 +46,7 @@ const BlogPostPage = ({ title, date, source }: Props) => {
           <Text color='gray.500' fontSize='sm'>
             <CountUp
               start={0}
-              end={432}
+              end={views}
               suffix=' views'
               useEasing
               delay={0}
