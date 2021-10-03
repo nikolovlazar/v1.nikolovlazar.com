@@ -3,7 +3,8 @@ import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import CountUp from 'react-countup';
-import { VStack, Heading, HStack, Text } from '@chakra-ui/react';
+import { VStack, Heading, HStack, Text, Icon } from '@chakra-ui/react';
+import { HiHeart } from 'react-icons/hi';
 
 import { BlogPost } from '@/types/blog-post';
 import { getBlogPosts } from '@/utils/get-blog-posts';
@@ -12,6 +13,7 @@ import MDXComponents from '@/components/mdx-components';
 import { useRouter } from 'next/router';
 import usePostViews from 'src/hooks/use-post-views';
 import { useEffect } from 'react';
+import LikeButton from '@/components/like-button';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
@@ -56,6 +58,9 @@ const BlogPostPage = ({ title, date, source }: Props) => {
         </HStack>
       </VStack>
       <MDXRemote {...source} components={MDXComponents} />
+      <HStack justifyContent='center' alignItems='center'>
+        <LikeButton onLike={() => console.log('LIKE!')} />
+      </HStack>
     </VStack>
   );
 };

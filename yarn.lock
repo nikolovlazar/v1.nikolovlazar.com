@@ -4197,6 +4197,13 @@ react-clientside-effect@^1.2.2:
   dependencies:
     "@babel/runtime" "^7.12.13"
 
+react-confetti@^6.0.1:
+  version "6.0.1"
+  resolved "https://registry.yarnpkg.com/react-confetti/-/react-confetti-6.0.1.tgz#d4f57b5a021dd908a6243b8f63b6009b00818d10"
+  integrity sha512-ZpOTBrqSNhWE4rRXCZ6E6U+wGd7iYHF5MGrqwikoiBpgBq9Akdu0DcLW+FdFnLjyZYC+VfAiV2KeFgYRMyMrkA==
+  dependencies:
+    tween-functions "^1.2.0"
+
 react-countup@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/react-countup/-/react-countup-6.0.0.tgz#463f174781db4bec25de8853335c18ff0a305131"
@@ -5065,6 +5072,11 @@ tty-browserify@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.1.tgz#3f05251ee17904dfd0677546670db9651682b811"
   integrity sha512-C3TaO7K81YvjCgQH9Q1S3R3P3BtN3RIM8n+OvX4il1K1zgE8ZhI0op7kClgkxtutIE8hQrcrHBXvIheqKUUCxw==
+
+tween-functions@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/tween-functions/-/tween-functions-1.2.0.tgz#1ae3a50e7c60bb3def774eac707acbca73bbc3ff"
+  integrity sha1-GuOlDnxguz3vd06scHrLynO7w/8=
 
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
