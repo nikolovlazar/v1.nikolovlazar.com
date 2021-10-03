@@ -14,6 +14,7 @@ import { useRouter } from 'next/router';
 import usePostViews from 'src/hooks/use-post-views';
 import { useEffect } from 'react';
 import LikeButton from '@/components/like-button';
+import usePostLikes from 'src/hooks/use-post-likes';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
@@ -23,13 +24,14 @@ const BlogPostPage = ({ title, date, source }: Props) => {
   const { query } = useRouter();
   const slug = query.slug as string;
 
-  const { views, increment } = usePostViews(slug);
+  const { views, increment: incrementViews } = usePostViews(slug);
+  const { likes, increment: incrementLikes } = usePostLikes(slug);
 
   useEffect(() => {
     if (slug) {
-      increment();
+      incrementViews();
     }
-  }, [slug, increment]);
+  }, [slug, incrementViews]);
 
   return (
     <VStack spacing={8} w='full' alignItems='stretch'>
@@ -59,7 +61,7 @@ const BlogPostPage = ({ title, date, source }: Props) => {
       </VStack>
       <MDXRemote {...source} components={MDXComponents} />
       <HStack justifyContent='center' alignItems='center'>
-        <LikeButton onLike={() => console.log('LIKE!')} />
+        <LikeButton onLike={incrementLikes} likes={likes} />
       </HStack>
     </VStack>
   );

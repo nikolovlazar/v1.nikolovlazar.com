@@ -20,9 +20,3 @@ model PostMeta {
   likes     Int      @default(1)
   views     Int      @default(0)
 }
-
-model LikesByUser {
-  id        String   @id
-  createdAt DateTime @default(now())
-  likes     Int      @default(1)
-}
