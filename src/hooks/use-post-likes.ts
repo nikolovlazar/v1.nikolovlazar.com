@@ -5,6 +5,7 @@ const API_URL = '/api/likes/';
 
 type LikesPayload = {
   likes: number;
+  userLikes: number;
 };
 
 async function getPostLikes(slug: string): Promise<LikesPayload> {
@@ -25,11 +26,12 @@ async function updatePostLikes(
 
   return {
     likes: data.likes,
+    userLikes: data.userLikes,
   };
 }
 
 const usePostLikes = (slug: string) => {
-  const { data } = useSWR(slug ? `${slug}/likes` : null, () =>
+  const { data, error } = useSWR(slug ? `${slug}/likes` : null, () =>
     getPostLikes(slug)
   );
 
@@ -40,7 +42,12 @@ const usePostLikes = (slug: string) => {
     [slug]
   );
 
-  return { likes: data?.likes ?? 0, increment };
+  return {
+    likes: data?.likes ?? 0,
+    userLikes: data?.userLikes ?? 0,
+    isLoading: !error && !data,
+    increment,
+  };
 };
 
 export default usePostLikes;

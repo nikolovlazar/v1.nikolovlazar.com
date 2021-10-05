@@ -1,53 +1,62 @@
-import { HStack, Icon, Text, Button } from '@chakra-ui/react';
-import { HiHeart } from 'react-icons/hi';
+import React, { useState } from 'react';
+import { HStack, Text, useColorModeValue as mode } from '@chakra-ui/react';
 import useWindowSize from 'react-use/lib/useWindowSize';
 import Confetti from 'react-confetti';
-import { useEffect, useState } from 'react';
+
+import { Zero, One, Two, Three, LikeIconProps } from './icons';
 
 type Props = {
   onLike: (numberOfLikes: number) => void;
   likes: number;
+  userLikes: number;
 };
 
-const CONFETTI_BATCH_NUMBER = 10;
-
-const LikeButton = ({ onLike, likes }: Props) => {
+const LikeButton = ({ onLike, likes, userLikes }: Props) => {
   const { width, height } = useWindowSize();
-  const [pendingLikes, setPendingLikes] = useState(0);
-  const [confettiPieces, setConfettiPieces] = useState(CONFETTI_BATCH_NUMBER);
+  const [currentLikes, setCurrentLikes] = useState(userLikes);
+  const [initialLikes] = useState(likes);
   const [clickCoordinates, setClickCoordinates] =
     useState<{ x: number; y: number }>();
 
-  useEffect(() => {
-    setPendingLikes(0);
-  }, [likes]);
+  const iconProps: LikeIconProps = {
+    color: mode('gray.700', 'white'),
+    mouthColor: mode('white', 'gray.800'),
+    w: 18,
+    h: 28,
+  };
+
+  const icons = [
+    <Zero {...iconProps} mouthColor={mode('gray.800', 'white')} key={0} />,
+    <One {...iconProps} key={1} />,
+    <Two {...iconProps} key={2} />,
+    <Three {...iconProps} key={3} />,
+  ];
 
   return (
     <HStack
-      as={Button}
+      as='button'
       aria-label='Like blog post'
-      variant='ghost'
       alignItems='center'
       spacing={2}
       onClick={(e) => {
-        setClickCoordinates({ x: e.clientX, y: e.clientY });
-        setConfettiPieces((oldPieces) =>
-          Math.min(oldPieces + CONFETTI_BATCH_NUMBER, 50)
-        );
-        setPendingLikes((oldValue) => oldValue + 1);
+        if (currentLikes < 3 && userLikes <= 3) {
+          setCurrentLikes((oldValue) => oldValue + 1);
+          onLike(1);
+
+          if (currentLikes === 2) {
+            setClickCoordinates({ x: e.clientX, y: e.clientY });
+          }
+        }
       }}
     >
-      <Icon as={HiHeart} color='red.400' boxSize={8} />
-      <Text color='gray.500'>{likes + pendingLikes}</Text>
+      {icons[currentLikes]}
+      <Text color={mode('gray.700', 'white')}>
+        {initialLikes + currentLikes} likes
+      </Text>
 
       {!!clickCoordinates && (
         <Confetti
-          numberOfPieces={confettiPieces}
-          onConfettiComplete={() => {
-            setClickCoordinates(undefined);
-            setConfettiPieces(CONFETTI_BATCH_NUMBER);
-            onLike(pendingLikes);
-          }}
+          numberOfPieces={100}
           recycle={false}
           width={width}
           height={height}

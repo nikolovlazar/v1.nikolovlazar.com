@@ -25,7 +25,12 @@ const BlogPostPage = ({ title, date, source }: Props) => {
   const slug = query.slug as string;
 
   const { views, increment: incrementViews } = usePostViews(slug);
-  const { likes, increment: incrementLikes } = usePostLikes(slug);
+  const {
+    likes,
+    userLikes,
+    isLoading,
+    increment: incrementLikes,
+  } = usePostLikes(slug);
 
   useEffect(() => {
     if (slug) {
@@ -60,9 +65,15 @@ const BlogPostPage = ({ title, date, source }: Props) => {
         </HStack>
       </VStack>
       <MDXRemote {...source} components={MDXComponents} />
-      <HStack justifyContent='center' alignItems='center'>
-        <LikeButton onLike={incrementLikes} likes={likes} />
-      </HStack>
+      {!isLoading && (
+        <HStack justifyContent='flex-start' alignItems='center'>
+          <LikeButton
+            onLike={incrementLikes}
+            likes={likes}
+            userLikes={userLikes}
+          />
+        </HStack>
+      )}
     </VStack>
   );
 };
