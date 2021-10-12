@@ -1,5 +1,5 @@
 module.exports = {
   images: {
-    domains: ['img.youtube.com'],
+    domains: ['img.youtube.com', 'dl.airtable.com'],
   },
 };
