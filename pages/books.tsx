@@ -56,6 +56,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     props: {
       books,
     },
+    revalidate: 60 * 60,
   };
 };
 
