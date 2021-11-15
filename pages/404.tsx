@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 import { VStack, Heading, Text, Link, AspectRatio } from '@chakra-ui/react';
 
 const NotFound = () => {
@@ -19,10 +20,13 @@ const NotFound = () => {
       </VStack>
       <AspectRatio ratio={16 / 9} w='full'>
         <iframe
-          src='https://player.twitch.tv/?video=v1168804058&parent=nikolovlazar.com&autoplay=false'
+          src='https://player.twitch.tv/?video=1168804058&parent=www.example.com'
+          // @ts-ignore
+          frameborder='0'
+          allowfullscreen='true'
+          scrolling='no'
           height='100%'
           width='100%'
-          allowfullscreen='true'
         ></iframe>
       </AspectRatio>
     </VStack>
