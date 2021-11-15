@@ -28,6 +28,10 @@ const firstGroup: LinkType[] = [
     href: '/talks',
     label: 'Talks',
   },
+  {
+    href: 'https://plausible.io/nikolovlazar.com',
+    label: 'Analytics',
+  },
 ];
 
 const secondGroup = [
