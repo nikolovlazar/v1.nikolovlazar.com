@@ -16,6 +16,7 @@
     "gray-matter": "^4.0.3",
     "next": "latest",
     "next-mdx-remote": "^3.0.4",
+    "next-seo": "^4.28.1",
     "prism-react-renderer": "^1.2.1",
     "prisma": "3.1.1",
     "react": "^17.0.2",
