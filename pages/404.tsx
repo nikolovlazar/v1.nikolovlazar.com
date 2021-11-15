@@ -20,7 +20,7 @@ const NotFound = () => {
       </VStack>
       <AspectRatio ratio={16 / 9} w='full'>
         <iframe
-          src='https://player.twitch.tv/?video=1168804058&parent=www.example.com'
+          src='https://player.twitch.tv/?video=1168804058&parent=www.nikolovlazar.com'
           // @ts-ignore
           frameborder='0'
           allowfullscreen='true'
