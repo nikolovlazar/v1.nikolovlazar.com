@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import { Stack, VStack, Divider, Link } from '@chakra-ui/react';
+import { chakra, Stack, VStack, Divider, Link, Text } from '@chakra-ui/react';
 
 import {
   TWITTER_PROFILE,
@@ -80,7 +80,7 @@ const Footer = () => {
   const { pathname } = useRouter();
 
   return (
-    <VStack pb={8} spacing={8} as='footer'>
+    <VStack pb={8} spacing={8} as='footer' alignItems='flex-start'>
       <Divider />
       <Stack
         direction={{ base: 'column', md: 'row' }}
@@ -116,6 +116,11 @@ const Footer = () => {
           ))}
         </VStack>
       </Stack>
+      <Text color='gray.500'>
+        ©{' '}
+        <chakra.span color='purple.500'>{new Date().getFullYear()}</chakra.span>{' '}
+        Lazar Nikolov
+      </Text>
     </VStack>
   );
 };
