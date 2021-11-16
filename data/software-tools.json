@@ -15,6 +15,20 @@
       "category": "development"
     },
     {
+      "title": "Sizzy",
+      "description": "The browser for developers. It’s a feature rich browser with lots of dev tools.",
+      "url": "https://sizzy.co/",
+      "image": "/assets/images/sizzy.png",
+      "category": "development"
+    },
+    {
+      "title": "Warp",
+      "description": "A super performant terminal.",
+      "url": "https://warp.dev/",
+      "image": "/assets/images/warp.png",
+      "category": "development"
+    },
+    {
       "title": "Figma",
       "description": "My #1 design tool. I do all my UI design in Figma.",
       "url": "https://figma.com/",
@@ -22,10 +36,10 @@
       "category": "design"
     },
     {
-      "title": "ColorSlurp",
-      "description": "This is the coolest color picker. It “slurps” when you pick a color 😂",
-      "url": "https://colorslurp.com/",
-      "image": "/assets/images/color-slurp.png",
+      "title": "Sip",
+      "description": "This is the coolest color picker.",
+      "url": "https://sipapp.io/",
+      "image": "/assets/images/sip.png",
       "category": "design"
     },
     {
@@ -43,10 +57,31 @@
       "category": "productivity"
     },
     {
+      "title": "Raycast",
+      "description": "The fastest Spotlight alternative. Also supports scripting. Recommend!",
+      "url": "https://www.raycast.com/",
+      "image": "/assets/images/raycast.svg",
+      "category": "productivity"
+    },
+    {
+      "title": "CleanShot X",
+      "description": "For taking and sharing screenshots and screen recordings.",
+      "url": "https://cleanshot.com/",
+      "image": "/assets/images/cleanshot.png",
+      "category": "productivity"
+    },
+    {
       "title": "Screenflow",
       "description": "Making screencasts in Screenflow is super easy!",
       "url": "http://www.telestream.net/screenflow/overview.htm",
       "image": "/assets/images/screenflow.png",
+      "category": "video"
+    },
+    {
+      "title": "DaVinci Resolve",
+      "description": "I also use DaVinci Resolve for “heavier” video editing.",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve/",
+      "image": "/assets/images/davinci.png",
       "category": "video"
     }
   ]
