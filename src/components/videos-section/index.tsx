@@ -7,7 +7,7 @@ type Props = {
   videos: Video[];
 };
 
-const VideosSection = ({ videos }) => {
+const VideosSection = ({ videos }: Props) => {
   return (
     <VStack w='full' alignItems='flex-start' spacing={4}>
       <Heading size='md'>Recent videos.</Heading>

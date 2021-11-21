@@ -1,0 +1,14 @@
+{
+  "talks": [
+    {
+      "title": "Frontend.horse: Building Layouts Fast with Chakra UI",
+      "description": "In this episode, we'll learn how to use Chakra UI to build pages with robust and customizable components!",
+      "url": "https://www.youtube.com/watch?v=fiqdtIQzIVo"
+    },
+    {
+      "title": "React Finland - Vodcast 5 - Design tools",
+      "description": "In the fifth React Finland Vodcast, we'll cover design tools with Laura Järvinen, Margarita Roi, and Lazar Nikolov.",
+      "url": "https://www.youtube.com/watch?v=AuwpOsrzHC8"
+    }
+  ]
+}
