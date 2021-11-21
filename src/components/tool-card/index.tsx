@@ -17,7 +17,7 @@ import Image from '../image';
 
 const ToolCard = ({ image, title, description, url }: Partial<Tool>) => {
   return (
-    <LinkBox role='group'>
+    <LinkBox role='group' as='article'>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         p={3}

@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { VStack, Heading, Text } from '@chakra-ui/react';
+import { VStack, Heading, Text, List, ListItem } from '@chakra-ui/react';
 
 import Link from '@/components/link';
 import { Gear } from '@/types/gear';
@@ -14,27 +14,29 @@ type Props = {
 const GearPage = ({ gear, categories }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full'>
+      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
         <Heading size='md'>Gear.</Heading>
         <Text>
           This is my hardware list. <strong>Not affiliate links</strong>. To see
           my software tools, check out the <Link href='/uses'>Uses</Link> page.
         </Text>
       </VStack>
-      <VStack spacing={12} alignItems='stretch' w='full'>
+      <List spacing={12} alignItems='stretch' w='full'>
         {categories.map((category) => (
-          <VStack spacing={8} alignItems='flex-start' key={category}>
+          <ListItem spacing={8} alignItems='flex-start' key={category}>
             <Heading size='md' textTransform='capitalize'>
               {category}.
             </Heading>
-            <VStack alignItems='stretch' w='full'>
+            <List alignItems='stretch' w='full'>
               {gear[category].map((gear) => (
-                <GearCard key={gear.url} {...gear} />
+                <ListItem key={gear.url}>
+                  <GearCard {...gear} />
+                </ListItem>
               ))}
-            </VStack>
-          </VStack>
+            </List>
+          </ListItem>
         ))}
-      </VStack>
+      </List>
     </>
   );
 };

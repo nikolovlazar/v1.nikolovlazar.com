@@ -31,14 +31,14 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
 
   return (
     <VStack spacing={8} w='full'>
-      <VStack spacing={3} alignItems='flex-start' w='full'>
+      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
         <Heading size='md'>Bookmarks.</Heading>
         <Text>
           A collection of interesting tools / frameworks / websites I stumble
           upon on the internet.
         </Text>
       </VStack>
-      <HStack w='full' spacing={3}>
+      <HStack w='full' spacing={3} as='section'>
         <Button
           textTransform='uppercase'
           onClick={() => filterBookmarks()}
@@ -66,6 +66,7 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
         gap={12}
         alignItems='stretch'
         w='full'
+        as='section'
       >
         {displayBookmarks.map(({ cover, link, title }) => (
           <BookmarkCard key={link} title={title} cover={cover} link={link} />

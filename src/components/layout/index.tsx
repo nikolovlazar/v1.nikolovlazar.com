@@ -17,11 +17,9 @@ const Layout = ({ children }: Props) => {
     >
       <VStack flex={1} spacing={16} alignItems='stretch' w='full'>
         <Header />
-        <Box flex={1} w='full' as='section'>
-          <VStack spacing={16} w='full'>
-            {children}
-          </VStack>
-        </Box>
+        <VStack spacing={16} flex={1} w='full' as='main'>
+          {children}
+        </VStack>
         <Footer />
       </VStack>
     </Container>

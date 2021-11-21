@@ -13,7 +13,7 @@ type Props = {
 const Books = ({ books }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full'>
+      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
         <Heading size='md'>Books.</Heading>
         <Text>
           A collection of interesting books that I read or look forward to
@@ -21,7 +21,7 @@ const Books = ({ books }: Props) => {
         </Text>
         <Suggest />
       </VStack>
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap={3}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap={3} as='section'>
         {books.map((book) => (
           <Book key={book.id} book={book} />
         ))}

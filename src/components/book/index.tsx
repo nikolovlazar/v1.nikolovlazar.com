@@ -19,7 +19,7 @@ type Props = {
 
 const Book = ({ book: { cover, title, author, state, link } }: Props) => {
   return (
-    <LinkBox>
+    <LinkBox as='article'>
       <HStack rounded='md' p={4} spacing={6} bg={mode('gray.50', 'gray.700')}>
         <Box position='relative' flexShrink={0}>
           <Image

@@ -8,7 +8,7 @@ type Props = {
 
 const CoursesSection = ({ courses }: Props) => {
   return (
-    <VStack w='full' alignItems='flex-start' spacing={4}>
+    <VStack w='full' alignItems='flex-start' spacing={4} as='section'>
       <Heading size='md'>Courses.</Heading>
       <List spacing={6}>
         {courses.map((course) => (

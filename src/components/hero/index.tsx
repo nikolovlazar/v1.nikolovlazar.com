@@ -45,6 +45,7 @@ const Hero = () => {
       spacing={12}
       w='full'
       direction={{ base: 'column-reverse', md: 'row' }}
+      as='section'
     >
       <VStack spacing={3} alignItems='flex-start' w='full'>
         <Stack
@@ -54,10 +55,12 @@ const Hero = () => {
           justifyContent={{ base: 'center', md: 'flex-start' }}
           alignItems='center'
         >
-          <Heading size='lg'>Hi, I’m Lazar Nikolov.</Heading>
+          <Heading size='lg' as='h1'>
+            Hi, I’m Lazar Nikolov.
+          </Heading>
           <HeroPlay />
         </Stack>
-        <Text lineHeight='175%'>
+        <Text lineHeight='175%' as='h2'>
           I’m a full-stack engineer, a designer, and a content creator. I work
           at <ExternalLink href='https://codechem.com'>CodeChem</ExternalLink>{' '}
           as a <strong>developer/designer</strong>, and I’m a{' '}

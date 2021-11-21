@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next';
-import { VStack, Heading, Text } from '@chakra-ui/react';
+import { VStack, Heading, Text, List, ListItem } from '@chakra-ui/react';
 
 import Link from '@/components/link';
 import { Tool } from '@/types/tool';
@@ -14,7 +14,7 @@ type Props = {
 const Uses = ({ tools, categories }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full'>
+      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
         <Heading size='md'>Software tools.</Heading>
         <Text>
           This is my list of software tools that I use frequently. I do my best
@@ -22,20 +22,22 @@ const Uses = ({ tools, categories }: Props) => {
           the <Link href='/gear'>Gear</Link> page.
         </Text>
       </VStack>
-      <VStack spacing={12} alignItems='stretch' w='full'>
+      <List spacing={12} alignItems='stretch' w='full'>
         {categories.map((category) => (
-          <VStack spacing={8} alignItems='flex-start' key={category}>
+          <ListItem spacing={8} alignItems='flex-start' key={category}>
             <Heading size='md' textTransform='capitalize'>
               {category}.
             </Heading>
-            <VStack alignItems='stretch' w='full'>
+            <List alignItems='stretch' w='full'>
               {tools[category].map((tool) => (
-                <ToolCard key={tool.url} {...tool} />
+                <ListItem key={tool.url}>
+                  <ToolCard {...tool} />
+                </ListItem>
               ))}
-            </VStack>
-          </VStack>
+            </List>
+          </ListItem>
         ))}
-      </VStack>
+      </List>
     </>
   );
 };

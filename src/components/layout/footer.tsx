@@ -118,7 +118,9 @@ const Footer = () => {
       </Stack>
       <Text color='gray.500'>
         ©{' '}
-        <chakra.span color='purple.500'>{new Date().getFullYear()}</chakra.span>{' '}
+        <chakra.span as='time' color='purple.500'>
+          {new Date().getFullYear()}
+        </chakra.span>{' '}
         Lazar Nikolov
       </Text>
     </VStack>

@@ -34,7 +34,7 @@ const Blog = ({ posts }: Props) => {
 
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full'>
+      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
         <Heading size='md'>Blog.</Heading>
         <Text fontSize='md'>
           Web development, with a focus on the React ecosystem. I’ve written a

@@ -14,7 +14,7 @@ import { Bookmark } from '@/types/bookmark';
 
 const BookmarkCard = ({ cover, title, link }: Partial<Bookmark>) => {
   return (
-    <LinkBox>
+    <LinkBox as='article'>
       <Tooltip label={title}>
         <VStack
           spacing={0}
