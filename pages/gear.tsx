@@ -14,7 +14,7 @@ type Props = {
 const GearPage = ({ gear, categories }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start'>
+      <VStack spacing={3} alignItems='flex-start' w='full'>
         <Heading size='md'>Gear.</Heading>
         <Text>
           This is my hardware list. <strong>Not affiliate links</strong>. To see
