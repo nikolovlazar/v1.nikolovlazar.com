@@ -14,7 +14,7 @@ type Props = {
 const Uses = ({ tools, categories }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start'>
+      <VStack spacing={3} alignItems='flex-start' w='full'>
         <Heading size='md'>Software tools.</Heading>
         <Text>
           This is my list of software tools that I use frequently. I do my best
