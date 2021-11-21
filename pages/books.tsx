@@ -49,6 +49,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
         author: fields['Author'],
         state: fields['State'],
         cover: fields['Cover'][0]['thumbnails']['large']['url'],
+        link: fields['Link'] ?? null,
       } as BookType)
   );
 

@@ -6,4 +6,5 @@ export type Book = {
   author: string;
   cover: string;
   state: BookState;
+  link?: string;
 };
