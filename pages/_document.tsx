@@ -16,7 +16,6 @@ class Doc extends Document {
             data-domain='nikolovlazar.com'
             src='https://plausible.io/js/plausible.js'
           />
-          ;
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
