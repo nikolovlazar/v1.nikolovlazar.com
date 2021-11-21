@@ -2,7 +2,7 @@
   "videos": [
     {
       "title": "Getting Started with Chakra UI",
-      "description": "",
+      "description": "A simple Getting Started with Chakra UI video that showcases how to create a new Next JS app, install and setup Chakra UI. As a demo I'm creating a simple Login form.",
       "url": "https://www.youtube.com/watch?v=wI2vqXsjsIo"
     },
     {

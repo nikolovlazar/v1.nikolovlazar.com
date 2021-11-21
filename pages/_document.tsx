@@ -9,14 +9,14 @@ import theme from '../src/theme';
 class Doc extends Document {
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head>
           <script
             defer
             data-domain='nikolovlazar.com'
             src='https://plausible.io/js/plausible.js'
           />
-          <meta name="monetization" content="$ilp.uphold.com/nZ4DF39aHkrm" />
+          <meta name='monetization' content='$ilp.uphold.com/nZ4DF39aHkrm' />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
