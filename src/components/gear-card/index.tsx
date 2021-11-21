@@ -24,11 +24,12 @@ const GearCard = ({ image, title, description, url }: Gear) => {
         spacing={6}
         justifyContent={{ base: 'center', md: 'flex-start' }}
         alignItems='center'
+        w='full'
       >
         <AspectRatio ratio={1} w={36} h={36}>
           <Image alt={title} src={image} layout='fill' />
         </AspectRatio>
-        <VStack spacing={0} alignItems='flex-start' flex={1}>
+        <VStack spacing={0} alignItems='flex-start' flex={1} w='full'>
           <LinkOverlay href={url} isExternal>
             <Heading size='sm'>{title}</Heading>
           </LinkOverlay>
