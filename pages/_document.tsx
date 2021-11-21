@@ -16,6 +16,7 @@ class Doc extends Document {
             data-domain='nikolovlazar.com'
             src='https://plausible.io/js/plausible.js'
           />
+          <meta name="monetization" content="$ilp.uphold.com/nZ4DF39aHkrm" />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />
