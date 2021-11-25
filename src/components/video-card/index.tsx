@@ -14,6 +14,7 @@ import {
 import { Video } from '@/types/video';
 import Image from '../image';
 import { HiPlay } from 'react-icons/hi';
+import Link from '../link';
 
 type Props = Video;
 
@@ -28,11 +29,12 @@ const VideoCard = ({ title, description, url }: Props) => {
 
   if (!videoId) return <Spinner />;
   return (
-    <LinkBox role='group' zIndex='dropdown'>
+    <LinkBox zIndex='dropdown'>
       <VStack spacing={4} alignItems='flex-start'>
         <AspectRatio
           ratio={16 / 9}
           w='full'
+          role='group'
           position='relative'
           rounded='lg'
           overflow='hidden'
@@ -73,7 +75,9 @@ const VideoCard = ({ title, description, url }: Props) => {
           </>
         </AspectRatio>
         <VStack spacing={2} alignItems='flex-start'>
-          <Heading size='sm'>{title}</Heading>
+          <Link href={url} isExternal>
+            <Heading size='sm'>{title}</Heading>
+          </Link>
           <Text fontSize='sm' color='gray.500'>
             {description}
           </Text>
