@@ -9,6 +9,7 @@ import {
   AspectRatio,
   Icon,
   useBreakpointValue,
+  SkeletonCircle,
 } from '@chakra-ui/react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
@@ -27,7 +28,12 @@ const GearCard = ({ image, title, description, url }: Gear) => {
         w='full'
       >
         <AspectRatio ratio={1} w={36} h={36}>
-          <Image alt={title} src={image} layout='fill' />
+          <Image
+            alt={title}
+            src={image}
+            layout='fill'
+            fallback={<SkeletonCircle w='full' h='full' />}
+          />
         </AspectRatio>
         <VStack spacing={0} alignItems='flex-start' flex={1} w='full'>
           <LinkOverlay href={url} isExternal>

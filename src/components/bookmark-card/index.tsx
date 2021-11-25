@@ -8,6 +8,7 @@ import {
   useColorModeValue,
   Tooltip,
   Text,
+  Skeleton,
 } from '@chakra-ui/react';
 
 import { Bookmark } from '@/types/bookmark';
@@ -29,7 +30,12 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
           _hover={{ transform: 'scale(1.05, 1.05)' }}
         >
           <AspectRatio ratio={16 / 9} w='full'>
-            <Image alt={`Thumbnail of ${title}`} src={cover} layout='fill' />
+            <Image
+              alt={`Thumbnail of ${title}`}
+              src={cover}
+              layout='fill'
+              fallback={<Skeleton w='full' h='full' />}
+            />
           </AspectRatio>
           <VStack p={3} spacing={1} alignItems='flex-start' flex={1} w='full'>
             <LinkOverlay href={link} isExternal w='full'>
