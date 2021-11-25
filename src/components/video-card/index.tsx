@@ -7,10 +7,13 @@ import {
   Text,
   LinkBox,
   LinkOverlay,
+  Flex,
+  Icon,
 } from '@chakra-ui/react';
 
 import { Video } from '@/types/video';
 import Image from '../image';
+import { HiPlay } from 'react-icons/hi';
 
 type Props = Video;
 
@@ -25,21 +28,52 @@ const VideoCard = ({ title, description, url }: Props) => {
 
   if (!videoId) return <Spinner />;
   return (
-    <LinkBox>
+    <LinkBox role='group' zIndex='dropdown'>
       <VStack spacing={4} alignItems='flex-start'>
-        <AspectRatio ratio={16 / 9} w='full'>
-          <Image
-            alt={`Thumbnail of ${title}`}
-            src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-            fallbackSrc={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
-            layout='fill'
-            rounded='lg'
-          />
+        <AspectRatio
+          ratio={16 / 9}
+          w='full'
+          position='relative'
+          rounded='lg'
+          overflow='hidden'
+        >
+          <>
+            <LinkOverlay href={url} target='_blank'>
+              <Flex
+                position='absolute'
+                _groupHover={{ bg: 'blackAlpha.500' }}
+                transitionProperty='background'
+                transitionDuration='slow'
+                transitionTimingFunction='ease-out'
+                alignItems='center'
+                justifyContent='center'
+                bg='transparent'
+                inset={0}
+                zIndex='docked'
+              >
+                <Icon
+                  opacity={0}
+                  _groupHover={{ opacity: 1 }}
+                  transitionProperty='opacity'
+                  transitionDuration='slow'
+                  transitionTimingFunction='ease-out'
+                  color='white'
+                  as={HiPlay}
+                  w={{ base: 12, md: 8 }}
+                  h={{ base: 12, md: 8 }}
+                />
+              </Flex>
+            </LinkOverlay>
+            <Image
+              alt={`Thumbnail of ${title}`}
+              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
+              fallbackSrc={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+              layout='fill'
+            />
+          </>
         </AspectRatio>
         <VStack spacing={2} alignItems='flex-start'>
-          <LinkOverlay href={url} target='_blank'>
-            <Heading size='sm'>{title}</Heading>
-          </LinkOverlay>
+          <Heading size='sm'>{title}</Heading>
           <Text fontSize='sm' color='gray.500'>
             {description}
           </Text>
