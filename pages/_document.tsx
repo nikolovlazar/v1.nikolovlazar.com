@@ -17,6 +17,24 @@ class Doc extends Document {
             src='https://plausible.io/js/plausible.js'
           />
           <meta name='monetization' content='$ilp.uphold.com/nZ4DF39aHkrm' />
+          <link
+            rel='preload'
+            href='/assets/fonts/CalSans-SemiBold.ttf'
+            as='font'
+            crossOrigin=''
+          />
+          <link
+            rel='preload'
+            href='/assets/fonts/CalSans-SemiBold.woff'
+            as='font'
+            crossOrigin=''
+          />
+          <link
+            rel='preload'
+            href='/assets/fonts/CalSans-SemiBold.woff2'
+            as='font'
+            crossOrigin=''
+          />
         </Head>
         <body>
           <ColorModeScript initialColorMode={theme.config.initialColorMode} />

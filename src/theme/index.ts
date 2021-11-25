@@ -15,6 +15,7 @@ const theme = extendTheme({
     Heading: {
       baseStyle: (props) => ({
         color: mode('gray.700', 'white')(props),
+        letterSpacing: '1px',
       }),
     },
     Text: {
@@ -27,7 +28,7 @@ const theme = extendTheme({
     twitter: '#1EA1F1',
   },
   fonts: {
-    heading: `Poppins, ${base.fonts.heading}`,
+    heading: `Cal Sans, ${base.fonts.heading}`,
     body: `Inter, ${base.fonts.body}`,
   },
   mdx: {
