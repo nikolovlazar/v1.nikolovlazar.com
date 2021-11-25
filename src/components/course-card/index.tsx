@@ -23,6 +23,10 @@ const CourseCard = ({ title, description, url }: Props) => {
         bg={mode('gray.100', 'gray.700')}
         rounded='md'
         alignItems='flex-start'
+        transitionProperty='transform'
+        transitionDuration='slow'
+        transitionTimingFunction='ease-out'
+        _hover={{ transform: 'scale(1.025, 1.025)' }}
       >
         <Stack
           w='full'
