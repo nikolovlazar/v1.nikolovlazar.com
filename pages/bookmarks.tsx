@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { GetStaticProps } from 'next';
 import {
   VStack,
@@ -10,7 +11,6 @@ import {
 
 import { Bookmark } from '@/types/bookmark';
 import BookmarkCard from '@/components/bookmark-card';
-import { useState } from 'react';
 
 type Props = {
   bookmarks: Bookmark[];
@@ -38,7 +38,7 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
           upon on the internet.
         </Text>
       </VStack>
-      <HStack w='full' spacing={3} as='section'>
+      <HStack w='full' spacing={3} as='section' flexWrap='wrap' gridRowGap={2}>
         <Button
           textTransform='uppercase'
           onClick={() => filterBookmarks()}

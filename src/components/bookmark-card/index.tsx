@@ -1,7 +1,6 @@
 import {
   VStack,
   Heading,
-  Text,
   LinkBox,
   LinkOverlay,
   AspectRatio,
