@@ -70,7 +70,6 @@ const VideoCard = ({ title, description, url }: Props) => {
             <Image
               alt={`Thumbnail of ${title}`}
               src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-              fallbackSrc={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
               fallback={<Skeleton w='full' h='full' />}
               layout='fill'
             />
