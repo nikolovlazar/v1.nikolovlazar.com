@@ -6,6 +6,19 @@ const config: ThemeConfig = {
   useSystemColorMode: true,
 };
 
+const purpleRing = (props) => ({
+  _focus: {
+    ringColor: mode('purple.300', 'purple.600')(props),
+    ring: 3,
+  },
+});
+
+const inputBorder = (props) => ({
+  _focus: {
+    borderColor: mode('purple.300', 'purple.600')(props),
+  },
+});
+
 const theme = extendTheme({
   config,
   sizes: {
@@ -22,6 +35,32 @@ const theme = extendTheme({
       baseStyle: (props) => ({
         color: mode('gray.700', 'white')(props),
       }),
+    },
+    Link: {
+      baseStyle: (props) => ({
+        ...purpleRing(props),
+      }),
+    },
+    Button: {
+      baseStyle: (props) => ({
+        ...purpleRing(props),
+      }),
+    },
+    Input: {
+      variants: {
+        filled: (props) => ({
+          field: {
+            ...inputBorder(props),
+          },
+        }),
+      },
+    },
+    Textarea: {
+      variants: {
+        filled: (props) => ({
+          ...inputBorder(props),
+        }),
+      },
     },
   },
   colors: {

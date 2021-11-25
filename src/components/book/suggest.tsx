@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import {
+  chakra,
+  Flex,
   Button,
   Collapse,
   SimpleGrid,
   GridItem,
   Input,
   Textarea,
-  IconButton,
   Icon,
   useColorModeValue as mode,
   useToast,
@@ -24,8 +25,7 @@ const Suggest = () => {
 
   const toast = useToast();
   const { sendSuggestion } = useBookSuggestions();
-  const { isOpen, onToggle, getButtonProps, getDisclosureProps } =
-    useDisclosure();
+  const { isOpen, onToggle, getButtonProps } = useDisclosure();
 
   const submit = async () => {
     if (title && author && reason) {
@@ -61,7 +61,7 @@ const Suggest = () => {
   };
 
   return (
-    <>
+    <Flex direction='column' alignItems='flex-start' w='full'>
       <Button
         {...getButtonProps()}
         variant='unstyled'
@@ -70,10 +70,11 @@ const Suggest = () => {
         fontWeight='normal'
         onClick={onToggle}
         h={6}
+        mb={3}
       >
         Suggest me a book!
       </Button>
-      <Collapse in={isOpen} animateOpacity {...getDisclosureProps()}>
+      <Collapse style={{ width: '100%' }} in={isOpen} animateOpacity>
         <SimpleGrid
           columns={{ base: 1, md: 2 }}
           w='full'
@@ -110,16 +111,34 @@ const Suggest = () => {
             />
           </GridItem>
           <GridItem colSpan={{ base: 1, md: 2 }}>
-            <IconButton
+            <Button
               isLoading={loading}
               aria-label='Send Suggestion'
-              icon={<Icon as={FiSend} />}
+              rightIcon={<Icon as={FiSend} ml={-2} _groupHover={{ ml: 0 }} />}
               onClick={submit}
-            />
+              role='group'
+              width={10}
+              _hover={{ width: '186px' }}
+              transitionProperty='all'
+              transitionDuration='slower'
+              transitionTimingFunction='ease-out'
+            >
+              <chakra.span
+                overflow='hidden'
+                width={0}
+                opacity={0}
+                _groupHover={{ width: 'auto', opacity: 1 }}
+                transitionProperty='all'
+                transitionDuration='slower'
+                transitionTimingFunction='ease-out'
+              >
+                Send suggestion
+              </chakra.span>
+            </Button>
           </GridItem>
         </SimpleGrid>
       </Collapse>
-    </>
+    </Flex>
   );
 };
 
