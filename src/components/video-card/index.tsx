@@ -9,7 +9,6 @@ import {
   LinkOverlay,
   Flex,
   Icon,
-  Skeleton,
 } from '@chakra-ui/react';
 
 import { Video } from '@/types/video';
@@ -70,7 +69,7 @@ const VideoCard = ({ title, description, url }: Props) => {
             <Image
               alt={`Thumbnail of ${title}`}
               src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-              fallback={<Skeleton w='full' h='full' />}
+              fallbackSrc={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
               layout='fill'
             />
           </>
