@@ -68,8 +68,14 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
         w='full'
         as='section'
       >
-        {displayBookmarks.map(({ cover, link, title }) => (
-          <BookmarkCard key={link} title={title} cover={cover} link={link} />
+        {displayBookmarks.map(({ cover, link, title, tags }) => (
+          <BookmarkCard
+            key={link}
+            title={title}
+            cover={cover}
+            link={link}
+            tags={tags}
+          />
         ))}
       </SimpleGrid>
     </VStack>
