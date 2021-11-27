@@ -1,16 +1,18 @@
 import {
   VStack,
+  HStack,
   Stack,
   Heading,
   Text,
   LinkBox,
   LinkOverlay,
+  Icon,
   useColorModeValue as mode,
 } from '@chakra-ui/react';
 
 import { Course } from '@/types/course';
 import ExternalLink from '../external-link';
-import { NEWSLETTER_URL } from 'src/constants';
+import { FiArrowUpRight } from 'react-icons/fi';
 
 type Props = Course;
 
@@ -42,21 +44,24 @@ const CourseCard = ({ title, description, url, live }: Props) => {
             {title}
           </Heading>
           {courseDomain && (
-            <LinkOverlay as={ExternalLink} href={url} target='_blank'>
+            <LinkOverlay as={ExternalLink} href={url}>
               <Text color='inherit' fontSize='sm'>
                 {courseDomain}
               </Text>
             </LinkOverlay>
           )}
           {!live && (
-            <LinkOverlay
-              as={ExternalLink}
-              href={NEWSLETTER_URL}
-              target='_blank'
-            >
-              <Text color='inherit' fontSize='sm'>
-                Get notified
-              </Text>
+            <LinkOverlay href='/newsletter'>
+              <HStack>
+                <Text color='purple.500' fontSize='sm'>
+                  Get notified
+                </Text>
+                <Icon
+                  as={FiArrowUpRight}
+                  color={mode('gray.700', 'white')}
+                  display='inline'
+                />
+              </HStack>
             </LinkOverlay>
           )}
         </Stack>

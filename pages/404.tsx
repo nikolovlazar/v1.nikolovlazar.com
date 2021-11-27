@@ -21,9 +21,8 @@ const NotFound = () => {
       <AspectRatio ratio={16 / 9} w='full'>
         <iframe
           src='https://player.twitch.tv/?video=1168804058&parent=nikolovlazar.com'
-          // @ts-ignore
-          frameborder='0'
-          allowfullscreen='true'
+          frameBorder='0'
+          allowFullScreen
           scrolling='no'
           height='100%'
           width='100%'

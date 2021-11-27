@@ -76,7 +76,7 @@ const thirdGroup = [
     label: 'Books',
   },
   {
-    href: NEWSLETTER_URL,
+    href: '/newsletter',
     label: 'Newsletter',
   },
 ];
