@@ -10,11 +10,15 @@ import {
 
 import { Course } from '@/types/course';
 import ExternalLink from '../external-link';
+import { NEWSLETTER_URL } from 'src/constants';
 
 type Props = Course;
 
-const CourseCard = ({ title, description, url }: Props) => {
-  const courseDomain = new URL(url).host;
+const CourseCard = ({ title, description, url, live }: Props) => {
+  let courseDomain: string;
+  if (url && url.length > 0) {
+    courseDomain = new URL(url).host;
+  }
   return (
     <LinkBox as='article'>
       <VStack
@@ -37,11 +41,24 @@ const CourseCard = ({ title, description, url }: Props) => {
           <Heading size='sm' weight='semibold'>
             {title}
           </Heading>
-          <LinkOverlay as={ExternalLink} href={url} target='_blank'>
-            <Text color='inherit' fontSize='sm'>
-              {courseDomain}
-            </Text>
-          </LinkOverlay>
+          {courseDomain && (
+            <LinkOverlay as={ExternalLink} href={url} target='_blank'>
+              <Text color='inherit' fontSize='sm'>
+                {courseDomain}
+              </Text>
+            </LinkOverlay>
+          )}
+          {!live && (
+            <LinkOverlay
+              as={ExternalLink}
+              href={NEWSLETTER_URL}
+              target='_blank'
+            >
+              <Text color='inherit' fontSize='sm'>
+                Get notified
+              </Text>
+            </LinkOverlay>
+          )}
         </Stack>
         <Text fontSize='sm'>{description}</Text>
       </VStack>

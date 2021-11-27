@@ -4,3 +4,4 @@ export const YOUTUBE_CHANNEL =
   'https://www.youtube.com/channel/UCTexaJMnN_Pv6TVueQ61-oQ';
 export const POLYWORK_PROFILE = 'https://www.polywork.com/lazar';
 export const TWITCH_CHANNEL = 'https://twitch.tv/nikolovlazar';
+export const NEWSLETTER_URL = 'http://newsletter.nikolovlazar.com';

@@ -8,6 +8,7 @@ import {
   YOUTUBE_CHANNEL,
   POLYWORK_PROFILE,
   TWITCH_CHANNEL,
+  NEWSLETTER_URL,
 } from '../../constants';
 import { Link as LinkType } from '@/types/link';
 
@@ -74,6 +75,10 @@ const thirdGroup = [
     href: '/books',
     label: 'Books',
   },
+  {
+    href: NEWSLETTER_URL,
+    label: 'Newsletter',
+  },
 ];
 
 const Footer = () => {
@@ -91,7 +96,10 @@ const Footer = () => {
         <VStack alignItems='flex-start'>
           {firstGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
-              <Link color={pathname === href ? 'purple.500' : 'gray.500'}>
+              <Link
+                isExternal={href.startsWith('http')}
+                color={pathname === href ? 'purple.500' : 'gray.500'}
+              >
                 {label}
               </Link>
             </NextLink>
@@ -100,7 +108,11 @@ const Footer = () => {
         <VStack alignItems='flex-start'>
           {secondGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
-              <Link isExternal target='_blank' color='gray.500'>
+              <Link
+                isExternal={href.startsWith('http')}
+                target='_blank'
+                color='gray.500'
+              >
                 {label}
               </Link>
             </NextLink>
@@ -109,7 +121,10 @@ const Footer = () => {
         <VStack alignItems='flex-start'>
           {thirdGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
-              <Link color={pathname === href ? 'purple.500' : 'gray.500'}>
+              <Link
+                isExternal={href.startsWith('http')}
+                color={pathname === href ? 'purple.500' : 'gray.500'}
+              >
                 {label}
               </Link>
             </NextLink>
