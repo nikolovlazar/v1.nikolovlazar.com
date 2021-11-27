@@ -44,5 +44,5 @@ export default async function handler(
 
   return res
     .status(201)
-    .json({ error: '', message: 'Thank you for subscribing! ❤️' });
+    .json({ error: '', message: 'Thank you for subscribing! 💜' });
 }
