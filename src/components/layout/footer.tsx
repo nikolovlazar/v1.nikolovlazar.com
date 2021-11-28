@@ -8,9 +8,9 @@ import {
   YOUTUBE_CHANNEL,
   POLYWORK_PROFILE,
   TWITCH_CHANNEL,
-  NEWSLETTER_URL,
 } from '../../constants';
 import { Link as LinkType } from '@/types/link';
+import VercelCallout from '../vercel-callout';
 
 const firstGroup: LinkType[] = [
   {
@@ -91,7 +91,7 @@ const Footer = () => {
         direction={{ base: 'column', md: 'row' }}
         justifyContent='space-between'
         w='full'
-        spacing={8}
+        spacing={{ base: 2, md: 8 }}
       >
         <VStack alignItems='flex-start'>
           {firstGroup.map(({ href, label }) => (
@@ -131,13 +131,23 @@ const Footer = () => {
           ))}
         </VStack>
       </Stack>
-      <Text color='gray.500'>
-        ©{' '}
-        <chakra.span as='time' color='purple.500'>
-          {new Date().getFullYear()}
-        </chakra.span>{' '}
-        Lazar Nikolov
-      </Text>
+      <Stack
+        w='full'
+        direction={{ base: 'column', md: 'row' }}
+        alignItems='center'
+        justifyContent={{ base: 'center', md: 'space-between' }}
+        spacing={0}
+        gridRowGap={4}
+      >
+        <Text color='gray.500'>
+          ©{' '}
+          <chakra.span as='time' color='purple.500'>
+            {new Date().getFullYear()}
+          </chakra.span>{' '}
+          Lazar Nikolov
+        </Text>
+        <VercelCallout />
+      </Stack>
     </VStack>
   );
 };
