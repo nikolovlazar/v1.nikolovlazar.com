@@ -1,11 +1,12 @@
 {
   "courses": [
     {
-      "title": "The Beginner's Guide to Next.js ▲ (Coming in February 2022)",
+      "title": "The Beginner's Guide to Next.js ▲",
       "url": "",
       "description": "In this course, you will learn about Next.js's features, like data fetching, page rendering, dynamic routes, API routes, dynamic imports, and how to deploy your Next.js project on Vercel.",
       "live": false,
-      "progress": 22
+      "progress": 22,
+      "expectedLaunch": "February 2022"
     },
     {
       "title": "Build a Modern User Interface with Chakra UI ⚡️",

@@ -28,6 +28,7 @@ const CourseCard = ({
   live,
   image,
   progress,
+  expectedLaunch,
 }: Props) => {
   let courseDomain: string;
   if (url && url.length > 0) {
@@ -98,6 +99,11 @@ const CourseCard = ({
               </LinkOverlay>
             )}
           </Stack>
+          {expectedLaunch && (
+            <Text fontSize='sm' alignSelf='flex-start' color='gray.500'>
+              Expected launch: {expectedLaunch}
+            </Text>
+          )}
           <Text fontSize='sm'>{description}</Text>
         </VStack>
       </Stack>

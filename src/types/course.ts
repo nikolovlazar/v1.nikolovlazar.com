@@ -5,4 +5,5 @@ export type Course = {
   live?: boolean;
   progress?: number;
   image?: string;
+  expectedLaunch?: string;
 };
