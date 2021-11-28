@@ -12,6 +12,7 @@ import { FiArrowUpRight } from 'react-icons/fi';
 import {
   GITHUB_PROFILE,
   POLYWORK_PROFILE,
+  TWITCH_CHANNEL,
   TWITTER_PROFILE,
 } from 'src/constants';
 import { Link as LinkType } from '@/types/link';
@@ -32,9 +33,9 @@ const socialLinks: SocialLink[] = [
     label: 'GitHub',
   },
   {
-    href: POLYWORK_PROFILE,
-    label: 'Polywork',
-    color: 'purple.600',
+    href: TWITCH_CHANNEL,
+    label: 'Twitch',
+    color: 'purple.500',
   },
 ];
 
