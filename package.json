@@ -4,7 +4,7 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
@@ -14,7 +14,7 @@
     "airtable": "^0.11.1",
     "framer-motion": "^4",
     "gray-matter": "^4.0.3",
-    "next": "latest",
+    "next": "12.0.4",
     "next-mdx-remote": "^3.0.4",
     "next-seo": "^4.28.1",
     "prism-react-renderer": "^1.2.1",
