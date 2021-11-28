@@ -29,9 +29,9 @@ const Header = () => {
             Bookmarks
           </Button>
         </NextLink>
-        <NextLink href='/blog' passHref>
+        <NextLink href='/gear' passHref>
           <Button as={Link} size='sm' variant='ghost'>
-            Blog
+            Gear
           </Button>
         </NextLink>
         <IconButton

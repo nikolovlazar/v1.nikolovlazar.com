@@ -10,6 +10,7 @@ import {
   Icon,
   CircularProgress,
   CircularProgressLabel,
+  useBreakpointValue,
   useColorModeValue as mode,
 } from '@chakra-ui/react';
 
@@ -34,13 +35,14 @@ const CourseCard = ({
   }
 
   const progressTrackColor = mode('blackAlpha.100', 'whiteAlpha.200');
+  const progressSize = useBreakpointValue({ base: '120px', md: '80px' });
 
   return (
     <LinkBox as='article'>
       <Stack
         direction={{ base: 'column', md: 'row' }}
         p={4}
-        spacing={3}
+        spacing={{ base: 8, md: 5 }}
         bg={mode('gray.100', 'gray.700')}
         rounded='md'
         alignItems='center'
@@ -49,7 +51,7 @@ const CourseCard = ({
         transitionTimingFunction='ease-out'
         _hover={{ transform: 'scale(1.025, 1.025)' }}
       >
-        <AspectRatio ratio={1} w={{ base: 40, md: 20 }} flexShrink={0}>
+        <AspectRatio ratio={1} w={{ base: 32, md: 20 }} flexShrink={0}>
           <>
             {image && <Image src={image} alt={title} layout='fill' />}
             {!live && progress && (
@@ -57,7 +59,7 @@ const CourseCard = ({
                 value={progress}
                 color='purple.500'
                 trackColor={progressTrackColor}
-                size='80px'
+                size={progressSize}
               >
                 <CircularProgressLabel>{progress}%</CircularProgressLabel>
               </CircularProgress>
