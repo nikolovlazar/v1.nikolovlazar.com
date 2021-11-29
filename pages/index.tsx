@@ -1,5 +1,4 @@
 import { GetStaticProps } from 'next';
-import { VStack } from '@chakra-ui/react';
 
 import { Course } from '@/types/course';
 import Hero from '@/components/hero';

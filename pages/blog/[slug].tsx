@@ -4,7 +4,6 @@ import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import CountUp from 'react-countup';
 import { VStack, Heading, HStack, Text, Icon } from '@chakra-ui/react';
-import { HiHeart } from 'react-icons/hi';
 
 import { BlogPost } from '@/types/blog-post';
 import { getBlogPosts } from '@/utils/get-blog-posts';
