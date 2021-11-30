@@ -3,7 +3,7 @@
     {
       "title": "The Beginner's Guide to Next.js ▲",
       "url": "",
-      "description": "In this course, you will learn about Next.js's features, like data fetching, page rendering, dynamic routes, API routes, dynamic imports, and how to deploy your Next.js project on Vercel.",
+      "description": "In this course, you will learn about Next.js's features, like data fetching, page rendering, dynamic routes, API routes, and how to deploy your Next.js project on Vercel.",
       "live": false,
       "progress": 43,
       "expectedLaunch": "February 2022"
