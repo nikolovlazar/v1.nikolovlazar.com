@@ -17,17 +17,22 @@ import useSWR from 'swr';
 import fetcher from '@/utils/fetcher';
 import { Subscribers } from '@/types/subscribers';
 import { Form, FormState } from '@/types/form-state';
+import { Course } from '@/types/course';
 
-const NewsletterForm = () => {
+type Props = {
+  course: Course;
+};
+
+const CourseForm = ({ course: { formId, title } }: Props) => {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const { data } = useSWR<Subscribers>('/api/newsletter/subscribers', fetcher);
+  const { data } = useSWR<Subscribers>(`/api/courses/subscribers/${formId}`, fetcher);
   const detailColor = useColorModeValue('gray.500', 'gray.400');
 
   const subscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
-    const res = await fetch('/api/newsletter/subscribe', {
+    const res = await fetch(`/api/courses/subscribe/${formId}`, {
       body: JSON.stringify({
         email: e.currentTarget.elements['email'].value,
       }),
@@ -61,10 +66,9 @@ const NewsletterForm = () => {
       w='full'
       alignItems='flex-start'
     >
-      <Heading size='md'>Subscribe to my newsletter ✉️</Heading>
+      <Heading size='md'>Subscribe to my course 🤓</Heading>
       <Text>
-        Get emails from me about web development, content creation, and whenever
-        I publish new content.
+        Get notified when I publish my &quot;{title}&quot; course!
       </Text>
       {form.state !== Form.Success && form.state !== Form.Error && (
         <>
@@ -113,4 +117,4 @@ const NewsletterForm = () => {
   );
 };
 
-export default NewsletterForm;
+export default CourseForm;

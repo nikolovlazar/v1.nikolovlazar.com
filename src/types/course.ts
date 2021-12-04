@@ -1,4 +1,5 @@
 export type Course = {
+  id: string;
   title: string;
   description: string;
   url: string;
@@ -6,4 +7,5 @@ export type Course = {
   progress?: number;
   image?: string;
   expectedLaunch?: string;
+  formId?: string;
 };

@@ -22,6 +22,7 @@ import Image from '../image';
 type Props = Course;
 
 const CourseCard = ({
+  id,
   title,
   description,
   url,
@@ -85,7 +86,7 @@ const CourseCard = ({
               </LinkOverlay>
             )}
             {!live && (
-              <LinkOverlay href='/newsletter'>
+              <LinkOverlay href={`/course/${id}/subscribe`}>
                 <HStack>
                   <Text color='purple.500' fontSize='sm'>
                     Get notified

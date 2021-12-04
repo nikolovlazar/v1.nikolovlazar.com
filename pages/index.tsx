@@ -6,13 +6,13 @@ import CoursesSection from '@/components/courses-section';
 import { readData } from '@/utils/read-data';
 import { Video } from '@/types/video';
 import VideosSection from '@/components/videos-section';
+import courses from '@/data/courses';
 
 type Props = {
-  courses: Course[];
   videos: Video[];
 };
 
-const IndexPage = ({ courses, videos }: Props) => {
+const IndexPage = ({ videos }: Props) => {
   return (
     <>
       <Hero />
@@ -23,14 +23,9 @@ const IndexPage = ({ courses, videos }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { courses } = await readData<{ courses: Course[] }>(
-    'data/courses.json'
-  );
-
   const { videos } = await readData<{ videos: Video[] }>('data/videos.json');
 
   const props: Props = {
-    courses,
     videos,
   };
 
