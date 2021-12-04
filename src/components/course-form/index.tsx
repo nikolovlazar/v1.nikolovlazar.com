@@ -18,6 +18,8 @@ import fetcher from '@/utils/fetcher';
 import { Subscribers } from '@/types/subscribers';
 import { Form, FormState } from '@/types/form-state';
 import { Course } from '@/types/course';
+import Link from '../link';
+import { TWITTER_PROFILE } from 'src/constants';
 
 type Props = {
   course: Course;
@@ -25,7 +27,10 @@ type Props = {
 
 const CourseForm = ({ course: { formId, title } }: Props) => {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const { data } = useSWR<Subscribers>(`/api/courses/subscribers/${formId}`, fetcher);
+  const { data } = useSWR<Subscribers>(
+    `/api/courses/subscribers/${formId}`,
+    fetcher
+  );
   const detailColor = useColorModeValue('gray.500', 'gray.400');
 
   const subscribe = async (e: FormEvent<HTMLFormElement>) => {
@@ -67,9 +72,7 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
       alignItems='flex-start'
     >
       <Heading size='md'>Subscribe to my course 🤓</Heading>
-      <Text>
-        Get notified when I publish my &quot;{title}&quot; course!
-      </Text>
+      <Text>Get notified when I publish my &quot;{title}&quot; course!</Text>
       {form.state !== Form.Success && form.state !== Form.Error && (
         <>
           <chakra.form
@@ -110,7 +113,11 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
       )}
       {form.state === Form.Error && (
         <Text size='sm' color='red.500'>
-          {form.message} 😕
+          {form.message} 😕 Reach out to me on{' '}
+          <Link href={TWITTER_PROFILE} isExternal>
+            Twitter
+          </Link>{' '}
+          about this.
         </Text>
       )}
     </VStack>

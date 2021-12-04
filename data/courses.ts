@@ -1,6 +1,14 @@
 import { Course } from '@/types/course';
 
 const courses: Course[] = [
+  /* Adding New Course Checklist:
+   * - Create new form on convertkit.com
+   * - Obtain formId
+   * - Write title & description
+   * - No URL
+   * - live: false
+   * - progress: 0
+   */
   {
     id: 'the-beginners-guide-to-nextjs',
     title: "The Beginner's Guide to Next.js ▲",

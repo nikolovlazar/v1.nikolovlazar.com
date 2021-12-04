@@ -29,10 +29,9 @@ export default async function handler(
     },
     body: JSON.stringify({ email, 'api_key': process.env.CONVERTKIT_API_KEY }),
   });
-  const data = await result.json();
 
   if (!result.ok) {
-    return res.status(500).json({ error: data.error.email[0] });
+    return res.status(500).json({ error: `Uh oh! Something happened and I couldn't subscribe you...` });
   }
 
   return res
