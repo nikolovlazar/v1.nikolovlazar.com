@@ -68,9 +68,10 @@ const VideoCard = ({ title, description, url }: Props) => {
             </LinkOverlay>
             <Image
               alt={`Thumbnail of ${title}`}
-              src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
-              fallbackSrc={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+              src={`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`}
+              fallbackSrc={`https://img.youtube.com/vi/${videoId}/mqdefault.jpg`}
               layout='fill'
+              objectFit='cover'
             />
           </>
         </AspectRatio>

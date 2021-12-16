@@ -1,18 +1,13 @@
-import { Box, AspectRatio, SkeletonCircle } from '@chakra-ui/react';
-
-import Lazar from './lazar-croissant.gif';
-import Image from '@/components/image';
+import { Box, AspectRatio } from '@chakra-ui/react';
 
 const HeroImage = () => {
   return (
     <AspectRatio flexShrink={0} ratio={1} w={56} h={56} as='figure'>
-      <Box>
-        <Image
-          alt="Lazar's profile photo"
-          src={Lazar}
-          rounded='full'
-          priority
-        />
+      <Box rounded='full' overflow='hidden'>
+        <video autoPlay loop muted playsInline>
+          <source src='/assets/videos/lazar-croissant.webm' type='video/webm' />
+          <source src='/assets/videos/lazar-croissant.mp4' type='video/mp4' />
+        </video>
       </Box>
     </AspectRatio>
   );
