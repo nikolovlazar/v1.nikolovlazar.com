@@ -1,4 +1,4 @@
-import { HStack, Text } from '@chakra-ui/react';
+import { HStack, Text, useColorModeValue as mode } from '@chakra-ui/react';
 
 import status from '@/data/status';
 
@@ -11,28 +11,29 @@ const StatusIndicator = () => {
           maxWidth: 40,
         },
       }}
+      _hover={{
+        width: 'full',
+        maxWidth: 40,
+        shadow: 'lg',
+      }}
       position='absolute'
       bottom={0}
       overflow='hidden'
       borderWidth={1}
-      borderColor='gray.300'
+      borderColor={mode('gray.300', 'gray.600')}
       borderStyle='solid'
       height={10}
       width={10}
       maxWidth={10}
       alignItems='center'
       justifyContent='center'
-      bg='white'
+      bg={mode('white', 'gray.800')}
       rounded='3xl'
       px={2}
       role='group'
       transitionProperty='all'
       transitionDuration='slow'
       transitionTimingFunction='ease-out'
-      _hover={{
-        width: 'full',
-        maxWidth: 40,
-      }}
     >
       <Text>{status.emoji}</Text>
       <Text
