@@ -41,7 +41,19 @@ const BlogPostPage = ({ title, description, date, source }: Props) => {
 
   return (
     <>
-      <NextSeo title={`${title} - Lazar Nikolov`} description={description} />
+      <NextSeo
+        title={`${title} - Lazar Nikolov`}
+        description={description}
+        openGraph={{
+          images: [
+            {
+              url: `https://res.cloudinary.com/nikolovlazar/image/upload/${encodeURIComponent(
+                `g_north_west,l_text:calsans-semibold.ttf_72:Lazar%20Nikolov,g_north_west,x_20,y_20,co_#EDF2F7,x_330,y_208,x_330,y_208/c_fit,g_north_west,l_c_fit,g_north_west,l_text:calsans-semibold.ttf_48:${title},g_north_west,x_20,y_20,co_#718096,w_771,x_330,y_306,w_771,x_330,y_306`
+              )}/blog-post-image-template_scisgq.png`,
+            },
+          ],
+        }}
+      />
       <VStack spacing={8} w='full' alignItems='stretch'>
         <VStack spacing={3} alignItems='flex-start'>
           <Heading size='lg'>{title}</Heading>
