@@ -46,19 +46,19 @@ function isImageNode(node: Node): node is ImageNode {
  */
 async function addMetadata(node: ImageNode): Promise<void> {
   let res: ISizeCalculationResult;
-  let blurhash: IGetBlurhashReturn;
+  let blur64: string;
   const isExternal = node.properties.src.startsWith('http');
 
   if (!isExternal) {
     res = await sizeOf(path.join(process.cwd(), 'public', node.properties.src));
-    blurhash = (await getPlaiceholder(node.properties.src)).blurhash
+    blur64 = (await getPlaiceholder(node.properties.src)).base64
   } else {
     const imageRes = await fetch(node.properties.src);
     const arrayBuffer = await imageRes.arrayBuffer();
     const buffer = Buffer.from(arrayBuffer);
 
     res = await imageSize(buffer);
-    blurhash = (await getPlaiceholder(buffer)).blurhash
+    blur64 = (await getPlaiceholder(buffer)).base64
   }
 
   if (!res) throw Error(`Invalid image with src "${node.properties.src}"`);
@@ -66,7 +66,8 @@ async function addMetadata(node: ImageNode): Promise<void> {
   node.properties.width = res.width;
   node.properties.height = res.height;
 
-  node.properties.blurDataURL = blurhash.hash;
+
+  node.properties.blurDataURL = blur64;
   node.properties.placeholder = 'blur'
 }
 
