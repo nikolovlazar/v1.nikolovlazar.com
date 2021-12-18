@@ -32,7 +32,10 @@ async function updatePostLikes(
 
 const usePostLikes = (slug: string) => {
   const { data, error } = useSWR(slug ? `${slug}/likes` : null, () =>
-    getPostLikes(slug)
+    getPostLikes(slug),
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   const increment = useCallback(

@@ -26,7 +26,10 @@ async function updatePostViews(slug: string): Promise<ViewsPayload> {
 
 const usePostViews = (slug: string) => {
   const { data } = useSWR(slug ? `${slug}/views` : null, () =>
-    getPostViews(slug)
+    getPostViews(slug),
+    {
+      revalidateOnFocus: false,
+    }
   );
 
   const increment = useCallback(() => {
