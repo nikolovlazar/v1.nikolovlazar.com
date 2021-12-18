@@ -45,6 +45,9 @@ const BlogPostPage = ({ title, description, date, source }: Props) => {
         title={`${title} - Lazar Nikolov`}
         description={description}
         openGraph={{
+          description,
+          title: `${title} - Lazar Nikolov`,
+          url: `https://nikolovlazar.com/blog/${slug}`,
           images: [
             {
               url: `https://res.cloudinary.com/nikolovlazar/image/upload/${encodeURIComponent(
