@@ -11,7 +11,7 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
 
   await Promise.all(
     blogPosts.map(async (post) => {
-      const postPath = path.join(dir, post);
+      const postPath = path.join(dir, post, 'index.mdx');
       const slug = post.replace('.mdx', '');
 
       const fileContent = await fs.readFile(postPath, 'utf8');
@@ -31,3 +31,13 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
 
   return result;
 };
+
+export const getRecentBlogPosts = async (count: number): Promise<BlogPost[]> => {
+  const posts = await getBlogPosts();
+
+  const recentPosts = posts
+    .sort((a, b) => Date.parse(b.date) - Date.parse(a.date))
+    .slice(0, count);
+
+  return recentPosts;
+}

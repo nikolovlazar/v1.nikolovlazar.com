@@ -11,6 +11,7 @@ import {
   List,
   ListItem,
 } from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
 import { HiOutlineSearch } from 'react-icons/hi';
 
 import { BlogPost } from '@/types/blog-post';
@@ -34,22 +35,25 @@ const Blog = ({ posts }: Props) => {
 
   return (
     <>
+      <NextSeo title='Blog - Lazar Nikolov' />
       <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
         <Heading size='md'>Blog.</Heading>
         <Text fontSize='md'>
           Web development, with a focus on the React ecosystem. I’ve written a
-          total of 6 articles.
+          total of {posts.length} article{posts.length > 1 && 's'}.
         </Text>
-        <InputGroup>
-          <InputLeftElement pointerEvents='none'>
-            <Icon as={HiOutlineSearch} color='gray.400' />
-          </InputLeftElement>
-          <Input
-            placeholder='Search blog posts'
-            variant='filled'
-            onChange={onSearch}
-          />
-        </InputGroup>
+        {posts.length > 1 && (
+          <InputGroup>
+            <InputLeftElement pointerEvents='none'>
+              <Icon as={HiOutlineSearch} color='gray.400' />
+            </InputLeftElement>
+            <Input
+              placeholder='Search blog posts'
+              variant='filled'
+              onChange={onSearch}
+            />
+          </InputGroup>
+        )}
       </VStack>
       <List spacing={12} w='full'>
         {displayPosts.map((post) => (

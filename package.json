@@ -14,9 +14,11 @@
     "airtable": "^0.11.1",
     "framer-motion": "^5",
     "gray-matter": "^4.0.3",
+    "image-size": "^1.0.0",
     "next": "12.0.7",
     "next-mdx-remote": "^3.0.4",
     "next-seo": "^4.28.1",
+    "plaiceholder": "^2.2.0",
     "prism-react-renderer": "^1.2.1",
     "prisma": "3.1.1",
     "react": "^17.0.2",
@@ -25,8 +27,10 @@
     "react-dom": "^17.0.2",
     "react-icons": "^4.2.0",
     "react-use": "^17.3.1",
+    "sharp": "^0.29.3",
     "slugify": "^1.6.0",
-    "swr": "^1.0.1"
+    "swr": "^1.0.1",
+    "unist-util-visit": "^4.1.0"
   },
   "devDependencies": {
     "@types/node": "^12.12.21",

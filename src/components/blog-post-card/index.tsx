@@ -23,7 +23,9 @@ const BlogPostCard = ({ title, description, slug, date }: BlogPost) => (
           {date}
         </Text>
       </HStack>
-      <Text fontSize='sm'>{description}</Text>
+      <Text fontSize='sm' color='gray.500'>
+        {description}
+      </Text>
     </VStack>
   </LinkBox>
 );

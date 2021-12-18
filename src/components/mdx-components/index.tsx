@@ -3,11 +3,13 @@ import {
   Box,
   chakra,
   Link,
-  Heading,
   HTMLChakraProps,
   Kbd,
   useColorModeValue,
+  useColorMode,
 } from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
+import NextImage from 'next/image';
 import slugify from 'slugify';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
@@ -76,21 +78,23 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
                 const lineProps = getLineProps({ line, key: i });
                 return (
                   <chakra.div {...lineProps} display='table-row' key={i}>
-                    <chakra.span
-                      w={8}
-                      display='table-cell'
-                      textAlign='right'
-                      userSelect='none'
-                      color={lineNumberColor}
-                      pr={3}
-                    >
-                      {i + 1}
-                    </chakra.span>
+                    {language !== 'shell' && (
+                      <chakra.span
+                        w={8}
+                        display='table-cell'
+                        textAlign='right'
+                        userSelect='none'
+                        color={lineNumberColor}
+                        pr={3}
+                      >
+                        {i + 1}
+                      </chakra.span>
+                    )}
                     {line.map((token, key) => {
                       return (
                         <chakra.span
                           {...getTokenProps({ token, key })}
-                          key={key}
+                          key={`${i}.${key}`}
                         />
                       );
                     })}
@@ -109,6 +113,10 @@ const InlineCode = (props: any) => (
   <chakra.code
     apply='mdx.code'
     color={useColorModeValue('purple.500', 'purple.200')}
+    bg={useColorModeValue('purple.50', 'purple.900')}
+    px={1}
+    py={0.5}
+    rounded={{ base: 'none', md: 'md' }}
     {...props}
   />
 );
@@ -142,6 +150,22 @@ const LinkedHeading = (props: HTMLChakraProps<'h2'>) => {
   );
 };
 
+const Image = (props) => {
+  return (
+    <NextImage {...props} layout='responsive' loading='lazy' quality={100} />
+  );
+};
+
+const Anchor = (props) => {
+  const { colorMode } = useColorMode();
+  return (
+    <chakra.a
+      color={mode('purple.500', 'purple.300')({ colorMode })}
+      {...props}
+    />
+  );
+};
+
 const MDXComponents = {
   code: CodeHighlight,
   inlineCode: InlineCode,
@@ -153,6 +177,7 @@ const MDXComponents = {
   strong: (props) => <Box as='strong' fontWeight='semibold' {...props} />,
   pre: Pre,
   kbd: Kbd,
+  img: Image,
   br: ({ reset, ...props }) => (
     <Box
       as={reset ? 'br' : undefined}
@@ -163,9 +188,11 @@ const MDXComponents = {
   table: Table,
   th: THead,
   td: TData,
-  a: (props) => <chakra.a apply='mdx.a' {...props} />,
+  a: Anchor,
   p: (props) => <chakra.p apply='mdx.p' {...props} />,
-  ul: (props) => <chakra.ul apply='mdx.ul' {...props} />,
+  ul: (props) => (
+    <chakra.ul px={{ base: 4, md: 0 }} apply='mdx.ul' {...props} />
+  ),
   ol: (props) => <chakra.ol apply='mdx.ul' {...props} />,
   li: (props) => <chakra.li pb='4px' {...props} />,
   blockquote: (props) => (

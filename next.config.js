@@ -12,7 +12,12 @@ const oldBlogPosts = [
 
 module.exports = {
   images: {
-    domains: ['img.youtube.com', 'dl.airtable.com', 'hn.nikolovlazar.com'],
+    domains: [
+      'img.youtube.com',
+      'dl.airtable.com',
+      'hn.nikolovlazar.com',
+      'opengraph.githubassets.com',
+    ],
   },
   async redirects() {
     return oldBlogPosts.map((post) => ({
