@@ -14,6 +14,7 @@ type Props = {
 const LikeButton = ({ onLike, likes, userLikes }: Props) => {
   const { width, height } = useWindowSize();
   const [currentLikes, setCurrentLikes] = useState(userLikes);
+  const [initialLikes] = useState(likes);
   const [clickCoordinates, setClickCoordinates] =
     useState<{ x: number; y: number }>();
 
@@ -50,7 +51,7 @@ const LikeButton = ({ onLike, likes, userLikes }: Props) => {
     >
       {icons[currentLikes]}
       <Text color={mode('gray.700', 'white')}>
-        {likes + currentLikes} likes
+        {currentLikes === 3 ? initialLikes : initialLikes + currentLikes} likes
       </Text>
 
       {!!clickCoordinates && (
