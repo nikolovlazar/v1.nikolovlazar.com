@@ -40,22 +40,20 @@ const Blog = ({ posts }: Props) => {
         <Heading size='md'>Blog.</Heading>
         <Text fontSize='md'>
           Web development, with a focus on the React ecosystem. I’ve written a
-          total of {posts.length} article{posts.length > 1 && 's'}.
+          total of {posts.length} articles.
         </Text>
-        {posts.length > 1 && (
-          <InputGroup>
-            <InputLeftElement pointerEvents='none'>
-              <Icon as={HiOutlineSearch} color='gray.400' />
-            </InputLeftElement>
-            <Input
-              placeholder='Search blog posts'
-              variant='filled'
-              onChange={onSearch}
-            />
-          </InputGroup>
-        )}
+        <InputGroup>
+          <InputLeftElement pointerEvents='none'>
+            <Icon as={HiOutlineSearch} color='gray.400' />
+          </InputLeftElement>
+          <Input
+            placeholder='Search blog posts'
+            variant='filled'
+            onChange={onSearch}
+          />
+        </InputGroup>
       </VStack>
-      <List spacing={12} w='full'>
+      <List spacing={2} w='full'>
         {displayPosts.map((post) => (
           <ListItem key={post.slug}>
             <BlogPostCard {...post} />

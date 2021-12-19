@@ -29,7 +29,7 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
     })
   );
 
-  return result;
+  return result.sort((a, b) => Date.parse(b.date) - Date.parse(a.date));
 };
 
 export const getRecentBlogPosts = async (count: number): Promise<BlogPost[]> => {
