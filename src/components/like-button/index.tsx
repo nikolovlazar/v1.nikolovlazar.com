@@ -6,7 +6,7 @@ import Confetti from 'react-confetti';
 import { Zero, One, Two, Three, LikeIconProps } from './icons';
 
 type Props = {
-  onLike: (numberOfLikes: number) => void;
+  onLike: () => void;
   likes: number;
   userLikes: number;
 };
@@ -41,7 +41,7 @@ const LikeButton = ({ onLike, likes, userLikes }: Props) => {
       onClick={(e) => {
         if (currentLikes < 3 && userLikes <= 3) {
           setCurrentLikes((oldValue) => oldValue + 1);
-          onLike(1);
+          onLike();
 
           if (currentLikes === 2) {
             setClickCoordinates({ x: e.clientX, y: e.clientY });

@@ -47,12 +47,11 @@ export default async function handler(
     }
 
     if (req.method === 'POST') {
-      const { numberOfLikes } = req.body;
       const [post, user] = await Promise.all([
         db.postMeta.update({
           data: {
             likes: {
-              increment: numberOfLikes,
+              increment: 1,
             },
           },
           where: {
@@ -64,11 +63,11 @@ export default async function handler(
           where: { id: sessionId },
           create: {
             id: sessionId,
-            likes: numberOfLikes,
+            likes: 1,
           },
           update: {
             likes: {
-              increment: numberOfLikes,
+              increment: 1,
             },
           },
         }),

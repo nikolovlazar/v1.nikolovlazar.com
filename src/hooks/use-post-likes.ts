@@ -15,12 +15,10 @@ async function getPostLikes(slug: string): Promise<LikesPayload> {
 
 async function updatePostLikes(
   slug: string,
-  numberOfLikes: number
 ): Promise<LikesPayload> {
   const res = await fetch(API_URL + slug, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ numberOfLikes }),
   });
   const data = await res.json();
 
@@ -39,8 +37,8 @@ const usePostLikes = (slug: string) => {
   );
 
   const increment = useCallback(
-    (numberOfLikes: number) => {
-      mutate(`${slug}/likes`, updatePostLikes(slug, numberOfLikes), false);
+    () => {
+      mutate(`${slug}/likes`, updatePostLikes(slug), false);
     },
     [slug]
   );
