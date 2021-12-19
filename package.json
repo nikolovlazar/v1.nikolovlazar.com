@@ -4,7 +4,8 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "theme": "npx @chakra-ui/cli tokens src/theme/index.ts --out node_modules/@chakra-ui/styled-system/dist/types/theming.types.d.ts"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
