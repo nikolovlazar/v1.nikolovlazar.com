@@ -1,0 +1,48 @@
+---
+title: Generating blurDataURL for remote images in Next.js
+description: Achieving a blur effect for all images, both local and remote, using Next.js, MDX and Rehype.
+date: December 19, 2021
+---
+
+The Next.js [Image Component](https://nextjs.org/docs/basic-features/image-optimization) is IMO the best tool that you can use to ensure the images
+on your Next.js website are optimized, and your page loads quicker. One interesting feature that the `next/image` component
+provides is the `placeholder` prop, whose values can be either `blur` or `empty`.
+
+When the placeholder is set to `blur`, we need to provide the `blurDataURL`. If we're importing local images statically, Next.js
+can access the resource and generate the `blurDataURL` for us. But, when we want to add the blur effect to remote images there
+are a few things that we need to do:
+
+- [Register the provider's domain in `next.config.js`](#registering-provider-domains)
+- [Generate the `blurDataURL` and pass it to the `NextImage` component](#generate-blurdataurl)
+
+I'm using [MDX](https://mdxjs.com/) for the content of my website (this one!), so in this article I'll explain the `blurDataURL`
+generation integrated with MDX, but the functionality is generic and not tied with MDX in any way. So let's begin!
+
+## Registering provider domains
+
+First things first, you need to register the provider's domain in order to render remote images with `next/image`. In my case,
+I'm loading the `og:image` from GitHub, and the URL looks like this:
+
+```text
+https://opengraph.githubassets.com/f4a95bd3aa5113a1f599f5a810edeb16b885f3364b0443dc3c34a02c3290a5d8/chakra-ui/chakra-ui-docs/pull/154
+```
+
+By looking at the URL, we know that we need to register the `opengraph.githubassets.com` domain, so let's jump in the `next.config.js`
+and do that:
+
+```javascript
+// next.config.js
+
+module.exports = {
+  images: {
+    domains: ['opengraph.githubassets.com'],
+  },
+};
+```
+
+And that's it! Now that we've got out of the way, let's start generating the `blurDataURL` prop.
+
+## Generate blurDataURL
+
+Since I'm using MDX and I'm rendering the pages statically, I've added a simple plugin that filters out all of
+the images from the markdown, calculates their `width`, `height`, and `blurDataURL` and passes them as props.
