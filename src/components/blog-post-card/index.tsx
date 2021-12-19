@@ -5,7 +5,7 @@ import {
   Heading,
   Text,
   VStack,
-  HStack,
+  Stack,
 } from '@chakra-ui/react';
 
 import { BlogPost } from '@/types/blog-post';
@@ -13,7 +13,7 @@ import { BlogPost } from '@/types/blog-post';
 const BlogPostCard = ({ title, description, slug, date }: BlogPost) => (
   <LinkBox as='article'>
     <VStack w='full' alignItems='stretch'>
-      <HStack justify='space-between'>
+      <Stack direction={{ base: 'column', md: 'row' }} justify='space-between'>
         <Link href={`/blog/${slug}`} passHref>
           <LinkOverlay>
             <Heading size='sm'>{title}</Heading>
@@ -22,7 +22,7 @@ const BlogPostCard = ({ title, description, slug, date }: BlogPost) => (
         <Text fontSize='sm' color='gray.500'>
           {date}
         </Text>
-      </HStack>
+      </Stack>
       <Text fontSize='sm' color='gray.500'>
         {description}
       </Text>
