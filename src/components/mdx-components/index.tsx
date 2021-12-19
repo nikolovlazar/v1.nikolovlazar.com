@@ -54,6 +54,7 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
   const theme = useColorModeValue(lightTheme, darkTheme);
   const lineNumberColor = useColorModeValue('blackAlpha.500', 'whiteAlpha.500');
   const preBackground = useColorModeValue('gray.50', 'gray.900');
+  const showLineNumbers = !['shell', 'text'].includes(language);
 
   return (
     <ChakraHighlight
@@ -78,7 +79,7 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
                 const lineProps = getLineProps({ line, key: i });
                 return (
                   <chakra.div {...lineProps} display='table-row' key={i}>
-                    {language !== 'shell' && (
+                    {showLineNumbers && (
                       <chakra.span
                         w={8}
                         display='table-cell'
@@ -135,7 +136,7 @@ const LinkedHeading = (props: HTMLChakraProps<'h2'>) => {
       </Box>
       <chakra.span
         aria-label='anchor'
-        color='teal.500'
+        color='purple.500'
         userSelect='none'
         fontWeight='normal'
         outline='none'
