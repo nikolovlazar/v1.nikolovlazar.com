@@ -21,6 +21,13 @@ const inputBorder = (props) => ({
 
 const theme = extendTheme({
   config,
+  styles: {
+    global: {
+      'body': {
+        fontFeatureSettings: '"ss02"',
+      }
+    },
+  },
   sizes: {
     18: '4.5rem',
   },

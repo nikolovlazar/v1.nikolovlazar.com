@@ -43,7 +43,7 @@ const CourseCard = ({
     <LinkBox as='article'>
       <Stack
         direction={{ base: 'column', md: 'row' }}
-        p={4}
+        p={6}
         spacing={{ base: 8, md: 5 }}
         bg={mode('gray.100', 'gray.700')}
         rounded='md'
@@ -68,43 +68,45 @@ const CourseCard = ({
             )}
           </>
         </AspectRatio>
-        <VStack>
-          <Stack
-            w='full'
-            direction={{ base: 'column', md: 'row' }}
-            justifyContent={{ base: 'flex-start', md: 'space-between' }}
-            alignItems={{ base: 'flex-start', md: 'center' }}
-          >
-            <Heading size='sm' weight='semibold'>
-              {title}
-            </Heading>
-            {courseDomain && (
-              <LinkOverlay as={ExternalLink} href={url}>
-                <Text color='inherit' fontSize='sm'>
-                  {courseDomain}
-                </Text>
-              </LinkOverlay>
-            )}
-            {!live && (
-              <LinkOverlay href={`/course/${id}/subscribe`}>
-                <HStack>
-                  <Text color='purple.500' fontSize='sm'>
-                    Get notified
+        <VStack spacing={3}>
+          <VStack w='full' spacing={1}>
+            <Stack
+              w='full'
+              direction={{ base: 'column', md: 'row' }}
+              justifyContent={{ base: 'flex-start', md: 'space-between' }}
+              alignItems={{ base: 'flex-start', md: 'center' }}
+            >
+              <Heading size='md' weight='semibold'>
+                {title}
+              </Heading>
+              {courseDomain && (
+                <LinkOverlay as={ExternalLink} href={url}>
+                  <Text color='inherit' fontSize='sm'>
+                    {courseDomain}
                   </Text>
-                  <Icon
-                    as={FiArrowUpRight}
-                    color={mode('gray.700', 'white')}
-                    display='inline'
-                  />
-                </HStack>
-              </LinkOverlay>
+                </LinkOverlay>
+              )}
+              {!live && (
+                <LinkOverlay href={`/course/${id}/subscribe`}>
+                  <HStack>
+                    <Text color='purple.500' fontSize='sm'>
+                      Get notified
+                    </Text>
+                    <Icon
+                      as={FiArrowUpRight}
+                      color={mode('gray.700', 'white')}
+                      display='inline'
+                    />
+                  </HStack>
+                </LinkOverlay>
+              )}
+            </Stack>
+            {expectedLaunch && (
+              <Text fontSize='sm' alignSelf='flex-start' color='gray.500'>
+                Expected launch: {expectedLaunch}
+              </Text>
             )}
-          </Stack>
-          {expectedLaunch && (
-            <Text fontSize='sm' alignSelf='flex-start' color='gray.500'>
-              Expected launch: {expectedLaunch}
-            </Text>
-          )}
+          </VStack>
           <Text fontSize='sm'>{description}</Text>
         </VStack>
       </Stack>

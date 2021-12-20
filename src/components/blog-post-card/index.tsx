@@ -35,10 +35,10 @@ const BlogPostCard = ({ title, description, slug, date }: BlogPost) => {
         >
           <Link href={`/blog/${slug}`} passHref>
             <LinkOverlay>
-              <Heading size='sm'>{title}</Heading>
+              <Heading size='md'>{title}</Heading>
             </LinkOverlay>
           </Link>
-          <Text fontSize='sm' color='gray.500'>
+          <Text fontSize='sm' color='gray.500' flexShrink={0}>
             {date}
           </Text>
         </Stack>
