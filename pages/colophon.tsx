@@ -35,7 +35,7 @@ const ColophonPage = () => {
           Everything is Open Source 💜
         </Text>
         <Text>
-          The source code can be found on <Link href="https://github.com/lazarnikolov94/personal-website" isExternal>GitHub</Link>.{' '}
+          The source code can be found on <Link href="https://github.com/nikolovlazar/personal-website" isExternal>GitHub</Link>.{' '}
           The UI Design can be found on <Link href="https://www.figma.com/community/file/1014838147356550908/Personal-Website" isExternal>Figma</Link>.
           Even the Analytics are open source: <Link href="https://plausible.io/nikolovlazar.com" isExternal>Analytics Dashboard</Link>
         </Text>

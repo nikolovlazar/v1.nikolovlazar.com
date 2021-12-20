@@ -1,4 +1,4 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/lazarnikolov94/nikolovlazar.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/nikolovlazar/nikolovlazar.com)
 
 # nikolovlazar.com
 
@@ -18,10 +18,10 @@
 ## Running Locally
 
 ```bash
-$ git clone https://github.com/lazarnikolov94/nikolovlazar.com.git
+$ git clone https://github.com/nikolovlazar/nikolovlazar.com.git
 $ cd nikolovlazar.com
 $ yarn
 $ yarn dev
 ```
 
-Create a `.env` file similar to [`.env.example`](https://github.com/lazarnikolov94/nikolovlazar.com/blob/main/.env.example).
+Create a `.env` file similar to [`.env.example`](https://github.com/nikolovlazar/nikolovlazar.com/blob/main/.env.example).
