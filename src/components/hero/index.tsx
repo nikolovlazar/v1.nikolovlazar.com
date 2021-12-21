@@ -80,7 +80,7 @@ const Hero = () => {
               color={color}
               href={href}
               target='_blank'
-              px={{ base: 0, md: 4 }}
+              px={4}
               justifyContent={{ base: 'flex-start', md: 'center' }}
               rightIcon={<Icon as={FiArrowUpRight} />}
             >
