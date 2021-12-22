@@ -8,7 +8,7 @@
     "theme": "npx @chakra-ui/cli tokens src/theme/index.ts --out node_modules/@chakra-ui/styled-system/dist/types/theming.types.d.ts"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.6.7",
+    "@chakra-ui/react": "^1.7.3",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "@prisma/client": "3.1.1",

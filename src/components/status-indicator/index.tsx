@@ -1,30 +1,46 @@
-import { HStack, Text, useColorModeValue as mode } from '@chakra-ui/react';
+import {
+  HStack,
+  StackProps,
+  Text,
+  useBreakpointValue,
+  useColorModeValue as mode,
+} from '@chakra-ui/react';
 
 import status from '@/data/status';
 
 const StatusIndicator = () => {
+  const isMobile = useBreakpointValue({ base: true, lg: false });
+
+  let stackStyles: StackProps;
+
+  if (isMobile) {
+    stackStyles = {
+      width: 'fit-content',
+      shadow: 'lg',
+      spacing: 3,
+    };
+  } else {
+    stackStyles = {
+      width: 10,
+      shadow: 'none',
+      spacing: 0,
+    };
+  }
+
   return (
     <HStack
-      sx={{
-        '@media(hover: none)': {
-          width: 'full',
-          maxWidth: 40,
-        },
-      }}
       _hover={{
-        width: 'full',
-        maxWidth: 40,
+        width: 'fit-content',
         shadow: 'lg',
       }}
       position='absolute'
-      bottom={0}
       overflow='hidden'
+      bottom={0}
+      marginLeft='auto'
       borderWidth={1}
       borderColor={mode('gray.300', 'gray.600')}
       borderStyle='solid'
       height={10}
-      width={10}
-      maxWidth={10}
       alignItems='center'
       justifyContent='center'
       bg={mode('white', 'gray.800')}
@@ -34,25 +50,27 @@ const StatusIndicator = () => {
       transitionProperty='all'
       transitionDuration='slow'
       transitionTimingFunction='ease-out'
+      {...stackStyles}
     >
       <Text>{status.emoji}</Text>
       <Text
         isTruncated
-        overflow='none'
-        display='none'
+        width={1}
+        maxWidth='full'
         opacity={0}
-        height={6}
         transitionProperty='opacity'
         transitionDuration='slow'
         transitionTimingFunction='ease-out'
         _groupHover={{
           opacity: 1,
-          display: 'inline',
+          width: 'fit-content',
+          marginLeft: 3,
         }}
         sx={{
           '@media(hover: none)': {
             opacity: 1,
-            display: 'inline',
+            width: 'fit-content',
+            marginLeft: 3,
           },
         }}
       >
