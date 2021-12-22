@@ -1,6 +1,6 @@
 const status = {
-  emoji: '🦀',
-  text: 'Learning Rust!',
+  emoji: '🤓',
+  text: 'Doing the Google UX Design on coursera',
 };
 
 export default status;
