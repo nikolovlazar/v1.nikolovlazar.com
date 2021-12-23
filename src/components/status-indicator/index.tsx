@@ -55,7 +55,7 @@ const StatusIndicator = () => {
       <Text>{status.emoji}</Text>
       <Text
         isTruncated
-        width={1}
+        width={0}
         maxWidth='full'
         opacity={0}
         transitionProperty='opacity'
