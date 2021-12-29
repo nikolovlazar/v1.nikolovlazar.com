@@ -28,7 +28,9 @@ const Blog = ({ posts }: Props) => {
   const onSearch: ChangeEventHandler<HTMLInputElement> = (event) => {
     const query = event.currentTarget.value;
 
-    const filteredPosts = posts.filter((post) => post.title.includes(query));
+    const filteredPosts = posts.filter((post) =>
+      post.title.toLowerCase().includes(query.toLowerCase())
+    );
 
     setDisplayPosts(filteredPosts);
   };
