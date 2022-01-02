@@ -1,4 +1,4 @@
-export type BookState = 'Favorite' | 'Reading' | 'Wish' | '';
+export type BookState = 'Favorite' | 'Reading' | 'Wish' | 'Completed' | '';
 
 export type Book = {
   id: string;
