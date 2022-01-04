@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import LikeButton from '@/components/like-button';
 import usePostLikes from 'src/hooks/use-post-likes';
 import imageMetadata from '@/utils/plugins/image-metadata';
+import ScrollToTopButton from '@/components/scroll-to-top-button';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
@@ -57,7 +58,7 @@ const BlogPostPage = ({ title, description, date, source }: Props) => {
           ],
         }}
       />
-      <VStack spacing={8} w='full' alignItems='stretch'>
+      <VStack spacing={8} w='full' alignItems='stretch' position='relative'>
         <VStack spacing={3} alignItems='flex-start'>
           <Heading size='lg'>{title}</Heading>
           <HStack
@@ -93,6 +94,7 @@ const BlogPostPage = ({ title, description, date, source }: Props) => {
           </HStack>
         )}
       </VStack>
+      <ScrollToTopButton />
     </>
   );
 };
