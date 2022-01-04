@@ -29,11 +29,6 @@ const Header = () => {
             Bookmarks
           </Button>
         </NextLink>
-        <NextLink href='/gear' passHref>
-          <Button as={Link} size='sm' variant='ghost'>
-            Gear
-          </Button>
-        </NextLink>
         <IconButton
           aria-label='toggle theme'
           icon={colorMode === 'light' ? <IoMoon /> : <IoSunny />}
