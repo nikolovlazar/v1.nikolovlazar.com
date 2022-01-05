@@ -12,7 +12,7 @@ import {
 import { BlogPost } from '@/types/blog-post';
 
 const BlogPostCard = ({ title, description, slug, date }: BlogPost) => {
-  const hoverBg = useColorModeValue('gray.100', 'gray.900');
+  const hoverBg = useColorModeValue('gray.100', 'gray.700');
 
   return (
     <LinkBox as='article'>
