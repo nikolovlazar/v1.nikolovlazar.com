@@ -30,6 +30,7 @@ const HeroPlay = () => {
       {audio}
       <IconButton
         aria-label='Play pronunciation track'
+        display='flex'
         icon={
           <Icon
             color='purple.500'
