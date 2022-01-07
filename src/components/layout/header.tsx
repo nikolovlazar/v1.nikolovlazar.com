@@ -8,13 +8,20 @@ import {
   Container,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { FiCommand } from 'react-icons/fi';
 
 import { CmdPaletteContext } from 'src/providers/cmd-palette-provider';
 
 const Header = () => {
   const { open: openCommandPalette } = useContext(CmdPaletteContext);
+  const [shortcut, setShortcut] = useState<string>();
+
+  useEffect(() => {
+    setShortcut(
+      navigator.userAgent.indexOf('Mac OS X') != -1 ? 'Cmd + K' : 'Ctrl + K'
+    );
+  }, [setShortcut]);
 
   return (
     <HStack
@@ -45,7 +52,7 @@ const Header = () => {
           </Link>
         </NextLink>
         <HStack alignItems='center' spacing={{ base: 0, md: 2 }}>
-          <Tooltip label='Command Palette (Cmd + K)'>
+          <Tooltip label={`Command Palette (${shortcut})`}>
             <IconButton
               aria-label='toggle theme'
               icon={<FiCommand />}
