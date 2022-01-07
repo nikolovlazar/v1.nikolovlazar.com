@@ -113,9 +113,9 @@ const CmdPalette = () => {
   }, [close, setFocusedIndex]);
 
   useKeyPressEvent((e) => {
-    e.stopPropagation();
-    e.preventDefault();
     if (!isOpened && e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+      e.stopPropagation();
+      e.preventDefault();
       open();
     }
     return true;
