@@ -3,9 +3,11 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { NextSeo } from 'next-seo';
 
 import theme from '../src/theme';
-import Layout from '../src/components/layout';
+import Layout from '@/components/layout';
+import CmdPalette from '@/components/cmd-palette';
 
 import '../style.css';
+import CmdPaletteProvider from 'src/providers/cmd-palette-provider';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -34,9 +36,12 @@ const App = ({ Component, pageProps }: AppProps) => {
           ],
         }}
       />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <CmdPaletteProvider>
+        <Layout>
+          <CmdPalette />
+          <Component {...pageProps} />
+        </Layout>
+      </CmdPaletteProvider>
     </ChakraProvider>
   );
 };

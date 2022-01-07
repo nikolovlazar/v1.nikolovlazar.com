@@ -8,6 +8,7 @@ import {
   YOUTUBE_CHANNEL,
   POLYWORK_PROFILE,
   TWITCH_CHANNEL,
+  PLAUSIBLE_LINK,
 } from '../../constants';
 import { Link as LinkType } from '@/types/link';
 import VercelCallout from '../vercel-callout';
@@ -30,7 +31,7 @@ const firstGroup: LinkType[] = [
     label: 'Talks',
   },
   {
-    href: 'https://plausible.io/nikolovlazar.com',
+    href: PLAUSIBLE_LINK,
     label: 'Analytics',
   },
 ];
