@@ -169,7 +169,7 @@ const CmdPalette = () => {
               bg={paletteBackgroundColor}
               shadow='2xl'
               maxW='3xl'
-              maxH='md'
+              maxH={{ base: '40vh', md: 'md' }}
               overflow='hidden'
               w='full'
               rounded='md'
