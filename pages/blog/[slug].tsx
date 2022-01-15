@@ -1,10 +1,9 @@
-import db from '@/db';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
 import { NextSeo } from 'next-seo';
-import { VStack, Heading, HStack, Text } from '@chakra-ui/react';
+import { VStack, Heading, HStack, Text, Spinner } from '@chakra-ui/react';
 
 import { BlogPost } from '@/types/blog-post';
 import { getBlogPosts } from '@/utils/get-blog-posts';
@@ -20,14 +19,13 @@ import ScrollToTopButton from '@/components/scroll-to-top-button';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
-  views: number;
 };
 
-const BlogPostPage = ({ title, description, date, source, views }: Props) => {
+const BlogPostPage = ({ title, description, date, source }: Props) => {
   const { query } = useRouter();
   const slug = query.slug as string;
 
-  const { increment: incrementViews } = usePostViews(slug);
+  const { views, increment: incrementViews } = usePostViews(slug);
   const {
     likes,
     userLikes,
@@ -73,7 +71,7 @@ const BlogPostPage = ({ title, description, date, source, views }: Props) => {
               {date}
             </Text>
             <Text color='gray.500' fontSize='sm'>
-              {views} views
+              {views ?? <Spinner size='xs' color='gray.500' />} views
             </Text>
           </HStack>
         </VStack>
@@ -111,12 +109,6 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
     data: { title, description, date },
   } = matter(postContent);
 
-  const postMeta = await db.postMeta.findUnique({
-    where: {
-      slug,
-    },
-  });
-
   return {
     props: {
       source: await serialize(content, {
@@ -128,7 +120,6 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
       description,
       date,
       slug,
-      views: postMeta?.views ?? 0,
     },
   };
 };

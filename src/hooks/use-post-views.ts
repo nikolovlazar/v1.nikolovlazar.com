@@ -1,10 +1,10 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useCallback } from 'react';
 import useSWR, { mutate } from 'swr';
 
 const API_URL = '/api/views/';
 
 type ViewsPayload = {
-  views: number;
+  views: number | undefined;
 };
 
 async function getPostViews(slug: string): Promise<ViewsPayload> {
@@ -36,7 +36,7 @@ const usePostViews = (slug: string) => {
     mutate(`${slug}/views`, updatePostViews(slug));
   }, [slug]);
 
-  return { views: data?.views ?? 0, increment };
+  return { views: data?.views, increment };
 };
 
 export default usePostViews;
