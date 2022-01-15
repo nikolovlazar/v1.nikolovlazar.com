@@ -11,6 +11,7 @@ import {
 
 import { Bookmark } from '@/types/bookmark';
 import BookmarkCard from '@/components/bookmark-card';
+import { fetchBookmarks } from '@/utils/bookmarks';
 
 type Props = {
   bookmarks: Bookmark[];
@@ -83,25 +84,7 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const req = await fetch(
-    `https://api.raindrop.io/rest/v1/raindrops/${process.env.RAINDROP_COLLECTION}`,
-    {
-      headers: {
-        Authorization: `Bearer ${process.env.RAINDROP_TOKEN}`,
-      },
-    }
-  );
-
-  const data = await req.json();
-
-  const bookmarks: Bookmark[] = data.items.map(
-    ({ cover, title, link, tags }) => ({
-      link,
-      title,
-      cover,
-      tags,
-    })
-  );
+  const bookmarks: Bookmark[] = await fetchBookmarks();
 
   const tags = Array.from(new Set(bookmarks.flatMap(({ tags }) => tags)));
 
