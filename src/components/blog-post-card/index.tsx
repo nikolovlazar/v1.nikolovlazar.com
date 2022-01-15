@@ -7,11 +7,19 @@ import {
   VStack,
   Stack,
   useColorModeValue,
+  HStack,
 } from '@chakra-ui/react';
+import { format } from 'timeago.js';
 
 import { BlogPost } from '@/types/blog-post';
 
-const BlogPostCard = ({ title, description, slug, date }: BlogPost) => {
+const BlogPostCard = ({
+  title,
+  description,
+  slug,
+  date,
+  readingTime,
+}: BlogPost) => {
   const hoverBg = useColorModeValue('gray.100', 'gray.700');
 
   return (
@@ -29,19 +37,27 @@ const BlogPostCard = ({ title, description, slug, date }: BlogPost) => {
           transform: 'scale(1.025, 1.025)',
         }}
       >
-        <Stack
-          direction={{ base: 'column', md: 'row' }}
-          justify='space-between'
-        >
+        <VStack alignItems='flex-start'>
           <Link href={`/blog/${slug}`} passHref>
             <LinkOverlay>
               <Heading size='md'>{title}</Heading>
             </LinkOverlay>
           </Link>
-          <Text fontSize='sm' color='gray.500' flexShrink={0}>
-            {date}
-          </Text>
-        </Stack>
+          <HStack
+            divider={
+              <Text color='gray.500' mx={2}>
+                •
+              </Text>
+            }
+          >
+            <Text color='gray.500' fontSize='sm'>
+              {format(date)}
+            </Text>
+            <Text color='gray.500' fontSize='sm'>
+              {readingTime}
+            </Text>
+          </HStack>
+        </VStack>
         <Text fontSize='sm' color='gray.500'>
           {description}
         </Text>

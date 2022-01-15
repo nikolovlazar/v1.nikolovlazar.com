@@ -2,8 +2,17 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import matter from 'gray-matter';
+import readingTime from 'reading-time';
 import { NextSeo } from 'next-seo';
-import { VStack, Heading, HStack, Text, Spinner } from '@chakra-ui/react';
+import { format } from 'timeago.js';
+import {
+  VStack,
+  Heading,
+  HStack,
+  Text,
+  Spinner,
+  Divider,
+} from '@chakra-ui/react';
 
 import { BlogPost } from '@/types/blog-post';
 import { getBlogPosts } from '@/utils/get-blog-posts';
@@ -16,12 +25,19 @@ import LikeButton from '@/components/like-button';
 import usePostLikes from 'src/hooks/use-post-likes';
 import imageMetadata from '@/utils/plugins/image-metadata';
 import ScrollToTopButton from '@/components/scroll-to-top-button';
+import NewsletterForm from '@/components/newsletter-form';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
 };
 
-const BlogPostPage = ({ title, description, date, source }: Props) => {
+const BlogPostPage = ({
+  title,
+  description,
+  date,
+  source,
+  readingTime,
+}: Props) => {
   const { query } = useRouter();
   const slug = query.slug as string;
 
@@ -68,16 +84,20 @@ const BlogPostPage = ({ title, description, date, source }: Props) => {
             }
           >
             <Text color='gray.500' fontSize='sm'>
-              {date}
+              {format(date)}
             </Text>
             <Text color='gray.500' fontSize='sm'>
               {views ?? <Spinner size='xs' color='gray.500' />} views
             </Text>
+            <Text color='gray.500' fontSize='sm'>
+              {readingTime}
+            </Text>
           </HStack>
         </VStack>
         <MDXRemote {...source} components={MDXComponents} />
+        <Divider />
         {!isLoading && (
-          <HStack justifyContent='flex-start' alignItems='center'>
+          <HStack justifyContent='center' alignItems='center'>
             <LikeButton
               onLike={incrementLikes}
               likes={likes}
@@ -85,6 +105,7 @@ const BlogPostPage = ({ title, description, date, source }: Props) => {
             />
           </HStack>
         )}
+        <NewsletterForm />
       </VStack>
       <ScrollToTopButton />
     </>
@@ -116,6 +137,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
           rehypePlugins: [imageMetadata],
         },
       }),
+      readingTime: readingTime(content).text,
       title,
       description,
       date,

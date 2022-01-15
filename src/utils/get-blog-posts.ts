@@ -1,5 +1,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
+import readingTime from 'reading-time';
 import matter from 'gray-matter';
 
 import { BlogPost } from '@/types/blog-post';
@@ -17,6 +18,7 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
       const fileContent = await fs.readFile(postPath, 'utf8');
 
       const {
+        content,
         data: { title, description, date },
       } = matter(fileContent);
 
@@ -25,6 +27,7 @@ export const getBlogPosts = async (): Promise<BlogPost[]> => {
         description,
         date,
         slug,
+        readingTime: readingTime(content).text,
       });
     })
   );
