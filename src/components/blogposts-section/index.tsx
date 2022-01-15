@@ -21,7 +21,13 @@ const BlogpostsSection = ({ posts }: Props) => {
         ))}
       </List>
       <Box>
-        <Link href='/blog' ml={{ base: 0, md: 4 }} role='group'>
+        <Link
+          display='flex'
+          alignItems='center'
+          href='/blog'
+          ml={{ base: 0, md: 4 }}
+          role='group'
+        >
           Read all articles
           <Icon
             as={CgArrowRight}
