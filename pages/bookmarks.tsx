@@ -84,7 +84,7 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const bookmarks: Bookmark[] = await fetchBookmarks();
+  const bookmarks = await fetchBookmarks();
 
   const tags = Array.from(new Set(bookmarks.flatMap(({ tags }) => tags)));
 
