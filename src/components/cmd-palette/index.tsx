@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useContext } from 'react';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 import {
   Flex,
@@ -18,12 +18,7 @@ import { createDescendantContext } from '@chakra-ui/descendant';
 import { CgArrowRight } from 'react-icons/cg';
 import { useKeyPressEvent } from 'react-use';
 
-import {
-  PageItem,
-  searchItems,
-  SocialItem,
-  ThemeItem,
-} from '@/data/cmd-palette';
+import { PageItem, SocialItem, ThemeItem } from '@/data/cmd-palette';
 import CommandItem from './command-item';
 import { CmdPaletteContext } from 'src/providers/cmd-palette-provider';
 
