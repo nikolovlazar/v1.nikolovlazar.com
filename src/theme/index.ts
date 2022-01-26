@@ -23,9 +23,9 @@ const theme = extendTheme({
   config,
   styles: {
     global: {
-      'body': {
+      body: {
         fontFeatureSettings: '"ss02"',
-      }
+      },
     },
   },
   sizes: {

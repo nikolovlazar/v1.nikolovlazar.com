@@ -14,8 +14,8 @@ const App = ({ Component, pageProps }: AppProps) => {
   return (
     <ChakraProvider theme={theme}>
       <NextSeo
-        title='Lazar Nikolov - Developer, designer, course creator.'
-        description='Full-stack Engineer, UI Designer, and Open Source Advocate.'
+        title="Lazar Nikolov - Developer, designer, course creator."
+        description="Full-stack Engineer, UI Designer, and Open Source Advocate."
         twitter={{
           cardType: 'summary_large_image',
           handle: '@NikolovLazar',
