@@ -1,6 +1,6 @@
 const status = {
-  emoji: '🤓',
-  text: 'Google UX Design Certification',
+  emoji: '🎥',
+  text: 'Working on a Next.js course',
 };
 
 export default status;
