@@ -39,7 +39,7 @@ Let's walk through the changes. First, I installed the Sandpack package:
 yarn add @codesandbox/sandpack-react
 ```
 
-Then I created a simple and generic component that displays the `Snowpack` component, but allows the data to be provided
+Then I created a simple and generic component that displays the `Sandpack` component, but allows the data to be provided
 from the outside:
 
 ```tsx
@@ -58,8 +58,8 @@ const SandpackEmbed = (props: BoxProps & SandpackProps) => {
         ...props.options,
         showLineNumbers: true,
       }}
-      theme='dark'
-      template='react-ts'
+      theme="dark"
+      template="react-ts"
       customSetup={{
         dependencies: {
           react: '17.0.2',
@@ -80,7 +80,7 @@ const SandpackEmbed = (props: BoxProps & SandpackProps) => {
 export default SandpackEmbed;
 ```
 
-It's basically a `Box` component, rendered as a `Snowpack` component, but its props are the `BoxProps` merged with `SandpackProps`.
+It's basically a `Box` component, rendered as a `Sandpack` component, but its props are the `BoxProps` merged with `SandpackProps`.
 That way we can pass Chakra style props, and Sandpack configuration props and reuse this component everywhere.
 
 Then I simply replaced the `iframe` on the homepage with the new `SandpackEmbed` component:
