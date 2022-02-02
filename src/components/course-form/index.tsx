@@ -72,7 +72,11 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
       alignItems='flex-start'
     >
       <Heading size='md'>Subscribe to my course 🤓</Heading>
-      <Text>Get notified when I publish my &quot;{title}&quot; course!</Text>
+      <Text>
+        Get notified when I publish my &quot;{title}&quot; course! I will just
+        send out one email when the course launches, and then delete your email
+        from the list. No further bothering, no spam. I promise.
+      </Text>
       {form.state !== Form.Success && form.state !== Form.Error && (
         <>
           <chakra.form
