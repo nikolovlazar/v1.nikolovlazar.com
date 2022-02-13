@@ -140,7 +140,7 @@ const Footer = () => {
         w='full'
         spacing={0}
       >
-        <Text color='gray.500'>
+        <Text color='gray.500' fontSize='sm'>
           ©{' '}
           <chakra.span as='time' color='purple.500'>
             {new Date().getFullYear()}
