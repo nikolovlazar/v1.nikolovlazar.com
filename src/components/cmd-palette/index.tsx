@@ -14,6 +14,7 @@ import {
   useMenu,
   VStack,
 } from '@chakra-ui/react';
+import { IoMoon, IoSunny } from 'react-icons/io5';
 import { createDescendantContext } from '@chakra-ui/descendant';
 import { CgArrowRight } from 'react-icons/cg';
 import { useKeyPressEvent } from 'react-use';
@@ -97,7 +98,7 @@ const CmdPalette = () => {
     filterCommands,
   } = useContext(CmdPaletteContext);
   const { descendants } = useMenu();
-  const { setColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const backdropColor = useColorModeValue('whiteAlpha.800', 'blackAlpha.800');
   const paletteBackgroundColor = useColorModeValue('white', 'gray.900');
@@ -222,16 +223,16 @@ const CmdPalette = () => {
                             />
                           );
                         } else if (section === 'theme') {
-                          const { title, id, icon } = command as ThemeItem;
+                          const { title, id } = command as ThemeItem;
+
+                          const icon = colorMode === 'dark' ? IoSunny : IoMoon;
 
                           return (
                             <CommandItem
                               key={id}
                               title={title}
                               icon={icon}
-                              onClick={() => {
-                                setColorMode(id.substring(6));
-                              }}
+                              onClick={toggleColorMode}
                             />
                           );
                         }
