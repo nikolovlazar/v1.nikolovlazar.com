@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 const NotFound = () => {
   const [videoVersion, setVideoVersion] = useState<number>();
 
+  // Have to use useEffect because Next.js will hardcode the video version on build time (static generation)
   useEffect(() => {
     setVideoVersion((new Date().getSeconds() % 3) + 1);
   }, [setVideoVersion]);
