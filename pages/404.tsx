@@ -1,32 +1,25 @@
-import { VStack, Heading, Text, Link, AspectRatio } from '@chakra-ui/react';
+import { VStack, Heading, Text, Box } from '@chakra-ui/react';
 
 const NotFound = () => {
+  const videoVersion = Math.floor(Math.random() * 3 + 1);
   return (
     <VStack w='full' spacing={12}>
-      <VStack>
-        <Heading>Coming soon...</Heading>
-        <Text>
-          I&apos;m live streaming the development, so make sure to follow me on{' '}
-          <Link
-            color='purple.500'
-            href='https://twitch.tv/nikolovlazar'
-            target='_blank'
-          >
-            Twitch
-          </Link>
-          .
-        </Text>
+      <VStack spacing={4}>
+        <Box overflow='hidden' rounded='lg'>
+          <video autoPlay loop muted playsInline>
+            <source
+              src={`/assets/videos/404-${videoVersion}.webm`}
+              type='video/webm'
+            />
+            <source
+              src={`/assets/videos/404-${videoVersion}.mp4`}
+              type='video/mp4'
+            />
+          </video>
+        </Box>
+        <Heading>Say what? 🤨</Heading>
+        <Text>I&apos;m afraid this page doesn&apos;t exist.</Text>
       </VStack>
-      <AspectRatio w='full' ratio={16 / 9}>
-        <iframe
-          src='https://player.twitch.tv/?video=1168804058&parent=nikolovlazar.com'
-          frameBorder='0'
-          allowFullScreen
-          scrolling='no'
-          height='100%'
-          width='100%'
-        ></iframe>
-      </AspectRatio>
     </VStack>
   );
 };
