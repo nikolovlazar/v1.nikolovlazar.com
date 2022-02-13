@@ -18,32 +18,32 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
     <LinkBox as='article'>
       <Tooltip label={title}>
         <VStack
-          spacing={0}
-          justifyContent={{ base: 'center', md: 'flex-start' }}
           alignItems='center'
-          rounded='md'
-          bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
+          justifyContent={{ base: 'center', md: 'flex-start' }}
           overflow='hidden'
-          transitionProperty='transform'
-          transitionDuration='slow'
-          transitionTimingFunction='ease-out'
+          bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
           _hover={{ transform: 'scale(1.05, 1.05)' }}
+          rounded='md'
+          spacing={0}
+          transitionDuration='slow'
+          transitionProperty='transform'
+          transitionTimingFunction='ease-out'
         >
-          <AspectRatio ratio={16 / 9} w='full'>
+          <AspectRatio w='full' ratio={16 / 9}>
             <Image
               alt={`Thumbnail of ${title}`}
-              src={cover}
-              layout='fill'
               fallback={<Skeleton w='full' h='full' />}
+              layout='fill'
+              src={cover}
             />
           </AspectRatio>
-          <VStack p={3} spacing={1} alignItems='flex-start' flex={1} w='full'>
-            <LinkOverlay href={link} isExternal w='full'>
+          <VStack alignItems='flex-start' flex={1} w='full' p={3} spacing={1}>
+            <LinkOverlay w='full' href={link} isExternal>
               <Heading isTruncated size='xs'>
                 {title}
               </Heading>
             </LinkOverlay>
-            <Text fontSize='xs' color='gray.500' textTransform='capitalize'>
+            <Text color='gray.500' fontSize='xs' textTransform='capitalize'>
               {tags.join(', ')}
             </Text>
           </VStack>

@@ -30,39 +30,39 @@ const VideoCard = ({ title, description, url }: Props) => {
   if (!videoId) return <Spinner />;
   return (
     <LinkBox zIndex='dropdown'>
-      <VStack spacing={4} alignItems='flex-start'>
+      <VStack alignItems='flex-start' spacing={4}>
         <AspectRatio
-          ratio={16 / 9}
-          w='full'
-          role='group'
           position='relative'
-          rounded='lg'
           overflow='hidden'
+          w='full'
+          ratio={16 / 9}
+          role='group'
+          rounded='lg'
         >
           <>
             <LinkOverlay href={url} target='_blank'>
               <Flex
                 position='absolute'
-                _groupHover={{ bg: 'blackAlpha.500' }}
-                transitionProperty='background'
-                transitionDuration='slow'
-                transitionTimingFunction='ease-out'
-                alignItems='center'
-                justifyContent='center'
-                bg='transparent'
-                inset={0}
                 zIndex='docked'
+                align='center'
+                justify='center'
+                bg='transparent'
+                _groupHover={{ bg: 'blackAlpha.500' }}
+                inset={0}
+                transitionDuration='slow'
+                transitionProperty='background'
+                transitionTimingFunction='ease-out'
               >
                 <Icon
-                  opacity={0}
-                  _groupHover={{ opacity: 1 }}
-                  transitionProperty='opacity'
-                  transitionDuration='slow'
-                  transitionTimingFunction='ease-out'
-                  color='white'
                   as={HiPlay}
                   w={{ base: 12, md: 8 }}
                   h={{ base: 12, md: 8 }}
+                  color='white'
+                  opacity={0}
+                  _groupHover={{ opacity: 1 }}
+                  transitionDuration='slow'
+                  transitionProperty='opacity'
+                  transitionTimingFunction='ease-out'
                 />
               </Flex>
             </LinkOverlay>
@@ -75,11 +75,11 @@ const VideoCard = ({ title, description, url }: Props) => {
             />
           </>
         </AspectRatio>
-        <VStack spacing={2} alignItems='flex-start'>
+        <VStack alignItems='flex-start' spacing={2}>
           <Link href={url} isExternal>
             <Heading size='sm'>{title}</Heading>
           </Link>
-          <Text fontSize='sm' color='gray.500'>
+          <Text color='gray.500' fontSize='sm'>
             {description}
           </Text>
         </VStack>

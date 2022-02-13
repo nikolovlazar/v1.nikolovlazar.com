@@ -11,9 +11,9 @@ type Props = {
 
 const BlogpostsSection = ({ posts }: Props) => {
   return (
-    <VStack w='full' alignItems='flex-start' spacing={4} as='section'>
+    <VStack as='section' alignItems='flex-start' w='full' spacing={4}>
       <Heading size='md'>Recent blog posts.</Heading>
-      <List spacing={{ base: 8, md: 2 }} w='full'>
+      <List w='full' spacing={{ base: 8, md: 2 }}>
         {posts.map((post) => (
           <ListItem key={post.slug}>
             <BlogPostCard {...post} />
@@ -32,11 +32,11 @@ const BlogpostsSection = ({ posts }: Props) => {
           <Icon
             as={CgArrowRight}
             ml={1}
-            _groupHover={{ ml: 3 }}
-            transitionProperty='margin-left'
-            transitionDuration='slow'
-            transitionTimingFunction='ease-out'
             color='purple.500'
+            _groupHover={{ ml: 3 }}
+            transitionDuration='slow'
+            transitionProperty='margin-left'
+            transitionTimingFunction='ease-out'
           />
         </Link>
       </Box>

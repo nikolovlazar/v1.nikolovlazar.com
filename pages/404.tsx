@@ -1,16 +1,15 @@
-/* eslint-disable react/no-unknown-property */
 import { VStack, Heading, Text, Link, AspectRatio } from '@chakra-ui/react';
 
 const NotFound = () => {
   return (
-    <VStack spacing={12} w='full'>
+    <VStack w='full' spacing={12}>
       <VStack>
         <Heading>Coming soon...</Heading>
         <Text>
           I&apos;m live streaming the development, so make sure to follow me on{' '}
           <Link
-            href='https://twitch.tv/nikolovlazar'
             color='purple.500'
+            href='https://twitch.tv/nikolovlazar'
             target='_blank'
           >
             Twitch
@@ -18,7 +17,7 @@ const NotFound = () => {
           .
         </Text>
       </VStack>
-      <AspectRatio ratio={16 / 9} w='full'>
+      <AspectRatio w='full' ratio={16 / 9}>
         <iframe
           src='https://player.twitch.tv/?video=1168804058&parent=nikolovlazar.com'
           frameBorder='0'

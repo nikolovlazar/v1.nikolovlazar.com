@@ -14,7 +14,7 @@ type Props = {
 const Uses = ({ tools, categories }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Software tools.</Heading>
         <Text>
           This is my list of software tools that I use frequently. I do my best
@@ -22,10 +22,10 @@ const Uses = ({ tools, categories }: Props) => {
           the <Link href='/gear'>Gear</Link> page.
         </Text>
       </VStack>
-      <List spacing={12} alignItems='stretch' w='full'>
+      <List alignItems='stretch' w='full' spacing={12}>
         {categories.map((category) => (
-          <ListItem spacing={8} alignItems='flex-start' key={category}>
-            <Heading size='md' textTransform='capitalize'>
+          <ListItem key={category} alignItems='flex-start' spacing={8}>
+            <Heading textTransform='capitalize' size='md'>
               {category}.
             </Heading>
             <List alignItems='stretch' w='full'>

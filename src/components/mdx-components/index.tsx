@@ -128,9 +128,9 @@ const LinkedHeading = (props: HTMLChakraProps<'h2'>) => {
     <Link href={`#${slug}`} name={slug} role='group'>
       <Box
         {...props}
-        display='inline'
-        fontFamily='heading'
+        d='inline'
         color={useColorModeValue('gray.700', 'white')}
+        fontFamily='heading'
       >
         {props.children}
       </Box>
@@ -182,7 +182,7 @@ const MDXComponents = {
   br: ({ reset, ...props }) => (
     <Box
       as={reset ? 'br' : undefined}
-      height={reset ? undefined : '24px'}
+      h={reset ? undefined : '24px'}
       {...props}
     />
   ),
@@ -199,14 +199,14 @@ const MDXComponents = {
   blockquote: (props) => (
     <Box>
       <Alert
+        as='blockquote'
         role='none'
+        rounded='4px'
         status='warning'
         variant='left-accent'
-        as='blockquote'
-        rounded='4px'
         {...props}
-        mx={-4}
         w='unset'
+        mx={-4}
       />
     </Box>
   ),

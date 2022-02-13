@@ -35,9 +35,8 @@ const LikeButton = ({ onLike, likes, userLikes }: Props) => {
   return (
     <HStack
       as='button'
-      aria-label='Like blog post'
       alignItems='center'
-      spacing={2}
+      aria-label='Like blog post'
       onClick={(e) => {
         if (currentLikes < 3 && userLikes <= 3) {
           setCurrentLikes((oldValue) => oldValue + 1);
@@ -48,6 +47,7 @@ const LikeButton = ({ onLike, likes, userLikes }: Props) => {
           }
         }
       }}
+      spacing={2}
     >
       {icons[currentLikes]}
       <Text color={mode('gray.700', 'white')}>

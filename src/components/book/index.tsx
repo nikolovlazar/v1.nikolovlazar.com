@@ -21,14 +21,14 @@ const Book = ({ book: { cover, title, author, state, link } }: Props) => {
   return (
     <LinkBox as='article'>
       <HStack
-        rounded='md'
         p={4}
-        spacing={6}
         bg={mode('gray.50', 'gray.700')}
-        transitionProperty='transform'
-        transitionDuration='slow'
-        transitionTimingFunction='ease-out'
         _hover={{ transform: 'scale(1.05, 1.05)' }}
+        rounded='md'
+        spacing={6}
+        transitionDuration='slow'
+        transitionProperty='transform'
+        transitionTimingFunction='ease-out'
       >
         <Box position='relative' flexShrink={0}>
           <Image
@@ -42,15 +42,15 @@ const Book = ({ book: { cover, title, author, state, link } }: Props) => {
           <Tag state={state} top={-2.5} right={-2.5} position='absolute' />
         </Box>
         <VStack
-          spacing={2}
-          height='full'
-          justifyContent='center'
           alignItems='flex-start'
+          justifyContent='center'
+          h='full'
+          spacing={2}
         >
           <LinkOverlay href={link} isExternal>
             <Heading size='xs'>{title}</Heading>
           </LinkOverlay>
-          <Text fontSize='xs' color={mode('gray.600', 'gray.400')}>
+          <Text color={mode('gray.600', 'gray.400')} fontSize='xs'>
             {author}
           </Text>
         </VStack>

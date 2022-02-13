@@ -16,7 +16,7 @@ type Props = {
 const Books = ({ reading, favorites, completed, wishing }: Props) => {
   return (
     <VStack alignItems='flex-start' spacing={8}>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Books.</Heading>
         <Text>
           A collection of interesting books that I read or look forward to
@@ -25,36 +25,36 @@ const Books = ({ reading, favorites, completed, wishing }: Props) => {
         <Suggest />
       </VStack>
 
-      <VStack spacing={4} alignItems='flex-start'>
+      <VStack alignItems='flex-start' spacing={4}>
         <Heading size='sm'>Currently reading</Heading>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={3} as='section'>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
           {reading.map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack spacing={4} alignItems='flex-start'>
+      <VStack alignItems='flex-start' spacing={4}>
         <Heading size='sm'>Favorites</Heading>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={3} as='section'>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
           {favorites.map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack spacing={4} alignItems='flex-start'>
+      <VStack alignItems='flex-start' spacing={4}>
         <Heading size='sm'>Wishlist</Heading>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={3} as='section'>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
           {wishing.map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack spacing={4} alignItems='flex-start'>
+      <VStack alignItems='flex-start' spacing={4}>
         <Heading size='sm'>Read</Heading>
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={3} as='section'>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
           {completed.map((book) => (
             <Book key={book.id} book={book} />
           ))}

@@ -34,15 +34,15 @@ const ScrollToTopButton = () => {
       {showScrollToTop && (
         <IconButton
           position='fixed'
-          bg={bgColor}
-          bottom={{ base: 5, md: 20 }}
-          right={{ base: 5, md: 20 }}
-          rounded='full'
-          aria-label='Back to the top'
-          size='lg'
           zIndex='tooltip'
-          onClick={scrollTop}
+          right={{ base: 5, md: 20 }}
+          bottom={{ base: 5, md: 20 }}
+          bg={bgColor}
+          aria-label='Back to the top'
           icon={<BiArrowToTop />}
+          onClick={scrollTop}
+          rounded='full'
+          size='lg'
         />
       )}
     </>

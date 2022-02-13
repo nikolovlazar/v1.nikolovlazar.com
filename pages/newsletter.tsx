@@ -5,7 +5,7 @@ import NewsletterForm from '@/components/newsletter-form';
 const Newsletter = () => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Newsletter.</Heading>
         <Text>
           Occasionally I&apos;ll be sharing my thoughts on web development,

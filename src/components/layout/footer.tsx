@@ -86,11 +86,11 @@ const Footer = () => {
   const { pathname } = useRouter();
 
   return (
-    <VStack pb={8} spacing={8} as='footer' alignItems='flex-start'>
+    <VStack as='footer' alignItems='flex-start' pb={8} spacing={8}>
       <Divider />
       <Stack
-        direction={{ base: 'column', md: 'row' }}
         justifyContent='space-between'
+        direction={{ base: 'column', md: 'row' }}
         w='full'
         spacing={{ base: 2, md: 8 }}
       >
@@ -98,8 +98,8 @@ const Footer = () => {
           {firstGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
               <Link
-                isExternal={href.startsWith('http')}
                 color={pathname === href ? 'purple.500' : 'gray.500'}
+                isExternal={href.startsWith('http')}
               >
                 {label}
               </Link>
@@ -110,9 +110,9 @@ const Footer = () => {
           {secondGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
               <Link
+                color='gray.500'
                 isExternal={href.startsWith('http')}
                 target='_blank'
-                color='gray.500'
               >
                 {label}
               </Link>
@@ -123,8 +123,8 @@ const Footer = () => {
           {thirdGroup.map(({ href, label }) => (
             <NextLink key={href} href={href} passHref>
               <Link
-                isExternal={href.startsWith('http')}
                 color={pathname === href ? 'purple.500' : 'gray.500'}
+                isExternal={href.startsWith('http')}
               >
                 {label}
               </Link>
@@ -133,12 +133,12 @@ const Footer = () => {
         </VStack>
       </Stack>
       <Stack
-        w='full'
-        direction={{ base: 'column', md: 'row' }}
         alignItems='center'
         justifyContent={{ base: 'center', md: 'space-between' }}
-        spacing={0}
+        direction={{ base: 'column', md: 'row' }}
         gridRowGap={4}
+        w='full'
+        spacing={0}
       >
         <Text color='gray.500'>
           ©{' '}

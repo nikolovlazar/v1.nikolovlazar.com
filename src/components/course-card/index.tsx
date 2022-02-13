@@ -42,26 +42,26 @@ const CourseCard = ({
   return (
     <LinkBox as='article'>
       <Stack
+        alignItems='center'
         direction={{ base: 'column', md: 'row' }}
         p={6}
-        spacing={{ base: 8, md: 5 }}
         bg={mode('gray.100', 'gray.700')}
-        rounded='md'
-        alignItems='center'
-        transitionProperty='transform'
-        transitionDuration='slow'
-        transitionTimingFunction='ease-out'
         _hover={{ transform: 'scale(1.025, 1.025)' }}
+        rounded='md'
+        spacing={{ base: 8, md: 5 }}
+        transitionDuration='slow'
+        transitionProperty='transform'
+        transitionTimingFunction='ease-out'
       >
-        <AspectRatio ratio={1} w={{ base: 32, md: 20 }} flexShrink={0}>
+        <AspectRatio flexShrink={0} w={{ base: 32, md: 20 }} ratio={1}>
           <>
             {image && <Image src={image} alt={title} layout='fill' />}
             {!live && progress && (
               <CircularProgress
-                value={progress}
                 color='purple.500'
-                trackColor={progressTrackColor}
                 size={progressSize}
+                trackColor={progressTrackColor}
+                value={progress}
               >
                 <CircularProgressLabel>{progress}%</CircularProgressLabel>
               </CircularProgress>
@@ -71,10 +71,10 @@ const CourseCard = ({
         <VStack spacing={3}>
           <VStack w='full' spacing={1}>
             <Stack
-              w='full'
-              direction={{ base: 'column', md: 'row' }}
-              justifyContent={{ base: 'flex-start', md: 'space-between' }}
               alignItems={{ base: 'flex-start', md: 'center' }}
+              justifyContent={{ base: 'flex-start', md: 'space-between' }}
+              direction={{ base: 'column', md: 'row' }}
+              w='full'
             >
               <Heading size='md' weight='semibold'>
                 {title}
@@ -94,15 +94,15 @@ const CourseCard = ({
                     </Text>
                     <Icon
                       as={FiArrowUpRight}
+                      d='inline'
                       color={mode('gray.700', 'white')}
-                      display='inline'
                     />
                   </HStack>
                 </LinkOverlay>
               )}
             </Stack>
             {expectedLaunch && (
-              <Text fontSize='sm' alignSelf='flex-start' color='gray.500'>
+              <Text alignSelf='flex-start' color='gray.500' fontSize='sm'>
                 Expected launch: {expectedLaunch}
               </Text>
             )}

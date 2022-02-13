@@ -61,66 +61,66 @@ const Suggest = () => {
   };
 
   return (
-    <Flex direction='column' alignItems='flex-start' w='full'>
+    <Flex align='flex-start' direction='column' w='full'>
       <Button
         {...getButtonProps()}
-        variant='unstyled'
+        h={6}
+        mb={3}
         color='purple.500'
         fontSize='sm'
         fontWeight='normal'
         onClick={onToggle}
-        h={6}
-        mb={3}
+        variant='unstyled'
       >
         Suggest me a book!
       </Button>
-      <Collapse style={{ width: '100%' }} in={isOpen} animateOpacity>
+      <Collapse animateOpacity in={isOpen} style={{ width: '100%' }}>
         <SimpleGrid
-          columns={{ base: 1, md: 2 }}
-          w='full'
-          bg={mode('gray.50', 'gray.700')}
-          rounded='md'
-          p={3}
           gap={3}
+          w='full'
+          p={3}
+          bg={mode('gray.50', 'gray.700')}
+          columns={{ base: 1, md: 2 }}
+          rounded='md'
         >
           <GridItem>
             <Input
-              required
-              placeholder='Title'
-              variant='filled'
-              value={title}
               onChange={(e) => setTitle(e.currentTarget.value)}
+              placeholder='Title'
+              required
+              value={title}
+              variant='filled'
             />
           </GridItem>
           <GridItem>
             <Input
-              required
-              placeholder='Author'
-              variant='filled'
-              value={author}
               onChange={(e) => setAuthor(e.currentTarget.value)}
+              placeholder='Author'
+              required
+              value={author}
+              variant='filled'
             />
           </GridItem>
           <GridItem colSpan={{ base: 1, md: 2 }}>
             <Textarea
-              required
-              variant='filled'
-              placeholder='Why would I like this book?'
-              value={reason}
               onChange={(e) => setReason(e.currentTarget.value)}
+              placeholder='Why would I like this book?'
+              required
+              value={reason}
+              variant='filled'
             />
           </GridItem>
           <GridItem colSpan={{ base: 1, md: 2 }}>
             <Button
-              isLoading={loading}
-              aria-label='Send Suggestion'
-              rightIcon={<Icon as={FiSend} ml={-2} _groupHover={{ ml: 0 }} />}
-              onClick={submit}
-              role='group'
-              width={10}
+              w={10}
               _hover={{ width: '186px' }}
-              transitionProperty='all'
+              aria-label='Send Suggestion'
+              isLoading={loading}
+              onClick={submit}
+              rightIcon={<Icon as={FiSend} ml={-2} _groupHover={{ ml: 0 }} />}
+              role='group'
               transitionDuration='slower'
+              transitionProperty='all'
               transitionTimingFunction='ease-out'
             >
               <chakra.span

@@ -42,26 +42,26 @@ const socialLinks: SocialLink[] = [
 const Hero = () => {
   return (
     <Stack
-      alignItems='center'
-      spacing={12}
-      w='full'
-      direction={{ base: 'column-reverse', md: 'row' }}
       as='section'
+      alignItems='center'
+      direction={{ base: 'column-reverse', md: 'row' }}
+      w='full'
+      spacing={12}
     >
-      <VStack spacing={3} alignItems='flex-start' w='full'>
+      <VStack alignItems='flex-start' w='full' spacing={3}>
         <Stack
-          spacing={3}
-          w='full'
-          direction={{ base: 'column', md: 'row' }}
-          justifyContent={{ base: 'center', md: 'flex-start' }}
           alignItems='center'
+          justifyContent={{ base: 'center', md: 'flex-start' }}
+          direction={{ base: 'column', md: 'row' }}
+          w='full'
+          spacing={3}
         >
-          <Heading size='lg' as='h1'>
+          <Heading as='h1' size='lg'>
             Hi, I’m Lazar Nikolov.
           </Heading>
           <HeroPlay />
         </Stack>
-        <Text lineHeight='175%' as='h2'>
+        <Text as='h2' lineHeight='175%'>
           I’m a full-stack engineer, a designer, and a content creator. I work
           at <ExternalLink href='https://codechem.com'>CodeChem</ExternalLink>{' '}
           as a <strong>developer/designer</strong>, and I’m a{' '}
@@ -71,18 +71,18 @@ const Hero = () => {
           <ExternalLink href='https://egghead.io'>egghead.io</ExternalLink>{' '}
           <strong>instructor</strong>.
         </Text>
-        <Stack spacing={3} direction={{ base: 'column', md: 'row' }}>
+        <Stack direction={{ base: 'column', md: 'row' }} spacing={3}>
           {socialLinks.map(({ href, label, color }) => (
             <Button
               key={href}
               as={Link}
-              variant='ghost'
+              justifyContent={{ base: 'flex-start', md: 'center' }}
+              px={4}
               color={color}
               href={href}
-              target='_blank'
-              px={4}
-              justifyContent={{ base: 'flex-start', md: 'center' }}
               rightIcon={<Icon as={FiArrowUpRight} />}
+              target='_blank'
+              variant='ghost'
             >
               {label}
             </Button>

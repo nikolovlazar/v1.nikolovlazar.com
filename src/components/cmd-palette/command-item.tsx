@@ -61,17 +61,17 @@ const CommandItem = ({ icon, title, onClick, href }: Props) => {
       ref={ref}
       px={3}
       py={3}
-      cursor='pointer'
-      _hover={{ bg: hoverBg }}
       bg={isFocused ? hoverBg : 'transparent'}
-      rounded='md'
+      _hover={{ bg: hoverBg }}
+      cursor='pointer'
       href={href}
       onClick={activateItem}
+      rounded='md'
     >
       <HStack>
         <Icon as={icon} />
         <Text>{title}</Text>
-        {isExternal && <Icon as={FiArrowUpRight} display='inline' />}
+        {isExternal && <Icon as={FiArrowUpRight} d='inline' />}
       </HStack>
     </ListItem>
   );

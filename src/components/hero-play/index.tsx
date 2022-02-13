@@ -29,20 +29,20 @@ const HeroPlay = () => {
     <>
       {audio}
       <IconButton
+        d='flex'
         aria-label='Play pronunciation track'
-        display='flex'
         icon={
           <Icon
-            color='purple.500'
             as={state.playing ? HiStop : HiPlay}
             w={{ base: 12, md: 8 }}
             h={{ base: 12, md: 8 }}
+            color='purple.500'
           />
         }
-        variant='unstyled'
-        size='lg'
-        rounded='full'
         onClick={toggle}
+        rounded='full'
+        size='lg'
+        variant='unstyled'
       />
     </>
   );

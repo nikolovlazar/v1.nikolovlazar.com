@@ -64,12 +64,12 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
 
   return (
     <VStack
-      spacing={3}
+      alignItems='flex-start'
+      w='full'
       p={{ base: 4, md: 6 }}
       bg={useColorModeValue('gray.50', 'gray.700')}
       rounded='md'
-      w='full'
-      alignItems='flex-start'
+      spacing={3}
     >
       <Heading size='md'>Subscribe to my course 🤓</Heading>
       <Text>
@@ -87,36 +87,36 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
           >
             <InputGroup w='full'>
               <Input
-                variant='filled'
+                disabled={form.state === Form.Loading}
+                name='email'
                 placeholder='email@example.com'
                 type='email'
-                name='email'
-                disabled={form.state === Form.Loading}
+                variant='filled'
               />
               <InputRightElement>
                 <IconButton
-                  size='sm'
                   aria-label='Subscribe'
-                  type='submit'
-                  name='subscribe'
-                  isLoading={form.state === Form.Loading}
                   icon={<Icon as={HiOutlineMail} />}
+                  isLoading={form.state === Form.Loading}
+                  name='subscribe'
+                  size='sm'
+                  type='submit'
                 />
               </InputRightElement>
             </InputGroup>
           </chakra.form>
-          <Text fontSize='sm' color={detailColor}>
+          <Text color={detailColor} fontSize='sm'>
             Join {data?.count}+ subscribers
           </Text>
         </>
       )}
       {form.state === Form.Success && (
-        <Text size='sm' color='green.500'>
+        <Text color='green.500' size='sm'>
           {form.message}
         </Text>
       )}
       {form.state === Form.Error && (
-        <Text size='sm' color='red.500'>
+        <Text color='red.500' size='sm'>
           {form.message} 😕 Reach out to me on{' '}
           <Link href={TWITTER_PROFILE} isExternal>
             Twitter

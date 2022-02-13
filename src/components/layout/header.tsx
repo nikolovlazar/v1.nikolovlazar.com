@@ -27,23 +27,23 @@ const Header = () => {
     <HStack
       as='nav'
       position='sticky'
-      top={0}
-      insetX={0}
       zIndex='popover'
-      justifyContent='space-between'
+      top={0}
       alignItems='center'
+      justifyContent='space-between'
       w='full'
+      mb={16}
       py={3}
       bg={useColorModeValue('white', 'gray.800')}
-      transitionProperty='background'
+      insetX={0}
       transitionDuration='normal'
-      mb={16}
+      transitionProperty='background'
     >
       <Container
-        display='flex'
-        maxW='container.md'
         alignItems='center'
         justifyContent='space-between'
+        d='flex'
+        maxW='container.md'
         px={{ base: 4, lg: 0 }}
       >
         <NextLink href='/' passHref>
@@ -56,9 +56,9 @@ const Header = () => {
             <IconButton
               aria-label='toggle theme'
               icon={<FiCommand />}
-              variant='ghost'
-              size='sm'
               onClick={openCommandPalette}
+              size='sm'
+              variant='ghost'
             />
           </Tooltip>
         </HStack>

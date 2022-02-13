@@ -31,20 +31,20 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
   };
 
   return (
-    <VStack spacing={8} w='full'>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+    <VStack w='full' spacing={8}>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Bookmarks.</Heading>
         <Text>
           A collection of interesting tools / frameworks / websites I stumble
           upon on the internet.
         </Text>
       </VStack>
-      <HStack w='full' spacing={3} as='section' flexWrap='wrap' gridRowGap={2}>
+      <HStack as='section' flexWrap='wrap' gridRowGap={2} w='full' spacing={3}>
         <Button
           textTransform='uppercase'
+          colorScheme='purple'
           onClick={() => filterBookmarks()}
           size='xs'
-          colorScheme='purple'
           variant={!selectedTag ? 'solid' : 'ghost'}
         >
           All
@@ -53,9 +53,9 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
           <Button
             key={tag}
             textTransform='uppercase'
+            colorScheme='purple'
             onClick={() => filterBookmarks(tag)}
             size='xs'
-            colorScheme='purple'
             variant={selectedTag === tag ? 'solid' : 'ghost'}
           >
             {tag}
@@ -63,11 +63,11 @@ const Bookmarks = ({ bookmarks, tags }: Props) => {
         ))}
       </HStack>
       <SimpleGrid
-        columns={{ base: 1, sm: 2, md: 3 }}
-        gap={12}
-        alignItems='stretch'
-        w='full'
         as='section'
+        alignItems='stretch'
+        gap={12}
+        w='full'
+        columns={{ base: 1, sm: 2, md: 3 }}
       >
         {displayBookmarks.map(({ cover, link, title, tags }) => (
           <BookmarkCard

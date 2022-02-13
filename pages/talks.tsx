@@ -12,11 +12,11 @@ type Props = {
 const TalksPage = ({ talks }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Talks.</Heading>
         <Text>A list of my talks and guest appearances.</Text>
       </VStack>
-      <List spacing={12} w='full'>
+      <List w='full' spacing={12}>
         {talks.map((talk) => (
           <ListItem key={talk.url} as='article'>
             <VideoCard {...talk} />

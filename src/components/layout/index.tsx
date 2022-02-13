@@ -11,14 +11,14 @@ const Layout = ({ children }: Props) => {
     <>
       <Header />
       <Container
-        display='flex'
+        d='flex'
         maxW='container.md'
         minH={{ base: 'auto', md: '100vh' }}
         px={{ base: 4, lg: 0 }}
         centerContent
       >
-        <VStack flex={1} spacing={16} alignItems='stretch' w='full'>
-          <VStack spacing={16} flex={1} w='full' as='main'>
+        <VStack alignItems='stretch' flex={1} w='full' spacing={16}>
+          <VStack as='main' flex={1} w='full' spacing={16}>
             {children}
           </VStack>
           <Footer />

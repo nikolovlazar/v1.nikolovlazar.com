@@ -14,17 +14,17 @@ type Props = {
 const GearPage = ({ gear, categories }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Gear.</Heading>
         <Text>
           This is my hardware list. <strong>Not affiliate links</strong>. To see
           my software tools, check out the <Link href='/uses'>Uses</Link> page.
         </Text>
       </VStack>
-      <List spacing={12} alignItems='stretch' w='full'>
+      <List alignItems='stretch' w='full' spacing={12}>
         {categories.map((category) => (
-          <ListItem spacing={8} alignItems='flex-start' key={category}>
-            <Heading size='md' textTransform='capitalize'>
+          <ListItem key={category} alignItems='flex-start' spacing={8}>
+            <Heading textTransform='capitalize' size='md'>
               {category}.
             </Heading>
             <List alignItems='stretch' w='full'>

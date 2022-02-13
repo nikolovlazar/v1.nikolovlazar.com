@@ -172,27 +172,27 @@ const CmdPalette = () => {
               borderStyle='solid'
             >
               <Input
-                placeholder='Search commands...'
-                variant='unstyled'
                 px={3}
                 py={4}
                 borderBottomWidth='1px'
-                rounded='none'
-                autoFocus
                 borderBottomStyle='solid'
+                autoFocus
                 onChange={(e) => filterCommands(e.currentTarget.value)}
+                placeholder='Search commands...'
+                rounded='none'
+                variant='unstyled'
               />
-              <List w='full' px={2} overflow='auto' pb={2}>
+              <List overflow='auto' w='full' pb={2} px={2}>
                 <MenuDescendantsProvider value={descendants}>
                   {Object.keys(commands).map((section) => (
                     <>
                       {commands[section].length > 0 && (
                         <ListItem key={section}>
                           <Text
-                            fontSize='sm'
-                            color='gray.500'
-                            textTransform='capitalize'
                             my={2}
+                            color='gray.500'
+                            fontSize='sm'
+                            textTransform='capitalize'
                           >
                             {section}
                           </Text>

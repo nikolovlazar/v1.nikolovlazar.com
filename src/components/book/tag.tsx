@@ -50,15 +50,15 @@ const Tag = ({ state, ...flexProps }: Props) => {
 
   return (
     <Flex
+      align='center'
+      justify='center'
       w={5}
       h={5}
-      rounded='full'
-      alignItems='center'
-      justifyContent='center'
       bg={tagProps.color}
+      rounded='full'
       {...flexProps}
     >
-      <Icon boxSize={3} color='white' as={tagProps.icon} />
+      <Icon as={tagProps.icon} boxSize={3} color='white' />
     </Flex>
   );
 };

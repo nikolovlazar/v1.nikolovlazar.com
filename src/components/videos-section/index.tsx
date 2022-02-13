@@ -9,14 +9,14 @@ type Props = {
 
 const VideosSection = ({ videos }: Props) => {
   return (
-    <VStack w='full' alignItems='flex-start' spacing={4} as='section'>
+    <VStack as='section' alignItems='flex-start' w='full' spacing={4}>
       <Heading size='md'>Recent videos.</Heading>
       <SimpleGrid
+        rowGap={8}
+        columnGap={12}
+        w='full'
         columns={{ base: 1, md: 2 }}
         spacing={6}
-        w='full'
-        columnGap={12}
-        rowGap={8}
       >
         {videos.map((video) => (
           <GridItem key={video.url} as='article'>

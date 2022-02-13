@@ -73,25 +73,25 @@ const BlogPostPage = ({
           ],
         }}
       />
-      <VStack spacing={8} w="full" alignItems="stretch" position="relative">
-        <VStack spacing={3} alignItems="flex-start">
-          <Heading as="h1" size="lg">
+      <VStack position='relative' alignItems='stretch' w='full' spacing={8}>
+        <VStack alignItems='flex-start' spacing={3}>
+          <Heading as='h1' size='lg'>
             {title}
           </Heading>
           <HStack
             divider={
-              <Text color="gray.500" mx={2}>
+              <Text mx={2} color='gray.500'>
                 •
               </Text>
             }
           >
-            <Text color="gray.500" fontSize="sm">
+            <Text color='gray.500' fontSize='sm'>
               {format(date)}
             </Text>
-            <Text color="gray.500" fontSize="sm">
-              {views ?? <Spinner size="xs" color="gray.500" />} views
+            <Text color='gray.500' fontSize='sm'>
+              {views ?? <Spinner color='gray.500' size='xs' />} views
             </Text>
-            <Text color="gray.500" fontSize="sm">
+            <Text color='gray.500' fontSize='sm'>
               {readingTime}
             </Text>
           </HStack>
@@ -99,7 +99,7 @@ const BlogPostPage = ({
         <MDXRemote {...source} components={MDXComponents} />
         <Divider />
         {!isLoading && (
-          <HStack justifyContent="center" alignItems="center">
+          <HStack alignItems='center' justifyContent='center'>
             <LikeButton
               onLike={incrementLikes}
               likes={likes}

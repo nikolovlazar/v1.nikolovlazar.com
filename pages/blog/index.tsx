@@ -38,7 +38,7 @@ const Blog = ({ posts }: Props) => {
   return (
     <>
       <NextSeo title='Blog - Lazar Nikolov' />
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Blog.</Heading>
         <Text fontSize='md'>
           Web development, with a focus on the React ecosystem. I’ve written a
@@ -49,13 +49,13 @@ const Blog = ({ posts }: Props) => {
             <Icon as={HiOutlineSearch} color='gray.400' />
           </InputLeftElement>
           <Input
+            onChange={onSearch}
             placeholder='Search blog posts'
             variant='filled'
-            onChange={onSearch}
           />
         </InputGroup>
       </VStack>
-      <List spacing={2} w='full'>
+      <List w='full' spacing={2}>
         {displayPosts.map((post) => (
           <ListItem key={post.slug}>
             <BlogPostCard {...post} />

@@ -3,12 +3,12 @@ import { Link } from '@chakra-ui/react';
 const VercelCallout = () => {
   return (
     <Link
-      href='https://vercel.com'
-      isExternal
+      d='inline-block'
       fontSize='xs'
       fontWeight='semibold'
-      display='inline-block'
       _hover={{ textDecoration: 'none' }}
+      href='https://vercel.com'
+      isExternal
     >
       Powered by{' '}
       <span role='img' aria-label='Vercel logo'>

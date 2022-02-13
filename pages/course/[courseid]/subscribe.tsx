@@ -7,19 +7,17 @@ import { Course } from '@/types/course';
 
 type Props = {
   course: Course;
-}
+};
 
 const CourseSubscribe = ({ course }: Props) => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>{course.title}</Heading>
-        <Text fontSize='sm' alignSelf='flex-start' color='gray.500'>
+        <Text alignSelf='flex-start' color='gray.500' fontSize='sm'>
           Expected launch: {course.expectedLaunch}
         </Text>
-        <Text>
-          {course.description}
-        </Text>
+        <Text>{course.description}</Text>
       </VStack>
       <CourseForm course={course} />
     </>
@@ -28,7 +26,9 @@ const CourseSubscribe = ({ course }: Props) => {
 
 export const getStaticPaths: GetStaticPaths = () => {
   return {
-    paths: courses.filter((course) => !course.live).map(({ id: courseid }) => ({ params: { courseid } })),
+    paths: courses
+      .filter((course) => !course.live)
+      .map(({ id: courseid }) => ({ params: { courseid } })),
     fallback: false,
   };
 };
@@ -40,15 +40,15 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
 
   if (!course) {
     return {
-      notFound: true
+      notFound: true,
     };
   }
 
   return {
     props: {
-      course
+      course,
     },
-  }
-}
+  };
+};
 
 export default CourseSubscribe;

@@ -8,7 +8,7 @@ import {
 const ColophonPage = () => {
   return (
     <>
-      <VStack spacing={3} alignItems='flex-start' w='full' as='section'>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
         <Heading size='md'>Colophon.</Heading>
         <Text>
           This website is designed and developed by Lazar Nikolov.
