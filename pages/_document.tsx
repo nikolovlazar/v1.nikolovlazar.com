@@ -18,24 +18,6 @@ class Doc extends Document {
           />
           <meta name='monetization' content='$ilp.uphold.com/nZ4DF39aHkrm' />
           <link
-            rel='preload'
-            href='/assets/fonts/CalSans-SemiBold.ttf'
-            as='font'
-            crossOrigin=''
-          />
-          <link
-            rel='preload'
-            href='/assets/fonts/CalSans-SemiBold.woff'
-            as='font'
-            crossOrigin=''
-          />
-          <link
-            rel='preload'
-            href='/assets/fonts/CalSans-SemiBold.woff2'
-            as='font'
-            crossOrigin=''
-          />
-          <link
             rel='icon'
             href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥐</text></svg>'
           />
