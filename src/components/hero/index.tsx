@@ -7,13 +7,14 @@ import {
   Icon,
   Link,
 } from '@chakra-ui/react';
-import { FiArrowUpRight } from 'react-icons/fi';
+import { FiExternalLink } from 'react-icons/fi';
+import { age } from '@/utils/time';
+import { useState, useEffect } from "react";
 
 import {
   GITHUB_PROFILE,
-  POLYWORK_PROFILE,
-  TWITCH_CHANNEL,
-  TWITTER_PROFILE,
+  SPOTIFY_PROFILE,
+  TWITTER_PROFILE
 } from 'src/constants';
 import { Link as LinkType } from '@/types/link';
 import ExternalLink from '../external-link';
@@ -31,11 +32,12 @@ const socialLinks: SocialLink[] = [
   {
     href: GITHUB_PROFILE,
     label: 'GitHub',
+    color: 'github',
   },
   {
-    href: TWITCH_CHANNEL,
-    label: 'Twitch',
-    color: 'purple.500',
+    href: SPOTIFY_PROFILE,
+    label: 'Spotify',
+    color: 'spotify',
   },
 ];
 
@@ -57,19 +59,20 @@ const Hero = () => {
           spacing={3}
         >
           <Heading as='h1' size='lg'>
-            Hi, I’m Lazar Nikolov.
+            Hi, I’m Nawrasse Dahman.
           </Heading>
           <HeroPlay />
         </Stack>
         <Text as='h2' lineHeight='175%'>
-          I’m a full-stack engineer, a designer, and a content creator. I work
-          at <ExternalLink href='https://codechem.com'>CodeChem</ExternalLink>{' '}
-          as a <strong>developer/designer</strong>, and I’m a{' '}
-          <strong>core member</strong> at{' '}
-          <ExternalLink href='https://chakra-ui.com'>Chakra UI</ExternalLink>,
-          contributing as a <strong>Developer Advocate</strong>. I’m also an{' '}
-          <ExternalLink href='https://egghead.io'>egghead.io</ExternalLink>{' '}
-          <strong>instructor</strong>.
+          I&apos;m <strong>( {age.toPrecision(5)} Years Old )</strong>, With{' '} <ExternalLink 
+          href='https://www.16personalities.com/intj-personality#:~:text=An%20Architect%20(INTJ)%20is%20a,often%20a%20private%2C%20complex%20one.'>
+          <strong>INTJ </strong>
+          </ExternalLink> <span>&nbsp;</span>
+          As My Personality Type, 
+          Based In <strong>Tangier</strong> With Passion For Building Digital Services / Stuff I Wants
+          Or Needs. I Knows A Lot Of <strong>Programming Languages</strong>, Which Makes Me An Expert At Doing
+          My Thing. <strong>When Not Online</strong>, I Loves Hanging Out With My Family & Animals Currently,
+          I&apos;m Focusing On My Passion For <strong>Movies & Tv Shows</strong> And Everything In Between.
         </Text>
         <Stack direction={{ base: 'column', md: 'row' }} spacing={3}>
           {socialLinks.map(({ href, label, color }) => (
@@ -80,7 +83,7 @@ const Hero = () => {
               px={4}
               color={color}
               href={href}
-              rightIcon={<Icon as={FiArrowUpRight} />}
+              rightIcon={<Icon as={FiExternalLink} />}
               target='_blank'
               variant='ghost'
             >
