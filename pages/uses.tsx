@@ -1,10 +1,10 @@
-import { GetStaticProps } from 'next';
-import { VStack, Heading, Text, List, ListItem } from '@chakra-ui/react';
+import { GetStaticProps } from "next";
+import { VStack, Heading, Text, List, ListItem } from "@chakra-ui/react";
 
-import Link from '@/components/link';
-import { Tool } from '@/types/tool';
-import ToolCard from '@/components/tool-card';
-import { readData } from '@/utils/read-data';
+import Link from "@/components/link";
+import { Tool } from "@/types/tool";
+import ToolCard from "@/components/tool-card";
+import { readData } from "@/utils/read-data";
 
 type Props = {
   tools: { [key: string]: Tool[] };
@@ -14,21 +14,21 @@ type Props = {
 const Uses = ({ tools, categories }: Props) => {
   return (
     <>
-      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
-        <Heading size='md'>Software tools.</Heading>
+      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
+        <Heading size="md">Software tools.</Heading>
         <Text>
           This is my list of software tools that I use frequently. I do my best
           at updating it whenever a change occurs. To see my hardware, check out
-          the <Link href='/gear'>Gear</Link> page.
+          the <Link href="/gear">Gear</Link> page.
         </Text>
       </VStack>
-      <List alignItems='stretch' w='full' spacing={12}>
+      <List alignItems="stretch" w="full" spacing={12}>
         {categories.map((category) => (
-          <ListItem key={category} alignItems='flex-start' spacing={8}>
-            <Heading textTransform='capitalize' size='md'>
+          <ListItem key={category} alignItems="flex-start" spacing={8}>
+            <Heading textTransform="capitalize" size="md">
               {category}.
             </Heading>
-            <List alignItems='stretch' w='full'>
+            <List alignItems="stretch" w="full">
               {tools[category].map((tool) => (
                 <ListItem key={tool.url}>
                   <ToolCard {...tool} />
@@ -44,7 +44,7 @@ const Uses = ({ tools, categories }: Props) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const { tools: toolsData } = await readData<{ tools: Tool[] }>(
-    'data/software-tools.json'
+    "data/software-tools.json"
   );
 
   const tools: { [key: string]: Tool[] } = {};

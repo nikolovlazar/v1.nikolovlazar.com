@@ -1,5 +1,5 @@
-import { VStack, Heading, Text, AspectRatio } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+import { VStack, Heading, Text, AspectRatio } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
 const NotFound = () => {
   const [videoVersion, setVideoVersion] = useState<number>();
@@ -10,25 +10,25 @@ const NotFound = () => {
   }, [setVideoVersion]);
 
   return (
-    <VStack w='full' spacing={12}>
-      <VStack w='full' spacing={4}>
+    <VStack w="full" spacing={12}>
+      <VStack w="full" spacing={4}>
         <AspectRatio
-          as='figure'
+          as="figure"
           flexShrink={0}
-          overflow='hidden'
-          w='full'
-          shadow='xl'
+          overflow="hidden"
+          w="full"
+          shadow="xl"
           ratio={16 / 9}
-          rounded='lg'
+          rounded="lg"
         >
           <video autoPlay loop muted playsInline>
             <source
               src={`/assets/videos/404-${videoVersion}.webm`}
-              type='video/webm'
+              type="video/webm"
             />
             <source
               src={`/assets/videos/404-${videoVersion}.mp4`}
-              type='video/mp4'
+              type="video/mp4"
             />
           </video>
         </AspectRatio>

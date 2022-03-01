@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 import {
   chakra,
   Flex,
@@ -12,10 +12,10 @@ import {
   useColorModeValue as mode,
   useToast,
   useDisclosure,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
-import useBookSuggestions from 'src/hooks/use-book-suggestions';
-import { FiSend } from 'react-icons/fi';
+import useBookSuggestions from "src/hooks/use-book-suggestions";
+import { FiSend } from "react-icons/fi";
 
 const Suggest = () => {
   const [title, setTitle] = useState<string>();
@@ -33,18 +33,18 @@ const Suggest = () => {
       const res = await sendSuggestion(title, author, reason);
       if (res.success) {
         toast({
-          status: 'success',
-          title: 'Success!',
-          description: 'Thank you for sending me a book suggestion ❤️',
+          status: "success",
+          title: "Success!",
+          description: "Thank you for sending me a book suggestion ❤️",
           isClosable: true,
         });
-        setTitle('');
-        setAuthor('');
-        setReason('');
+        setTitle("");
+        setAuthor("");
+        setReason("");
       } else {
         toast({
-          status: 'error',
-          title: 'Oops!',
+          status: "error",
+          title: "Oops!",
           description: "Oh damn... Your suggestion didn't go through 😞",
           isClosable: true,
         });
@@ -52,85 +52,85 @@ const Suggest = () => {
       setLoading(false);
     } else {
       toast({
-        status: 'warning',
-        title: 'Hey!',
-        description: 'All fields are required 😁',
+        status: "warning",
+        title: "Hey!",
+        description: "All fields are required 😁",
         isClosable: true,
       });
     }
   };
 
   return (
-    <Flex align='flex-start' direction='column' w='full'>
+    <Flex align="flex-start" direction="column" w="full">
       <Button
         {...getButtonProps()}
         h={6}
         mb={3}
-        color='purple.500'
-        fontSize='sm'
-        fontWeight='normal'
+        color="purple.500"
+        fontSize="sm"
+        fontWeight="normal"
         onClick={onToggle}
-        variant='unstyled'
+        variant="unstyled"
       >
         Suggest me a book!
       </Button>
-      <Collapse animateOpacity in={isOpen} style={{ width: '100%' }}>
+      <Collapse animateOpacity in={isOpen} style={{ width: "100%" }}>
         <SimpleGrid
           gap={3}
-          w='full'
+          w="full"
           p={3}
-          bg={mode('gray.50', 'gray.700')}
+          bg={mode("gray.50", "gray.700")}
           columns={{ base: 1, md: 2 }}
-          rounded='md'
+          rounded="md"
         >
           <GridItem>
             <Input
               onChange={(e) => setTitle(e.currentTarget.value)}
-              placeholder='Title'
+              placeholder="Title"
               required
               value={title}
-              variant='filled'
+              variant="filled"
             />
           </GridItem>
           <GridItem>
             <Input
               onChange={(e) => setAuthor(e.currentTarget.value)}
-              placeholder='Author'
+              placeholder="Author"
               required
               value={author}
-              variant='filled'
+              variant="filled"
             />
           </GridItem>
           <GridItem colSpan={{ base: 1, md: 2 }}>
             <Textarea
               onChange={(e) => setReason(e.currentTarget.value)}
-              placeholder='Why would I like this book?'
+              placeholder="Why would I like this book?"
               required
               value={reason}
-              variant='filled'
+              variant="filled"
             />
           </GridItem>
           <GridItem colSpan={{ base: 1, md: 2 }}>
             <Button
               w={10}
-              _hover={{ width: '186px' }}
-              aria-label='Send Suggestion'
+              _hover={{ width: "186px" }}
+              aria-label="Send Suggestion"
               isLoading={loading}
               onClick={submit}
               rightIcon={<Icon as={FiSend} ml={-2} _groupHover={{ ml: 0 }} />}
-              role='group'
-              transitionDuration='slower'
-              transitionProperty='all'
-              transitionTimingFunction='ease-out'
+              role="group"
+              transitionDuration="slower"
+              transitionProperty="all"
+              transitionTimingFunction="ease-out"
             >
               <chakra.span
-                overflow='hidden'
+                overflow="hidden"
                 width={0}
                 opacity={0}
-                _groupHover={{ width: 'auto', opacity: 1 }}
-                transitionProperty='all'
-                transitionDuration='slower'
-                transitionTimingFunction='ease-out'
+                _groupHover={{ width: "auto", opacity: 1 }}
+                transitionProperty="all"
+                transitionDuration="slower"
+                transitionTimingFunction="ease-out"
               >
                 Send suggestion
               </chakra.span>

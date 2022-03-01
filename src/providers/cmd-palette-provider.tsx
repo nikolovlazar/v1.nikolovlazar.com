@@ -1,6 +1,6 @@
-import { createContext, PropsWithChildren, useState } from 'react';
+import { createContext, PropsWithChildren, useState } from "react";
 
-import { searchItems, SearchItemsType } from '@/data/cmd-palette';
+import { searchItems, SearchItemsType } from "@/data/cmd-palette";
 
 type CmdPaletteType = {
   isOpened: boolean;

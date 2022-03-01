@@ -1,10 +1,10 @@
-import { GetStaticProps } from 'next';
-import { VStack, Heading, Text, List, ListItem } from '@chakra-ui/react';
+import { GetStaticProps } from "next";
+import { VStack, Heading, Text, List, ListItem } from "@chakra-ui/react";
 
-import Link from '@/components/link';
-import { Gear } from '@/types/gear';
-import GearCard from '@/components/gear-card';
-import { readData } from '@/utils/read-data';
+import Link from "@/components/link";
+import { Gear } from "@/types/gear";
+import GearCard from "@/components/gear-card";
+import { readData } from "@/utils/read-data";
 
 type Props = {
   gear: { [key: string]: Gear[] };
@@ -14,20 +14,20 @@ type Props = {
 const GearPage = ({ gear, categories }: Props) => {
   return (
     <>
-      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
-        <Heading size='md'>Gear.</Heading>
+      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
+        <Heading size="md">Gear.</Heading>
         <Text>
           This is my hardware list. <strong>Not affiliate links</strong>. To see
-          my software tools, check out the <Link href='/uses'>Uses</Link> page.
+          my software tools, check out the <Link href="/uses">Uses</Link> page.
         </Text>
       </VStack>
-      <List alignItems='stretch' w='full' spacing={12}>
+      <List alignItems="stretch" w="full" spacing={12}>
         {categories.map((category) => (
-          <ListItem key={category} alignItems='flex-start' spacing={8}>
-            <Heading textTransform='capitalize' size='md'>
+          <ListItem key={category} alignItems="flex-start" spacing={8}>
+            <Heading textTransform="capitalize" size="md">
               {category}.
             </Heading>
-            <List alignItems='stretch' w='full'>
+            <List alignItems="stretch" w="full">
               {gear[category].map((gear) => (
                 <ListItem key={gear.url}>
                   <GearCard {...gear} />
@@ -42,7 +42,7 @@ const GearPage = ({ gear, categories }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { gear: gearData } = await readData<{ gear: Gear[] }>('data/gear.json');
+  const { gear: gearData } = await readData<{ gear: Gear[] }>("data/gear.json");
 
   const gear: { [key: string]: Gear[] } = {};
 

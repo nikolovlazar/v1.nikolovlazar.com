@@ -1,10 +1,10 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import matter from 'gray-matter';
-import readingTime from 'reading-time';
-import { NextSeo } from 'next-seo';
-import { format } from 'timeago.js';
+import { GetStaticProps, GetStaticPaths } from "next";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
+import matter from "gray-matter";
+import readingTime from "reading-time";
+import { NextSeo } from "next-seo";
+import { format } from "timeago.js";
 import {
   VStack,
   Heading,
@@ -12,20 +12,20 @@ import {
   Text,
   Spinner,
   Divider,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
-import { BlogPost } from '@/types/blog-post';
-import { getBlogPosts } from '@/utils/get-blog-posts';
-import { readBlogPost } from '@/utils/read-blog-post';
-import MDXComponents from '@/components/mdx-components';
-import { useRouter } from 'next/router';
-import usePostViews from 'src/hooks/use-post-views';
-import { useEffect } from 'react';
-import LikeButton from '@/components/like-button';
-import usePostLikes from 'src/hooks/use-post-likes';
-import imageMetadata from '@/utils/plugins/image-metadata';
-import ScrollToTopButton from '@/components/scroll-to-top-button';
-import NewsletterForm from '@/components/newsletter-form';
+import { BlogPost } from "@/types/blog-post";
+import { getBlogPosts } from "@/utils/get-blog-posts";
+import { readBlogPost } from "@/utils/read-blog-post";
+import MDXComponents from "@/components/mdx-components";
+import { useRouter } from "next/router";
+import usePostViews from "src/hooks/use-post-views";
+import { useEffect } from "react";
+import LikeButton from "@/components/like-button";
+import usePostLikes from "src/hooks/use-post-likes";
+import imageMetadata from "@/utils/plugins/image-metadata";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
+import NewsletterForm from "@/components/newsletter-form";
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
@@ -73,25 +73,25 @@ const BlogPostPage = ({
           ],
         }}
       />
-      <VStack position='relative' alignItems='stretch' w='full' spacing={8}>
-        <VStack alignItems='flex-start' spacing={3}>
-          <Heading as='h1' size='lg'>
+      <VStack position="relative" alignItems="stretch" w="full" spacing={8}>
+        <VStack alignItems="flex-start" spacing={3}>
+          <Heading as="h1" size="lg">
             {title}
           </Heading>
           <HStack
             divider={
-              <Text mx={2} color='gray.500'>
+              <Text mx={2} color="gray.500">
                 •
               </Text>
             }
           >
-            <Text color='gray.500' fontSize='sm'>
+            <Text color="gray.500" fontSize="sm">
               {format(date)}
             </Text>
-            <Text color='gray.500' fontSize='sm'>
-              {views ?? <Spinner color='gray.500' size='xs' />} views
+            <Text color="gray.500" fontSize="sm">
+              {views ?? <Spinner color="gray.500" size="xs" />} views
             </Text>
-            <Text color='gray.500' fontSize='sm'>
+            <Text color="gray.500" fontSize="sm">
               {readingTime}
             </Text>
           </HStack>
@@ -99,7 +99,7 @@ const BlogPostPage = ({
         <MDXRemote {...source} components={MDXComponents} />
         <Divider />
         {!isLoading && (
-          <HStack alignItems='center' justifyContent='center'>
+          <HStack alignItems="center" justifyContent="center">
             <LikeButton
               onLike={incrementLikes}
               likes={likes}

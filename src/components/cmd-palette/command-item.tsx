@@ -5,14 +5,14 @@ import {
   Text,
   useColorModeValue,
   useMenuDescendant,
-} from '@chakra-ui/react';
-import { useRouter } from 'next/router';
-import { useContext, useEffect, useRef } from 'react';
-import { FiArrowUpRight } from 'react-icons/fi';
-import { BsArrowReturnLeft } from 'react-icons/bs';
-import { IconType } from 'react-icons/lib';
-import { useKeyPressEvent } from 'react-use';
-import { CmdPaletteContext } from 'src/providers/cmd-palette-provider';
+} from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useContext, useEffect, useRef } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
+import { BsArrowReturnLeft } from "react-icons/bs";
+import { IconType } from "react-icons/lib";
+import { useKeyPressEvent } from "react-use";
+import { CmdPaletteContext } from "src/providers/cmd-palette-provider";
 
 type Props = {
   icon: IconType;
@@ -22,11 +22,11 @@ type Props = {
 };
 
 const CommandItem = ({ icon, title, onClick, href }: Props) => {
-  const hoverBg = useColorModeValue('blackAlpha.50', 'whiteAlpha.50');
+  const hoverBg = useColorModeValue("blackAlpha.50", "whiteAlpha.50");
   const { focusedIndex, close } = useContext(CmdPaletteContext);
   const ref = useRef<HTMLLIElement>();
   const router = useRouter();
-  const isExternal = href && href.startsWith('http');
+  const isExternal = href && href.startsWith("http");
 
   const { register, index } = useMenuDescendant();
 
@@ -41,7 +41,7 @@ const CommandItem = ({ icon, title, onClick, href }: Props) => {
   const activateItem = () => {
     if (href) {
       if (isExternal) {
-        window.open(href, 'blank');
+        window.open(href, "blank");
       } else {
         router.push(href, href);
       }
@@ -51,7 +51,7 @@ const CommandItem = ({ icon, title, onClick, href }: Props) => {
     close();
   };
 
-  useKeyPressEvent('Enter', () => {
+  useKeyPressEvent("Enter", () => {
     if (isFocused) {
       activateItem();
     }
@@ -62,7 +62,7 @@ const CommandItem = ({ icon, title, onClick, href }: Props) => {
       ref={ref}
       px={3}
       py={3}
-      bg={isFocused ? hoverBg : 'transparent'}
+      bg={isFocused ? hoverBg : "transparent"}
       _hover={{ bg: hoverBg }}
       cursor="pointer"
       href={href}

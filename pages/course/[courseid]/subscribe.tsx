@@ -1,9 +1,9 @@
-import type { GetStaticPaths, GetStaticProps } from 'next';
-import { VStack, Heading, Text } from '@chakra-ui/react';
+import type { GetStaticPaths, GetStaticProps } from "next";
+import { VStack, Heading, Text } from "@chakra-ui/react";
 
-import courses from '@/data/courses';
-import CourseForm from '@/components/course-form';
-import { Course } from '@/types/course';
+import courses from "@/data/courses";
+import CourseForm from "@/components/course-form";
+import { Course } from "@/types/course";
 
 type Props = {
   course: Course;
@@ -12,9 +12,9 @@ type Props = {
 const CourseSubscribe = ({ course }: Props) => {
   return (
     <>
-      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
-        <Heading size='md'>{course.title}</Heading>
-        <Text alignSelf='flex-start' color='gray.500' fontSize='sm'>
+      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
+        <Heading size="md">{course.title}</Heading>
+        <Text alignSelf="flex-start" color="gray.500" fontSize="sm">
           Expected launch: {course.expectedLaunch}
         </Text>
         <Text>{course.description}</Text>

@@ -1,10 +1,10 @@
-import { IconButton, Icon } from '@chakra-ui/react';
-import { HiPlay, HiStop } from 'react-icons/hi';
-import { useAudio } from 'react-use';
+import { IconButton, Icon } from "@chakra-ui/react";
+import { HiPlay, HiStop } from "react-icons/hi";
+import { useAudio } from "react-use";
 
 const HeroPlay = () => {
   const [audio, state, controls] = useAudio({
-    src: '/assets/pronunciation.mp3',
+    src: "/assets/pronunciation.mp3",
     autoPlay: false,
   });
 
@@ -29,20 +29,20 @@ const HeroPlay = () => {
     <>
       {audio}
       <IconButton
-        d='flex'
-        aria-label='Play pronunciation track'
+        d="flex"
+        aria-label="Play pronunciation track"
         icon={
           <Icon
             as={state.playing ? HiStop : HiPlay}
             w={{ base: 12, md: 8 }}
             h={{ base: 12, md: 8 }}
-            color='purple.500'
+            color="purple.500"
           />
         }
         onClick={toggle}
-        rounded='full'
-        size='lg'
-        variant='unstyled'
+        rounded="full"
+        size="lg"
+        variant="unstyled"
       />
     </>
   );

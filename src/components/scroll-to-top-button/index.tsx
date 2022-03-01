@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import { IconButton, useColorModeValue } from '@chakra-ui/react';
-import { BiArrowToTop } from 'react-icons/bi';
+import { useState, useEffect } from "react";
+import { IconButton, useColorModeValue } from "@chakra-ui/react";
+import { BiArrowToTop } from "react-icons/bi";
 
 const ScrollToTopButton = () => {
   const [showScrollToTop, setScrollToTop] = useState(false);
-  const bgColor = useColorModeValue('gray.50', 'gray.700');
+  const bgColor = useColorModeValue("gray.50", "gray.700");
 
   const updateScrollToTop = () => {
     if (window.pageYOffset > 300) {
@@ -15,17 +15,17 @@ const ScrollToTopButton = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('scroll', updateScrollToTop);
+    window.addEventListener("scroll", updateScrollToTop);
 
     return () => {
-      window.removeEventListener('scroll', updateScrollToTop);
+      window.removeEventListener("scroll", updateScrollToTop);
     };
   }, []);
 
   const scrollTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -33,16 +33,16 @@ const ScrollToTopButton = () => {
     <>
       {showScrollToTop && (
         <IconButton
-          position='fixed'
-          zIndex='tooltip'
+          position="fixed"
+          zIndex="tooltip"
           right={{ base: 5, md: 20 }}
           bottom={{ base: 5, md: 20 }}
           bg={bgColor}
-          aria-label='Back to the top'
+          aria-label="Back to the top"
           icon={<BiArrowToTop />}
           onClick={scrollTop}
-          rounded='full'
-          size='lg'
+          rounded="full"
+          size="lg"
         />
       )}
     </>

@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState } from "react";
 import {
   chakra,
   VStack,
@@ -10,16 +10,16 @@ import {
   Text,
   Icon,
   IconButton,
-} from '@chakra-ui/react';
-import { HiOutlineMail } from 'react-icons/hi';
-import useSWR from 'swr';
+} from "@chakra-ui/react";
+import { HiOutlineMail } from "react-icons/hi";
+import useSWR from "swr";
 
-import fetcher from '@/utils/fetcher';
-import { Subscribers } from '@/types/subscribers';
-import { Form, FormState } from '@/types/form-state';
-import { Course } from '@/types/course';
-import Link from '../link';
-import { TWITTER_PROFILE } from 'src/constants';
+import fetcher from "@/utils/fetcher";
+import { Subscribers } from "@/types/subscribers";
+import { Form, FormState } from "@/types/form-state";
+import { Course } from "@/types/course";
+import Link from "../link";
+import { TWITTER_PROFILE } from "src/constants";
 
 type Props = {
   course: Course;
@@ -31,7 +31,7 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
     `/api/courses/subscribers/${formId}`,
     fetcher
   );
-  const detailColor = useColorModeValue('gray.500', 'gray.400');
+  const detailColor = useColorModeValue("gray.500", "gray.400");
 
   const subscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,12 +39,12 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
 
     const res = await fetch(`/api/courses/subscribe/${formId}`, {
       body: JSON.stringify({
-        email: e.currentTarget.elements['email'].value,
+        email: e.currentTarget.elements["email"].value,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
     });
 
     const { error, message } = await res.json();
@@ -64,14 +64,14 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
 
   return (
     <VStack
-      alignItems='flex-start'
-      w='full'
+      alignItems="flex-start"
+      w="full"
       p={{ base: 4, md: 6 }}
-      bg={useColorModeValue('gray.50', 'gray.700')}
-      rounded='md'
+      bg={useColorModeValue("gray.50", "gray.700")}
+      rounded="md"
       spacing={3}
     >
-      <Heading size='md'>Subscribe to my course 🤓</Heading>
+      <Heading size="md">Subscribe to my course 🤓</Heading>
       <Text>
         Get notified when I publish my &quot;{title}&quot; course! I will just
         send out one email when the course launches, and then delete your email
@@ -80,47 +80,47 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
       {form.state !== Form.Success && form.state !== Form.Error && (
         <>
           <chakra.form
-            name='subscribe-form'
-            target='_blank'
-            w='full'
+            name="subscribe-form"
+            target="_blank"
+            w="full"
             onSubmit={subscribe}
           >
-            <InputGroup w='full'>
+            <InputGroup w="full">
               <Input
                 disabled={form.state === Form.Loading}
-                name='email'
-                placeholder='email@example.com'
-                type='email'
-                variant='filled'
+                name="email"
+                placeholder="email@example.com"
+                type="email"
+                variant="filled"
               />
               <InputRightElement>
                 <IconButton
-                  aria-label='Subscribe'
+                  aria-label="Subscribe"
                   icon={<Icon as={HiOutlineMail} />}
                   isLoading={form.state === Form.Loading}
-                  name='subscribe'
-                  size='sm'
-                  type='submit'
+                  name="subscribe"
+                  size="sm"
+                  type="submit"
                 />
               </InputRightElement>
             </InputGroup>
           </chakra.form>
-          <Text color={detailColor} fontSize='sm'>
+          <Text color={detailColor} fontSize="sm">
             Join {data?.count}+ subscribers
           </Text>
         </>
       )}
       {form.state === Form.Success && (
-        <Text color='green.500' size='sm'>
+        <Text color="green.500" size="sm">
           {form.message}
         </Text>
       )}
       {form.state === Form.Error && (
-        <Text color='red.500' size='sm'>
-          {form.message} 😕 Reach out to me on{' '}
+        <Text color="red.500" size="sm">
+          {form.message} 😕 Reach out to me on{" "}
           <Link href={TWITTER_PROFILE} isExternal>
             Twitter
-          </Link>{' '}
+          </Link>{" "}
           about this.
         </Text>
       )}

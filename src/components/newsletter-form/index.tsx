@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useState } from "react";
 import {
   chakra,
   VStack,
@@ -10,31 +10,31 @@ import {
   Text,
   Icon,
   IconButton,
-} from '@chakra-ui/react';
-import { HiOutlineMail } from 'react-icons/hi';
-import useSWR from 'swr';
+} from "@chakra-ui/react";
+import { HiOutlineMail } from "react-icons/hi";
+import useSWR from "swr";
 
-import fetcher from '@/utils/fetcher';
-import { Subscribers } from '@/types/subscribers';
-import { Form, FormState } from '@/types/form-state';
+import fetcher from "@/utils/fetcher";
+import { Subscribers } from "@/types/subscribers";
+import { Form, FormState } from "@/types/form-state";
 
 const NewsletterForm = () => {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const { data } = useSWR<Subscribers>('/api/newsletter/subscribers', fetcher);
-  const detailColor = useColorModeValue('gray.500', 'gray.400');
+  const { data } = useSWR<Subscribers>("/api/newsletter/subscribers", fetcher);
+  const detailColor = useColorModeValue("gray.500", "gray.400");
 
   const subscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
-    const res = await fetch('/api/newsletter/subscribe', {
+    const res = await fetch("/api/newsletter/subscribe", {
       body: JSON.stringify({
-        email: e.currentTarget.elements['email'].value,
+        email: e.currentTarget.elements["email"].value,
       }),
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
-      method: 'POST',
+      method: "POST",
     });
 
     const { error, message } = await res.json();
@@ -54,14 +54,14 @@ const NewsletterForm = () => {
 
   return (
     <VStack
-      alignItems='flex-start'
-      w='full'
+      alignItems="flex-start"
+      w="full"
       p={{ base: 4, md: 6 }}
-      bg={useColorModeValue('gray.50', 'gray.700')}
-      rounded='md'
+      bg={useColorModeValue("gray.50", "gray.700")}
+      rounded="md"
       spacing={3}
     >
-      <Heading size='md'>Subscribe to my newsletter ✉️</Heading>
+      <Heading size="md">Subscribe to my newsletter ✉️</Heading>
       <Text>
         Get emails from me about web development, content creation, and whenever
         I publish new content.
@@ -69,43 +69,43 @@ const NewsletterForm = () => {
       {form.state !== Form.Success && form.state !== Form.Error && (
         <>
           <chakra.form
-            name='subscribe-form'
-            target='_blank'
-            w='full'
+            name="subscribe-form"
+            target="_blank"
+            w="full"
             onSubmit={subscribe}
           >
-            <InputGroup w='full'>
+            <InputGroup w="full">
               <Input
                 disabled={form.state === Form.Loading}
-                name='email'
-                placeholder='email@example.com'
-                type='email'
-                variant='filled'
+                name="email"
+                placeholder="email@example.com"
+                type="email"
+                variant="filled"
               />
               <InputRightElement>
                 <IconButton
-                  aria-label='Subscribe'
+                  aria-label="Subscribe"
                   icon={<Icon as={HiOutlineMail} />}
                   isLoading={form.state === Form.Loading}
-                  name='subscribe'
-                  size='sm'
-                  type='submit'
+                  name="subscribe"
+                  size="sm"
+                  type="submit"
                 />
               </InputRightElement>
             </InputGroup>
           </chakra.form>
-          <Text color={detailColor} fontSize='sm'>
+          <Text color={detailColor} fontSize="sm">
             Join {data?.count}+ subscribers
           </Text>
         </>
       )}
       {form.state === Form.Success && (
-        <Text color='green.500' size='sm'>
+        <Text color="green.500" size="sm">
           {form.message}
         </Text>
       )}
       {form.state === Form.Error && (
-        <Text color='red.500' size='sm'>
+        <Text color="red.500" size="sm">
           {form.message} 😕
         </Text>
       )}

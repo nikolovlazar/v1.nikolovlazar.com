@@ -1,5 +1,5 @@
-import { useCallback, useContext } from 'react';
-import { AnimatePresence, motion, Variants } from 'framer-motion';
+import { useCallback, useContext } from "react";
+import { AnimatePresence, motion, Variants } from "framer-motion";
 import {
   Flex,
   FlexProps,
@@ -13,15 +13,15 @@ import {
   useColorModeValue,
   useMenu,
   VStack,
-} from '@chakra-ui/react';
-import { IoMoon, IoSunny } from 'react-icons/io5';
-import { createDescendantContext } from '@chakra-ui/descendant';
-import { CgArrowRight } from 'react-icons/cg';
-import { useKeyPressEvent } from 'react-use';
+} from "@chakra-ui/react";
+import { IoMoon, IoSunny } from "react-icons/io5";
+import { createDescendantContext } from "@chakra-ui/descendant";
+import { CgArrowRight } from "react-icons/cg";
+import { useKeyPressEvent } from "react-use";
 
-import { PageItem, SocialItem, ThemeItem } from '@/data/cmd-palette';
-import CommandItem from './command-item';
-import { CmdPaletteContext } from 'src/providers/cmd-palette-provider';
+import { PageItem, SocialItem, ThemeItem } from "@/data/cmd-palette";
+import CommandItem from "./command-item";
+import { CmdPaletteContext } from "src/providers/cmd-palette-provider";
 
 export const [
   MenuDescendantsProvider,
@@ -34,25 +34,25 @@ const backdropVariants: Variants = {
   initial: {
     opacity: 0,
     transition: {
-      type: 'tween',
+      type: "tween",
       duration: 0.15,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
   enter: {
     opacity: 1,
     transition: {
-      type: 'tween',
+      type: "tween",
       duration: 0.15,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
   exit: {
     opacity: 0,
     transition: {
-      type: 'tween',
+      type: "tween",
       duration: 0.15,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -61,25 +61,25 @@ const commandPaletteVariants: Variants = {
   initial: {
     scale: 0.9,
     transition: {
-      type: 'tween',
+      type: "tween",
       duration: 0.15,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
   enter: {
     scale: 1,
     transition: {
-      type: 'tween',
+      type: "tween",
       duration: 0.15,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
   exit: {
     scale: 0.9,
     transition: {
-      type: 'tween',
+      type: "tween",
       duration: 0.15,
-      ease: 'easeOut',
+      ease: "easeOut",
     },
   },
 };
@@ -100,8 +100,8 @@ const CmdPalette = () => {
   const { descendants } = useMenu();
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const backdropColor = useColorModeValue('whiteAlpha.800', 'blackAlpha.800');
-  const paletteBackgroundColor = useColorModeValue('white', 'gray.900');
+  const backdropColor = useColorModeValue("whiteAlpha.800", "blackAlpha.800");
+  const paletteBackgroundColor = useColorModeValue("white", "gray.900");
 
   const hidePalette = useCallback(() => {
     close();
@@ -109,7 +109,7 @@ const CmdPalette = () => {
   }, [close, setFocusedIndex]);
 
   useKeyPressEvent((e) => {
-    if (!isOpened && e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+    if (!isOpened && e.key === "k" && (e.metaKey || e.ctrlKey)) {
       e.stopPropagation();
       e.preventDefault();
       open();
@@ -117,23 +117,23 @@ const CmdPalette = () => {
     return true;
   });
 
-  useKeyPressEvent('Escape', hidePalette);
+  useKeyPressEvent("Escape", hidePalette);
 
-  useKeyPressEvent('ArrowDown', () => {
+  useKeyPressEvent("ArrowDown", () => {
     const next = descendants.nextEnabled(focusedIndex);
     if (next) {
       setFocusedIndex(next.index);
       next.node.focus();
-      next.node.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      next.node.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
   });
 
-  useKeyPressEvent('ArrowUp', () => {
+  useKeyPressEvent("ArrowUp", () => {
     const prev = descendants.prevEnabled(focusedIndex);
     if (prev) {
       setFocusedIndex(prev.index);
       prev.node.focus();
-      prev.node.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      prev.node.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
   });
 
@@ -165,7 +165,7 @@ const CmdPalette = () => {
               bg={paletteBackgroundColor}
               shadow="2xl"
               maxW="3xl"
-              maxH={{ base: '40vh', md: 'md' }}
+              maxH={{ base: "40vh", md: "md" }}
               overflow="hidden"
               w="full"
               rounded="md"
@@ -200,7 +200,7 @@ const CmdPalette = () => {
                         </ListItem>
                       )}
                       {commands[section].map((command) => {
-                        if (section === 'pages') {
+                        if (section === "pages") {
                           const { title, href } = command as PageItem;
 
                           return (
@@ -211,7 +211,7 @@ const CmdPalette = () => {
                               href={href}
                             />
                           );
-                        } else if (section === 'social') {
+                        } else if (section === "social") {
                           const { title, href, icon } = command as SocialItem;
 
                           return (
@@ -222,10 +222,10 @@ const CmdPalette = () => {
                               href={href}
                             />
                           );
-                        } else if (section === 'theme') {
+                        } else if (section === "theme") {
                           const { title, id } = command as ThemeItem;
 
-                          const icon = colorMode === 'dark' ? IoSunny : IoMoon;
+                          const icon = colorMode === "dark" ? IoSunny : IoMoon;
 
                           return (
                             <CommandItem
