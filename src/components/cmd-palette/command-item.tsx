@@ -9,6 +9,7 @@ import {
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useRef } from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
+import { BsArrowReturnLeft } from 'react-icons/bs';
 import { IconType } from 'react-icons/lib';
 import { useKeyPressEvent } from 'react-use';
 import { CmdPaletteContext } from 'src/providers/cmd-palette-provider';
@@ -63,15 +64,23 @@ const CommandItem = ({ icon, title, onClick, href }: Props) => {
       py={3}
       bg={isFocused ? hoverBg : 'transparent'}
       _hover={{ bg: hoverBg }}
-      cursor='pointer'
+      cursor="pointer"
       href={href}
       onClick={activateItem}
-      rounded='md'
+      rounded="md"
     >
-      <HStack>
-        <Icon as={icon} />
-        <Text>{title}</Text>
-        {isExternal && <Icon as={FiArrowUpRight} d='inline' />}
+      <HStack justifyContent="space-between">
+        <HStack>
+          <Icon as={icon} />
+          <Text>{title}</Text>
+          {isExternal && <Icon as={FiArrowUpRight} d="inline" />}
+        </HStack>
+        {isFocused && (
+          <HStack spacing={1}>
+            <Text fontSize="xs">Enter</Text>
+            <Icon as={BsArrowReturnLeft} h={3} />
+          </HStack>
+        )}
       </HStack>
     </ListItem>
   );
