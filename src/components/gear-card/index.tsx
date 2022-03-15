@@ -10,19 +10,19 @@ import {
   Icon,
   useBreakpointValue,
   SkeletonCircle,
-} from "@chakra-ui/react";
-import { FiArrowUpRight } from "react-icons/fi";
+} from '@chakra-ui/react';
+import { FiArrowUpRight } from 'react-icons/fi';
 
-import { Gear } from "@/types/gear";
-import Image from "../image";
+import { Gear } from '@/types/gear';
+import Image from '../image';
 
 const GearCard = ({ image, title, description, url }: Gear) => {
   return (
     <LinkBox as="article" role="group">
       <Stack
         alignItems="center"
-        justifyContent={{ base: "center", md: "flex-start" }}
-        direction={{ base: "column", md: "row" }}
+        justifyContent={{ base: 'center', md: 'flex-start' }}
+        direction={{ base: 'column', md: 'row' }}
         w="full"
         p={3}
         spacing={6}
@@ -30,11 +30,11 @@ const GearCard = ({ image, title, description, url }: Gear) => {
         <AspectRatio w={36} h={36} ratio={1}>
           <Image alt={title} src={image} layout="fill" objectFit="contain" />
         </AspectRatio>
-        <VStack alignItems="flex-start" flex={1} w="full" spacing={0}>
+        <VStack alignItems="flex-start" flex={1} w="full" spacing={4}>
           <LinkOverlay href={url} isExternal>
-            <Heading size="sm">{title}</Heading>
+            <Heading size="md">{title}</Heading>
           </LinkOverlay>
-          <Text color="gray.500" fontSize="sm">
+          <Text color="gray.500" fontSize="md">
             {description}
           </Text>
         </VStack>

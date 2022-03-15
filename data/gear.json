@@ -15,6 +15,27 @@
       "category": "audio"
     },
     {
+      "title": "Shure SM7B",
+      "description": "A legendary microphone! Michael Jackson used it on Thriller! 🕺",
+      "url": "https://www.shure.com/en-GB/products/microphones/sm7b",
+      "image": "/assets/images/shure-sm7b.png",
+      "category": "audio"
+    },
+    {
+      "title": "Triton Audio FetHead",
+      "description": "A relatively cheap and reliable mic preamp. It's a good CloudLifter alternative. You need this if you use an SM7B!",
+      "url": "https://www.tritonaudio.com/fethead",
+      "image": "/assets/images/fethead.png",
+      "category": "audio"
+    },
+    {
+      "title": "Røde PSA1",
+      "description": "A sturdy studio arm. Can easily handle heavier microphones.",
+      "url": "https://rode.com/accessories/stands/psa1",
+      "image": "/assets/images/psa1.png",
+      "category": "audio"
+    },
+    {
       "title": "SteelSeries Arctis 3 Bluetooth",
       "description": "One of my favorite headphones. So comfortable, I can wear them all day.",
       "url": "https://steelseries.com/gaming-headsets/arctis-3-bluetooth",
