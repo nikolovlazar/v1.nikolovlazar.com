@@ -1,7 +1,7 @@
 {
   "gear": [
     {
-      "title": "Røde NT-USB",
+      "title": "RØDE NT-USB",
       "description": "A great beginner USB microphone.",
       "url": "http://www.rode.com/microphones/nt-usb",
       "image": "/assets/images/rode.png",
@@ -29,10 +29,17 @@
       "category": "audio"
     },
     {
-      "title": "Røde PSA1",
+      "title": "RØDE PSA1",
       "description": "A sturdy studio arm. Can easily handle heavier microphones.",
       "url": "https://rode.com/accessories/stands/psa1",
       "image": "/assets/images/psa1.png",
+      "category": "audio"
+    },
+    {
+      "title": "RØDECaster Pro",
+      "description": "The perfect audio interface/mixer solution! More than enough inputs, Aphex integrated (real-time audio processing), and even 8 programmable sound pads 😲!",
+      "url": "https://rode.com/interfaces-and-mixers/rodecaster-pro",
+      "image": "/assets/images/rodecaster-pro.png",
       "category": "audio"
     },
     {
