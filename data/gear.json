@@ -2,7 +2,7 @@
   "gear": [
     {
       "title": "Røde NT-USB",
-      "description": "A great beginner USB microphone. Mounted it on the cheapest boom arm. No issues at all.",
+      "description": "A great beginner USB microphone.",
       "url": "http://www.rode.com/microphones/nt-usb",
       "image": "/assets/images/rode.png",
       "category": "audio"
