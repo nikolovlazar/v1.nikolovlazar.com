@@ -1,20 +1,6 @@
 {
   "gear": [
     {
-      "title": "RØDE NT-USB",
-      "description": "A great beginner USB microphone.",
-      "url": "http://www.rode.com/microphones/nt-usb",
-      "image": "/assets/images/rode.png",
-      "category": "audio"
-    },
-    {
-      "title": "Audio Technica ATR2100X-USB",
-      "description": "A welcoming gift from egghead.io. Those guys care so much ❤️",
-      "url": "https://www.audio-technica.com/en-us/atr2100x-usb",
-      "image": "/assets/images/atr2100x.png",
-      "category": "audio"
-    },
-    {
       "title": "Shure SM7B",
       "description": "A legendary microphone! Michael Jackson used it on Thriller! 🕺",
       "url": "https://www.shure.com/en-GB/products/microphones/sm7b",
@@ -47,6 +33,20 @@
       "description": "One of my favorite headphones. So comfortable, I can wear them all day.",
       "url": "https://steelseries.com/gaming-headsets/arctis-3-bluetooth",
       "image": "/assets/images/arctis-3.png",
+      "category": "audio"
+    },
+    {
+      "title": "RØDE NT-USB",
+      "description": "A great beginner USB microphone.",
+      "url": "http://www.rode.com/microphones/nt-usb",
+      "image": "/assets/images/rode.png",
+      "category": "audio"
+    },
+    {
+      "title": "Audio Technica ATR2100X-USB",
+      "description": "A welcoming gift from egghead.io. Those guys care so much ❤️",
+      "url": "https://www.audio-technica.com/en-us/atr2100x-usb",
+      "image": "/assets/images/atr2100x.png",
       "category": "audio"
     },
     {
@@ -85,6 +85,13 @@
       "category": "video"
     },
     {
+      "title": "Elgato Multi Mount System",
+      "description": "I've got two Master Mount L arms for the ring lights, and one Solid Arm for my camera, just like on the picture.",
+      "url": "https://www.elgato.com/en/multi-mount-system",
+      "image": "/assets/images/elgato-mounting-setup.png",
+      "category": "video"
+    },
+    {
       "title": "2 x Cheap Ringlights",
       "description": "Didn’t want to spend 💰 on lights, but these turned out pretty nice actually.",
       "url": "https://www.amazon.com/Dimmable-Ringlight-Photography-Compatible-UPGRADED/dp/B07W66QFPR/ref=sr_1_4?dchild=1&keywords=ring+light&qid=1632076717&sr=8-4",
@@ -96,13 +103,6 @@
       "description": "This is a phantom battery adapter for my a6300. It makes it think that it’s a battery, so you can use it for longer time.",
       "url": "https://www.subtel.de/en/Power-supply-for-Sony-Alpha-A6000-A6300-A6500-A5000-A5100-Alpha-7-A7-A7s-A7II-Sony-RX10-III-915664.html",
       "image": "/assets/images/subtel-power-adapter.png",
-      "category": "video"
-    },
-    {
-      "title": "Elgato Multi Mount System",
-      "description": "I've got two Master Mount L arms for the ring lights, and one Solid Arm for my camera, just like on the picture.",
-      "url": "https://www.elgato.com/en/multi-mount-system",
-      "image": "/assets/images/elgato-mounting-setup.png",
       "category": "video"
     }
   ]
