@@ -6,12 +6,12 @@ import {
   Tooltip,
   useColorModeValue,
   Container,
-} from "@chakra-ui/react";
-import NextLink from "next/link";
-import { useContext, useEffect, useState } from "react";
-import { FiCommand } from "react-icons/fi";
+} from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { useContext, useEffect, useState } from 'react';
+import { FiCommand } from 'react-icons/fi';
 
-import { CmdPaletteContext } from "src/providers/cmd-palette-provider";
+import { CmdPaletteContext } from 'src/providers/cmd-palette-provider';
 
 const Header = () => {
   const { open: openCommandPalette } = useContext(CmdPaletteContext);
@@ -19,7 +19,7 @@ const Header = () => {
 
   useEffect(() => {
     setShortcut(
-      navigator.userAgent.indexOf("Mac OS X") != -1 ? "Cmd + K" : "Ctrl + K"
+      navigator.userAgent.indexOf('Mac OS X') != -1 ? 'Cmd + K' : 'Ctrl + K'
     );
   }, [setShortcut]);
 
@@ -34,7 +34,7 @@ const Header = () => {
       w="full"
       mb={16}
       py={3}
-      bg={useColorModeValue("white", "gray.800")}
+      bg={useColorModeValue('white', 'gray.800')}
       insetX={0}
       transitionDuration="normal"
       transitionProperty="background"
@@ -42,7 +42,7 @@ const Header = () => {
       <Container
         alignItems="center"
         justifyContent="space-between"
-        d="flex"
+        display="flex"
         maxW="container.md"
         px={{ base: 4, lg: 0 }}
       >

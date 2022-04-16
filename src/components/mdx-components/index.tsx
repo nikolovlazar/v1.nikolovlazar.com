@@ -7,17 +7,17 @@ import {
   Kbd,
   useColorModeValue,
   useColorMode,
-} from "@chakra-ui/react";
-import { mode } from "@chakra-ui/theme-tools";
-import NextImage from "next/image";
-import slugify from "slugify";
-import Highlight, { defaultProps } from "prism-react-renderer";
-import darkTheme from "prism-react-renderer/themes/nightOwl";
-import lightTheme from "prism-react-renderer/themes/nightOwlLight";
+} from '@chakra-ui/react';
+import { mode } from '@chakra-ui/theme-tools';
+import NextImage from 'next/image';
+import slugify from 'slugify';
+import Highlight, { defaultProps } from 'prism-react-renderer';
+import darkTheme from 'prism-react-renderer/themes/nightOwl';
+import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
 
 const ChakraHighlight = chakra(Highlight, {
   shouldForwardProp: (prop) =>
-    ["Prism", "theme", "code", "language", "children"].includes(prop),
+    ['Prism', 'theme', 'code', 'language', 'children'].includes(prop),
 });
 
 const Pre = (props) => <chakra.div my="2em" borderRadius="sm" {...props} />;
@@ -30,7 +30,7 @@ const Table = (props) => (
 
 const THead = (props) => (
   <chakra.th
-    bg={useColorModeValue("gray.50", "whiteAlpha.100")}
+    bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
     fontWeight="semibold"
     p={2}
     fontSize="sm"
@@ -50,11 +50,11 @@ const TData = (props) => (
 );
 
 const CodeHighlight = ({ children: codeString, className: language }: any) => {
-  language = language.replace("language-", "");
+  language = language.replace('language-', '');
   const theme = useColorModeValue(lightTheme, darkTheme);
-  const lineNumberColor = useColorModeValue("blackAlpha.500", "whiteAlpha.500");
-  const preBackground = useColorModeValue("gray.50", "gray.900");
-  const showLineNumbers = !["shell", "text"].includes(language);
+  const lineNumberColor = useColorModeValue('blackAlpha.500', 'whiteAlpha.500');
+  const preBackground = useColorModeValue('gray.50', 'gray.900');
+  const showLineNumbers = !['shell', 'text'].includes(language);
 
   return (
     <ChakraHighlight
@@ -113,23 +113,23 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
 const InlineCode = (props: any) => (
   <chakra.code
     apply="mdx.code"
-    color={useColorModeValue("purple.500", "purple.200")}
-    bg={useColorModeValue("purple.50", "purple.900")}
+    color={useColorModeValue('purple.500', 'purple.200')}
+    bg={useColorModeValue('purple.50', 'purple.900')}
     px={1}
     py={0.5}
-    rounded={{ base: "none", md: "md" }}
+    rounded={{ base: 'none', md: 'md' }}
     {...props}
   />
 );
 
-const LinkedHeading = (props: HTMLChakraProps<"h2">) => {
+const LinkedHeading = (props: HTMLChakraProps<'h2'>) => {
   const slug = slugify(props.children as string, { lower: true });
   return (
-    <Link href={`#${slug}`} name={slug} role="group">
+    <Link href={`#${slug}`} role="group">
       <Box
         {...props}
         d="inline"
-        color={useColorModeValue("gray.700", "white")}
+        color={useColorModeValue('gray.700', 'white')}
         fontFamily="heading"
       >
         {props.children}
@@ -140,7 +140,7 @@ const LinkedHeading = (props: HTMLChakraProps<"h2">) => {
         userSelect="none"
         fontWeight="normal"
         outline="none"
-        _focus={{ opacity: 1, boxShadow: "outline" }}
+        _focus={{ opacity: 1, boxShadow: 'outline' }}
         opacity={0}
         _groupHover={{ opacity: 1 }}
         ml="0.375rem"
@@ -161,7 +161,7 @@ const Anchor = (props) => {
   const { colorMode } = useColorMode();
   return (
     <chakra.a
-      color={mode("purple.500", "purple.300")({ colorMode })}
+      color={mode('purple.500', 'purple.300')({ colorMode })}
       {...props}
     />
   );
@@ -181,8 +181,8 @@ const MDXComponents = {
   img: Image,
   br: ({ reset, ...props }) => (
     <Box
-      as={reset ? "br" : undefined}
-      h={reset ? undefined : "24px"}
+      as={reset ? 'br' : undefined}
+      h={reset ? undefined : '24px'}
       {...props}
     />
   ),

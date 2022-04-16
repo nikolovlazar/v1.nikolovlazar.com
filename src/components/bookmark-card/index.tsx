@@ -9,9 +9,9 @@ import {
   Tooltip,
   Text,
   Skeleton,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { Bookmark } from "@/types/bookmark";
+import { Bookmark } from '@/types/bookmark';
 
 const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
   return (
@@ -19,10 +19,10 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
       <Tooltip label={title}>
         <VStack
           alignItems="center"
-          justifyContent={{ base: "center", md: "flex-start" }}
+          justifyContent={{ base: 'center', md: 'flex-start' }}
           overflow="hidden"
-          bg={useColorModeValue("gray.50", "whiteAlpha.100")}
-          _hover={{ transform: "scale(1.05, 1.05)" }}
+          bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
+          _hover={{ transform: 'scale(1.05, 1.05)' }}
           rounded="md"
           spacing={0}
           transitionDuration="slow"
@@ -33,7 +33,6 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
             <Image
               alt={`Thumbnail of ${title}`}
               fallback={<Skeleton w="full" h="full" />}
-              layout="fill"
               src={cover}
             />
           </AspectRatio>
@@ -44,7 +43,7 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
               </Heading>
             </LinkOverlay>
             <Text color="gray.500" fontSize="xs" textTransform="capitalize">
-              {tags.join(", ")}
+              {tags.join(', ')}
             </Text>
           </VStack>
         </VStack>

@@ -3,7 +3,6 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["chakra-ui"],
   "rules": {
-    "chakra-ui/props-order": "error",
-    "chakra-ui/props-shorthand": "error"
+    "chakra-ui/props-order": "error"
   }
 }

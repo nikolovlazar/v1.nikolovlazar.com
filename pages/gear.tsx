@@ -1,10 +1,10 @@
-import { GetStaticProps } from "next";
-import { VStack, Heading, Text, List, ListItem } from "@chakra-ui/react";
+import { GetStaticProps } from 'next';
+import { VStack, Heading, Text, List, ListItem } from '@chakra-ui/react';
 
-import Link from "@/components/link";
-import { Gear } from "@/types/gear";
-import GearCard from "@/components/gear-card";
-import { readData } from "@/utils/read-data";
+import Link from '@/components/link';
+import { Gear } from '@/types/gear';
+import GearCard from '@/components/gear-card';
+import { readData } from '@/utils/read-data';
 
 type Props = {
   gear: { [key: string]: Gear[] };
@@ -23,7 +23,7 @@ const GearPage = ({ gear, categories }: Props) => {
       </VStack>
       <List alignItems="stretch" w="full" spacing={12}>
         {categories.map((category) => (
-          <ListItem key={category} alignItems="flex-start" spacing={8}>
+          <ListItem key={category} alignItems="flex-start">
             <Heading textTransform="capitalize" size="md">
               {category}.
             </Heading>
@@ -42,7 +42,7 @@ const GearPage = ({ gear, categories }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  const { gear: gearData } = await readData<{ gear: Gear[] }>("data/gear.json");
+  const { gear: gearData } = await readData<{ gear: Gear[] }>('data/gear.json');
 
   const gear: { [key: string]: Gear[] } = {};
 

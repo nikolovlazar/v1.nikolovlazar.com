@@ -1,10 +1,10 @@
-import { GetStaticProps } from "next";
-import { VStack, Heading, Text, List, ListItem } from "@chakra-ui/react";
+import { GetStaticProps } from 'next';
+import { VStack, Heading, Text, List, ListItem } from '@chakra-ui/react';
 
-import Link from "@/components/link";
-import { Tool } from "@/types/tool";
-import ToolCard from "@/components/tool-card";
-import { readData } from "@/utils/read-data";
+import Link from '@/components/link';
+import { Tool } from '@/types/tool';
+import ToolCard from '@/components/tool-card';
+import { readData } from '@/utils/read-data';
 
 type Props = {
   tools: { [key: string]: Tool[] };
@@ -24,7 +24,7 @@ const Uses = ({ tools, categories }: Props) => {
       </VStack>
       <List alignItems="stretch" w="full" spacing={12}>
         {categories.map((category) => (
-          <ListItem key={category} alignItems="flex-start" spacing={8}>
+          <ListItem key={category} alignItems="flex-start">
             <Heading textTransform="capitalize" size="md">
               {category}.
             </Heading>
@@ -44,7 +44,7 @@ const Uses = ({ tools, categories }: Props) => {
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const { tools: toolsData } = await readData<{ tools: Tool[] }>(
-    "data/software-tools.json"
+    'data/software-tools.json'
   );
 
   const tools: { [key: string]: Tool[] } = {};

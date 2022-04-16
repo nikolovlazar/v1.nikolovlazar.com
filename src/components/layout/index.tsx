@@ -1,8 +1,8 @@
-import { PropsWithChildren } from "react";
-import { VStack, Container } from "@chakra-ui/react";
+import { PropsWithChildren } from 'react';
+import { VStack, Container } from '@chakra-ui/react';
 
-import Header from "./header";
-import Footer from "./footer";
+import Header from './header';
+import Footer from './footer';
 
 type Props = PropsWithChildren<{}>;
 
@@ -11,9 +11,9 @@ const Layout = ({ children }: Props) => {
     <>
       <Header />
       <Container
-        d="flex"
+        display="flex"
         maxW="container.md"
-        minH={{ base: "auto", md: "100vh" }}
+        minH={{ base: 'auto', md: '100vh' }}
         px={{ base: 4, lg: 0 }}
         centerContent
       >

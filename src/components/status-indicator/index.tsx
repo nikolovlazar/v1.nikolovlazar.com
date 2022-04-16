@@ -4,9 +4,9 @@ import {
   Text,
   useBreakpointValue,
   useColorModeValue as mode,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import status from "@/data/status";
+import status from '@/data/status';
 
 const StatusIndicator = () => {
   const isMobile = useBreakpointValue({ base: true, lg: false });
@@ -15,14 +15,14 @@ const StatusIndicator = () => {
 
   if (isMobile) {
     stackStyles = {
-      width: "fit-content",
-      shadow: "lg",
+      width: 'max-content',
+      shadow: 'lg',
       spacing: 3,
     };
   } else {
     stackStyles = {
       width: 10,
-      shadow: "none",
+      shadow: 'none',
       spacing: 0,
     };
   }
@@ -37,13 +37,13 @@ const StatusIndicator = () => {
       h={10}
       ml="auto"
       px={2}
-      bg={mode("white", "gray.800")}
+      bg={mode('white', 'gray.800')}
       borderWidth={1}
       borderStyle="solid"
-      borderColor={mode("gray.300", "gray.600")}
+      borderColor={mode('gray.300', 'gray.600')}
       _hover={{
-        width: "fit-content",
-        shadow: "lg",
+        width: 'max-content',
+        shadow: 'lg',
       }}
       role="group"
       rounded="3xl"
@@ -55,9 +55,9 @@ const StatusIndicator = () => {
       <Text>{status.emoji}</Text>
       <Text
         sx={{
-          "@media(hover: none)": {
+          '@media(hover: none)': {
             opacity: 1,
-            width: "fit-content",
+            width: 'max-content',
             marginLeft: 3,
           },
         }}
@@ -66,7 +66,7 @@ const StatusIndicator = () => {
         opacity={0}
         _groupHover={{
           opacity: 1,
-          width: "fit-content",
+          width: 'max-content',
           marginLeft: 3,
         }}
         isTruncated
