@@ -16,7 +16,7 @@ const courses: Course[] = [
     description:
       "In this course, you will learn about Next.js's features, like data fetching, page rendering, dynamic routes, API routes, and how to deploy your Next.js project on Vercel.",
     live: false,
-    progress: 75,
+    progress: 90,
     expectedLaunch: 'April 2022',
     formId: '2820925',
   },
