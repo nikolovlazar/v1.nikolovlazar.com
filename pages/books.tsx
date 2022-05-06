@@ -1,10 +1,10 @@
-import { GetStaticProps } from "next";
-import { Heading, VStack, Text, SimpleGrid } from "@chakra-ui/react";
-import Airtable from "airtable";
+import { GetStaticProps } from 'next';
+import { Heading, VStack, Text, SimpleGrid } from '@chakra-ui/react';
+import Airtable from 'airtable';
 
-import { Book as BookType } from "@/types/book";
-import Book from "@/components/book";
-import Suggest from "@/components/book/suggest";
+import { Book as BookType } from '@/types/book';
+import Book from '@/components/book';
+import Suggest from '@/components/book/suggest';
 
 type Props = {
   reading: BookType[];
@@ -15,9 +15,9 @@ type Props = {
 
 const Books = ({ reading, favorites, completed, wishing }: Props) => {
   return (
-    <VStack alignItems="flex-start" spacing={8}>
-      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
-        <Heading size="md">Books.</Heading>
+    <VStack alignItems='flex-start' spacing={8}>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
+        <Heading size='md'>Books.</Heading>
         <Text>
           A collection of interesting books that I read or look forward to
           reading them.
@@ -25,37 +25,28 @@ const Books = ({ reading, favorites, completed, wishing }: Props) => {
         <Suggest />
       </VStack>
 
-      <VStack alignItems="flex-start" spacing={4}>
-        <Heading size="sm">Currently reading</Heading>
-        <SimpleGrid as="section" gap={3} columns={{ base: 1, md: 2 }}>
+      <VStack alignItems='flex-start' spacing={4}>
+        <Heading size='sm'>Currently reading</Heading>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
           {reading.map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack alignItems="flex-start" spacing={4}>
-        <Heading size="sm">Favorites</Heading>
-        <SimpleGrid as="section" gap={3} columns={{ base: 1, md: 2 }}>
-          {favorites.map((book) => (
+      <VStack alignItems='flex-start' spacing={4}>
+        <Heading size='sm'>Read</Heading>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
+          {[...favorites, ...completed].map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack alignItems="flex-start" spacing={4}>
-        <Heading size="sm">Wishlist</Heading>
-        <SimpleGrid as="section" gap={3} columns={{ base: 1, md: 2 }}>
+      <VStack alignItems='flex-start' spacing={4}>
+        <Heading size='sm'>Wishlist</Heading>
+        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
           {wishing.map((book) => (
-            <Book key={book.id} book={book} />
-          ))}
-        </SimpleGrid>
-      </VStack>
-
-      <VStack alignItems="flex-start" spacing={4}>
-        <Heading size="sm">Read</Heading>
-        <SimpleGrid as="section" gap={3} columns={{ base: 1, md: 2 }}>
-          {completed.map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
@@ -70,29 +61,29 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   );
 
   const books = (
-    await booksBase("Books")
+    await booksBase('Books')
       .select({
-        view: "Grid view",
+        view: 'Grid view',
       })
       .all()
   ).map(
     ({ fields, id }) =>
       ({
         id,
-        title: fields["Title"],
-        author: fields["Author"],
-        state: fields["State"],
-        cover: fields["Cover"][0]["thumbnails"]["large"]["url"],
-        link: fields["Link"] ?? null,
+        title: fields['Title'],
+        author: fields['Author'],
+        state: fields['State'],
+        cover: fields['Cover'][0]['thumbnails']['large']['url'],
+        link: fields['Link'] ?? null,
       } as BookType)
   );
 
   return {
     props: {
-      reading: books.filter(({ state }) => state === "Reading"),
-      completed: books.filter(({ state }) => state === "Completed"),
-      favorites: books.filter(({ state }) => state === "Favorite"),
-      wishing: books.filter(({ state }) => state === "Wish"),
+      reading: books.filter(({ state }) => state === 'Reading'),
+      completed: books.filter(({ state }) => state === 'Completed'),
+      favorites: books.filter(({ state }) => state === 'Favorite'),
+      wishing: books.filter(({ state }) => state === 'Wish'),
     },
     revalidate: 60 * 60,
   };
