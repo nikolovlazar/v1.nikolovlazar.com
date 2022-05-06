@@ -25,27 +25,27 @@ const Books = ({ reading, favorites, completed, wishing }: Props) => {
         <Suggest />
       </VStack>
 
-      <VStack alignItems='flex-start' spacing={4}>
+      <VStack alignItems='flex-start' w='full' spacing={4}>
         <Heading size='sm'>Currently reading</Heading>
-        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
+        <SimpleGrid as='section' gap={3} w='full' columns={{ base: 1, md: 2 }}>
           {reading.map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack alignItems='flex-start' spacing={4}>
+      <VStack alignItems='flex-start' w='full' spacing={4}>
         <Heading size='sm'>Read</Heading>
-        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
+        <SimpleGrid as='section' gap={3} w='full' columns={{ base: 1, md: 2 }}>
           {[...favorites, ...completed].map((book) => (
             <Book key={book.id} book={book} />
           ))}
         </SimpleGrid>
       </VStack>
 
-      <VStack alignItems='flex-start' spacing={4}>
+      <VStack alignItems='flex-start' w='full' spacing={4}>
         <Heading size='sm'>Wishlist</Heading>
-        <SimpleGrid as='section' gap={3} columns={{ base: 1, md: 2 }}>
+        <SimpleGrid as='section' gap={3} w='full' columns={{ base: 1, md: 2 }}>
           {wishing.map((book) => (
             <Book key={book.id} book={book} />
           ))}
