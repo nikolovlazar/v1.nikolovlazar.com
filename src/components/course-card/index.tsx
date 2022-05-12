@@ -63,7 +63,9 @@ const CourseCard = ({
                 trackColor={progressTrackColor}
                 value={progress}
               >
-                <CircularProgressLabel>{progress}%</CircularProgressLabel>
+                <CircularProgressLabel fontSize="lg">
+                  {progress}%
+                </CircularProgressLabel>
               </CircularProgress>
             )}
           </>

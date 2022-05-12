@@ -1,10 +1,10 @@
-import { GetStaticProps, GetStaticPaths } from "next";
-import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
-import { serialize } from "next-mdx-remote/serialize";
-import matter from "gray-matter";
-import readingTime from "reading-time";
-import { NextSeo } from "next-seo";
-import { format } from "timeago.js";
+import { GetStaticProps, GetStaticPaths } from 'next';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
+import { serialize } from 'next-mdx-remote/serialize';
+import matter from 'gray-matter';
+import readingTime from 'reading-time';
+import { NextSeo } from 'next-seo';
+import { format } from 'timeago.js';
 import {
   VStack,
   Heading,
@@ -12,20 +12,20 @@ import {
   Text,
   Spinner,
   Divider,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { BlogPost } from "@/types/blog-post";
-import { getBlogPosts } from "@/utils/get-blog-posts";
-import { readBlogPost } from "@/utils/read-blog-post";
-import MDXComponents from "@/components/mdx-components";
-import { useRouter } from "next/router";
-import usePostViews from "src/hooks/use-post-views";
-import { useEffect } from "react";
-import LikeButton from "@/components/like-button";
-import usePostLikes from "src/hooks/use-post-likes";
-import imageMetadata from "@/utils/plugins/image-metadata";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
-import NewsletterForm from "@/components/newsletter-form";
+import { BlogPost } from '@/types/blog-post';
+import { getBlogPosts } from '@/utils/get-blog-posts';
+import { readBlogPost } from '@/utils/read-blog-post';
+import MDXComponents from '@/components/mdx-components';
+import { useRouter } from 'next/router';
+import usePostViews from 'src/hooks/use-post-views';
+import { useEffect } from 'react';
+import LikeButton from '@/components/like-button';
+import usePostLikes from 'src/hooks/use-post-likes';
+import imageMetadata from '@/utils/plugins/image-metadata';
+import ScrollToTopButton from '@/components/scroll-to-top-button';
+import NewsletterForm from '@/components/newsletter-form';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;

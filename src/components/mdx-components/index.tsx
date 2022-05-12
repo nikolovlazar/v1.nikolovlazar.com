@@ -50,10 +50,26 @@ const TData = (props) => (
 );
 
 const CodeHighlight = ({ children: codeString, className: language }: any) => {
-  language = language.replace('language-', '');
   const theme = useColorModeValue(lightTheme, darkTheme);
-  const lineNumberColor = useColorModeValue('blackAlpha.500', 'whiteAlpha.500');
-  const preBackground = useColorModeValue('gray.50', 'gray.900');
+  if (!language) {
+    return (
+      <chakra.code
+        apply="mdx.code"
+        color="purple.500"
+        _dark={{
+          color: 'purple.200',
+          bg: 'purple.900',
+        }}
+        bg="purple.50"
+        px={1}
+        py={0.5}
+        rounded={{ base: 'none', md: 'md' }}
+      >
+        {codeString}
+      </chakra.code>
+    );
+  }
+  language = language.replace('language-', '');
   const showLineNumbers = !['shell', 'text'].includes(language);
 
   return (
@@ -69,7 +85,10 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
           <div data-language={className}>
             <chakra.pre
               className={className}
-              sx={{ ...style, backgroundColor: preBackground }}
+              sx={{ ...style, backgroundColor: 'gray.50' }}
+              _dark={{
+                backgroundColor: 'gray.900',
+              }}
               overflowX="auto"
               rounded="md"
               p={4}
@@ -85,8 +104,11 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
                         display="table-cell"
                         textAlign="right"
                         userSelect="none"
-                        color={lineNumberColor}
+                        color="blackAlpha.500"
                         pr={3}
+                        _dark={{
+                          color: 'whiteAlpha.500',
+                        }}
                       >
                         {i + 1}
                       </chakra.span>
@@ -110,22 +132,10 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
   );
 };
 
-const InlineCode = (props: any) => (
-  <chakra.code
-    apply="mdx.code"
-    color={useColorModeValue('purple.500', 'purple.200')}
-    bg={useColorModeValue('purple.50', 'purple.900')}
-    px={1}
-    py={0.5}
-    rounded={{ base: 'none', md: 'md' }}
-    {...props}
-  />
-);
-
 const LinkedHeading = (props: HTMLChakraProps<'h2'>) => {
   const slug = slugify(props.children as string, { lower: true });
   return (
-    <Link href={`#${slug}`} role="group">
+    <Link alignItems="flex-end" display="flex" href={`#${slug}`} role="group">
       <Box
         {...props}
         d="inline"
@@ -169,7 +179,6 @@ const Anchor = (props) => {
 
 const MDXComponents = {
   code: CodeHighlight,
-  inlineCode: InlineCode,
   h1: (props) => <LinkedHeading as="h1" apply="mdx.h1" {...props} />,
   h2: (props) => <LinkedHeading as="h2" apply="mdx.h2" {...props} />,
   h3: (props) => <LinkedHeading as="h3" apply="mdx.h3" {...props} />,
@@ -179,13 +188,7 @@ const MDXComponents = {
   pre: Pre,
   kbd: Kbd,
   img: Image,
-  br: ({ reset, ...props }) => (
-    <Box
-      as={reset ? 'br' : undefined}
-      h={reset ? undefined : '24px'}
-      {...props}
-    />
-  ),
+  br: (props) => <Box as={'br'} h={undefined} {...props} />,
   table: Table,
   th: THead,
   td: TData,

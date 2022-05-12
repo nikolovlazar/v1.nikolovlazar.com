@@ -38,7 +38,12 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
           </AspectRatio>
           <VStack alignItems="flex-start" flex={1} w="full" p={3} spacing={1}>
             <LinkOverlay w="full" href={link} isExternal>
-              <Heading isTruncated size="xs">
+              <Heading
+                overflow="hidden"
+                whiteSpace="nowrap"
+                textOverflow="ellipsis"
+                size="xs"
+              >
                 {title}
               </Heading>
             </LinkOverlay>

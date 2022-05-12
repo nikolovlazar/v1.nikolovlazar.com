@@ -15,7 +15,7 @@ const StatusIndicator = () => {
 
   if (isMobile) {
     stackStyles = {
-      width: 'max-content',
+      width: 10,
       shadow: 'lg',
       spacing: 3,
     };
@@ -43,10 +43,12 @@ const StatusIndicator = () => {
       borderColor={mode('gray.300', 'gray.600')}
       _hover={{
         width: 'max-content',
+        maxWidth: 'unset',
         shadow: 'lg',
       }}
       role="group"
       rounded="3xl"
+      spacing={0}
       transitionDuration="slow"
       transitionProperty="all"
       transitionTimingFunction="ease-out"
@@ -61,6 +63,8 @@ const StatusIndicator = () => {
             marginLeft: 3,
           },
         }}
+        display="none"
+        overflow="hidden"
         w={0}
         maxW="full"
         opacity={0}
@@ -68,8 +72,10 @@ const StatusIndicator = () => {
           opacity: 1,
           width: 'max-content',
           marginLeft: 3,
+          display: 'initial',
         }}
-        isTruncated
+        whiteSpace="nowrap"
+        textOverflow="ellipsis"
         transitionDuration="slow"
         transitionProperty="opacity"
         transitionTimingFunction="ease-out"
