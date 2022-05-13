@@ -1,40 +1,38 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState } from 'react';
 import {
   chakra,
   VStack,
   InputGroup,
   Input,
   InputRightElement,
-  useColorModeValue,
   Heading,
   Text,
   Icon,
   IconButton,
-} from "@chakra-ui/react";
-import { HiOutlineMail } from "react-icons/hi";
-import useSWR from "swr";
+} from '@chakra-ui/react';
+import { HiOutlineMail } from 'react-icons/hi';
+import useSWR from 'swr';
 
-import fetcher from "@/utils/fetcher";
-import { Subscribers } from "@/types/subscribers";
-import { Form, FormState } from "@/types/form-state";
+import fetcher from '@/utils/fetcher';
+import { Subscribers } from '@/types/subscribers';
+import { Form, FormState } from '@/types/form-state';
 
 const NewsletterForm = () => {
   const [form, setForm] = useState<FormState>({ state: Form.Initial });
-  const { data } = useSWR<Subscribers>("/api/newsletter/subscribers", fetcher);
-  const detailColor = useColorModeValue("gray.500", "gray.400");
+  const { data } = useSWR<Subscribers>('/api/newsletter/subscribers', fetcher);
 
   const subscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setForm({ state: Form.Loading });
 
-    const res = await fetch("/api/newsletter/subscribe", {
+    const res = await fetch('/api/newsletter/subscribe', {
       body: JSON.stringify({
-        email: e.currentTarget.elements["email"].value,
+        email: e.currentTarget.elements['email'].value,
       }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      method: "POST",
+      method: 'POST',
     });
 
     const { error, message } = await res.json();
@@ -57,7 +55,10 @@ const NewsletterForm = () => {
       alignItems="flex-start"
       w="full"
       p={{ base: 4, md: 6 }}
-      bg={useColorModeValue("gray.50", "gray.700")}
+      bg="gray.50"
+      _dark={{
+        bg: 'gray.700',
+      }}
       rounded="md"
       spacing={3}
     >
@@ -94,7 +95,7 @@ const NewsletterForm = () => {
               </InputRightElement>
             </InputGroup>
           </chakra.form>
-          <Text color={detailColor} fontSize="sm">
+          <Text color="gray.500" fontSize="sm" _dark={{ color: 'gray.400' }}>
             Join {data?.count}+ subscribers
           </Text>
         </>

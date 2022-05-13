@@ -30,7 +30,10 @@ const Table = (props) => (
 
 const THead = (props) => (
   <chakra.th
-    bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
+    bg="gray.50"
+    _dark={{
+      bg: 'whiteAlpha.100',
+    }}
     fontWeight="semibold"
     p={2}
     fontSize="sm"
@@ -138,9 +141,12 @@ const LinkedHeading = (props: HTMLChakraProps<'h2'>) => {
     <Link alignItems="flex-end" display="flex" href={`#${slug}`} role="group">
       <Box
         {...props}
-        d="inline"
-        color={useColorModeValue('gray.700', 'white')}
+        display="inline"
+        color="gray.700"
         fontFamily="heading"
+        _dark={{
+          color: 'white',
+        }}
       >
         {props.children}
       </Box>

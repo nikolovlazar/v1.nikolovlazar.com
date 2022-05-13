@@ -3,7 +3,6 @@ import {
   Icon,
   ListItem,
   Text,
-  useColorModeValue,
   useMenuDescendant,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
@@ -22,7 +21,6 @@ type Props = {
 };
 
 const CommandItem = ({ icon, title, onClick, href }: Props) => {
-  const hoverBg = useColorModeValue('blackAlpha.50', 'whiteAlpha.50');
   const { focusedIndex, close } = useContext(CmdPaletteContext);
   const ref = useRef<HTMLLIElement>();
   const router = useRouter();
@@ -62,8 +60,14 @@ const CommandItem = ({ icon, title, onClick, href }: Props) => {
       ref={ref}
       px={3}
       py={3}
-      bg={isFocused ? hoverBg : 'transparent'}
-      _hover={{ bg: hoverBg }}
+      bg={isFocused ? 'blackAlpha.50' : 'transparent'}
+      _hover={{ bg: 'blackAlpha.50' }}
+      _dark={{
+        bg: isFocused ? 'whiteAlpha.50' : 'transparent',
+        _hover: {
+          bg: 'whiteAlpha.50',
+        },
+      }}
       cursor="pointer"
       onClick={activateItem}
       rounded="md"

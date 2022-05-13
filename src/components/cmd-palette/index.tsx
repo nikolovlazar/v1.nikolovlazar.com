@@ -10,7 +10,6 @@ import {
   StackProps,
   Text,
   useColorMode,
-  useColorModeValue,
   useMenu,
   VStack,
 } from '@chakra-ui/react';
@@ -100,9 +99,6 @@ const CmdPalette = () => {
   const { descendants } = useMenu();
   const { colorMode, toggleColorMode } = useColorMode();
 
-  const backdropColor = useColorModeValue('whiteAlpha.800', 'blackAlpha.800');
-  const paletteBackgroundColor = useColorModeValue('white', 'gray.900');
-
   const hidePalette = useCallback(() => {
     close();
     setFocusedIndex(0);
@@ -149,7 +145,10 @@ const CmdPalette = () => {
             exit="exit"
             position="fixed"
             inset={0}
-            bg={backdropColor}
+            bg="whiteAlpha.800"
+            _dark={{
+              bg: 'blackAlpha.800',
+            }}
             zIndex="tooltip"
             alignItems="flex-start"
             justifyContent="center"
@@ -162,7 +161,10 @@ const CmdPalette = () => {
               mt={{ base: 12, md: 24 }}
               mx={2}
               onClick={(e) => e.stopPropagation()}
-              bg={paletteBackgroundColor}
+              bg="white"
+              _dark={{
+                bg: 'gray.900',
+              }}
               shadow="2xl"
               maxW="3xl"
               maxH={{ base: '40vh', md: 'md' }}

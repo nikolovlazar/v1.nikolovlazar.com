@@ -4,7 +4,6 @@ import {
   IconButton,
   Link,
   Tooltip,
-  useColorModeValue,
   Container,
 } from '@chakra-ui/react';
 import NextLink from 'next/link';
@@ -34,7 +33,10 @@ const Header = () => {
       w="full"
       mb={16}
       py={3}
-      bg={useColorModeValue('white', 'gray.800')}
+      bg="white"
+      _dark={{
+        bg: 'gray.800',
+      }}
       insetX={0}
       transitionDuration="normal"
       transitionProperty="background"

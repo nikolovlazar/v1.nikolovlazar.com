@@ -96,7 +96,7 @@ const CourseCard = ({
                     </Text>
                     <Icon
                       as={FiArrowUpRight}
-                      d="inline"
+                      display="inline"
                       color={mode('gray.700', 'white')}
                     />
                   </HStack>

@@ -1,25 +1,24 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useState } from 'react';
 import {
   chakra,
   VStack,
   InputGroup,
   Input,
   InputRightElement,
-  useColorModeValue,
   Heading,
   Text,
   Icon,
   IconButton,
-} from "@chakra-ui/react";
-import { HiOutlineMail } from "react-icons/hi";
-import useSWR from "swr";
+} from '@chakra-ui/react';
+import { HiOutlineMail } from 'react-icons/hi';
+import useSWR from 'swr';
 
-import fetcher from "@/utils/fetcher";
-import { Subscribers } from "@/types/subscribers";
-import { Form, FormState } from "@/types/form-state";
-import { Course } from "@/types/course";
-import Link from "../link";
-import { TWITTER_PROFILE } from "src/constants";
+import fetcher from '@/utils/fetcher';
+import { Subscribers } from '@/types/subscribers';
+import { Form, FormState } from '@/types/form-state';
+import { Course } from '@/types/course';
+import Link from '../link';
+import { TWITTER_PROFILE } from 'src/constants';
 
 type Props = {
   course: Course;
@@ -31,7 +30,6 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
     `/api/courses/subscribers/${formId}`,
     fetcher
   );
-  const detailColor = useColorModeValue("gray.500", "gray.400");
 
   const subscribe = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,12 +37,12 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
 
     const res = await fetch(`/api/courses/subscribe/${formId}`, {
       body: JSON.stringify({
-        email: e.currentTarget.elements["email"].value,
+        email: e.currentTarget.elements['email'].value,
       }),
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
-      method: "POST",
+      method: 'POST',
     });
 
     const { error, message } = await res.json();
@@ -67,7 +65,10 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
       alignItems="flex-start"
       w="full"
       p={{ base: 4, md: 6 }}
-      bg={useColorModeValue("gray.50", "gray.700")}
+      bg="gray.50"
+      _dark={{
+        bg: 'gray.700',
+      }}
       rounded="md"
       spacing={3}
     >
@@ -105,7 +106,7 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
               </InputRightElement>
             </InputGroup>
           </chakra.form>
-          <Text color={detailColor} fontSize="sm">
+          <Text color="gray.500" fontSize="sm" _dark={{ color: 'gray.400' }}>
             Join {data?.count}+ subscribers
           </Text>
         </>
@@ -117,10 +118,10 @@ const CourseForm = ({ course: { formId, title } }: Props) => {
       )}
       {form.state === Form.Error && (
         <Text color="red.500" size="sm">
-          {form.message} 😕 Reach out to me on{" "}
+          {form.message} 😕 Reach out to me on{' '}
           <Link href={TWITTER_PROFILE} isExternal>
             Twitter
-          </Link>{" "}
+          </Link>{' '}
           about this.
         </Text>
       )}

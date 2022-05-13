@@ -1,17 +1,15 @@
-import Link from "next/link";
+import Link from 'next/link';
 import {
   LinkBox,
   LinkOverlay,
   Heading,
   Text,
   VStack,
-  Stack,
-  useColorModeValue,
   HStack,
-} from "@chakra-ui/react";
-import { format } from "timeago.js";
+} from '@chakra-ui/react';
+import { format } from 'timeago.js';
 
-import { BlogPost } from "@/types/blog-post";
+import { BlogPost } from '@/types/blog-post';
 
 const BlogPostCard = ({
   title,
@@ -20,8 +18,6 @@ const BlogPostCard = ({
   date,
   readingTime,
 }: BlogPost) => {
-  const hoverBg = useColorModeValue("gray.100", "gray.700");
-
   return (
     <LinkBox as="article">
       <VStack
@@ -29,8 +25,13 @@ const BlogPostCard = ({
         w="full"
         p={{ base: 0, md: 4 }}
         _hover={{
-          bg: hoverBg,
-          transform: "scale(1.025, 1.025)",
+          bg: 'gray.100',
+          transform: 'scale(1.025, 1.025)',
+        }}
+        _dark={{
+          _hover: {
+            bg: 'gray.700',
+          },
         }}
         rounded="md"
         transitionDuration="slow"

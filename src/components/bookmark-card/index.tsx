@@ -21,8 +21,11 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
           alignItems="center"
           justifyContent={{ base: 'center', md: 'flex-start' }}
           overflow="hidden"
-          bg={useColorModeValue('gray.50', 'whiteAlpha.100')}
+          bg="gray.50"
           _hover={{ transform: 'scale(1.05, 1.05)' }}
+          _dark={{
+            bg: 'whiteAlpha.100',
+          }}
           rounded="md"
           spacing={0}
           transitionDuration="slow"
@@ -38,12 +41,7 @@ const BookmarkCard = ({ cover, title, link, tags }: Partial<Bookmark>) => {
           </AspectRatio>
           <VStack alignItems="flex-start" flex={1} w="full" p={3} spacing={1}>
             <LinkOverlay w="full" href={link} isExternal>
-              <Heading
-                overflow="hidden"
-                whiteSpace="nowrap"
-                textOverflow="ellipsis"
-                size="xs"
-              >
+              <Heading noOfLines={1} size="xs">
                 {title}
               </Heading>
             </LinkOverlay>
