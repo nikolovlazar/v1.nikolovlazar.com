@@ -1,7 +1,7 @@
-import { Heading, SimpleGrid, GridItem, VStack } from "@chakra-ui/react";
+import { Heading, SimpleGrid, GridItem, VStack } from '@chakra-ui/react';
 
-import { Video } from "@/types/video";
-import VideoCard from "../video-card";
+import { Video } from '@/types/video';
+import VideoCard from '../video-card';
 
 type Props = {
   videos: Video[];

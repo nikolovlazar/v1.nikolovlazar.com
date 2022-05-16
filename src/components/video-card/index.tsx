@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 import {
   VStack,
   AspectRatio,
@@ -9,12 +9,12 @@ import {
   LinkOverlay,
   Flex,
   Icon,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 
-import { Video } from "@/types/video";
-import Image from "../image";
-import { HiPlay } from "react-icons/hi";
-import Link from "../link";
+import { Video } from '@/types/video';
+import Image from '../image';
+import { HiPlay } from 'react-icons/hi';
+import Link from '../link';
 
 type Props = Video;
 
@@ -22,9 +22,9 @@ const VideoCard = ({ title, description, url }: Props) => {
   const [videoId, setVideoId] = useState<string>();
 
   useEffect(() => {
-    const queryParams = url.split("?")[1];
+    const queryParams = url.split('?')[1];
     const params = new URLSearchParams(queryParams);
-    setVideoId(params.get("v"));
+    setVideoId(params.get('v'));
   }, [url]);
 
   if (!videoId) return <Spinner />;
@@ -47,7 +47,7 @@ const VideoCard = ({ title, description, url }: Props) => {
                 align="center"
                 justify="center"
                 bg="transparent"
-                _groupHover={{ bg: "blackAlpha.500" }}
+                _groupHover={{ bg: 'blackAlpha.500' }}
                 inset={0}
                 transitionDuration="slow"
                 transitionProperty="background"
@@ -77,7 +77,7 @@ const VideoCard = ({ title, description, url }: Props) => {
         </AspectRatio>
         <VStack alignItems="flex-start" spacing={2}>
           <Link href={url} isExternal>
-            <Heading size="sm">{title}</Heading>
+            <Heading size="md">{title}</Heading>
           </Link>
           <Text color="gray.500" fontSize="sm">
             {description}
