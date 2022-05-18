@@ -11,8 +11,8 @@ const courses: Course[] = [
    */
   {
     id: 'the-beginners-guide-to-nextjs',
-    title: 'Intro to Next.js API and Features',
-    url: 'https://egghead.io/courses/intro-to-next-js-api-and-features-a6a7509f',
+    title: 'Fundamental Next.js API and Patterns',
+    url: 'https://egghead.io/courses/fundamental-next-js-api-and-patterns-a6a7509f',
     description:
       "In this course, you will learn about Next.js's features, like data fetching, page rendering, dynamic routes, API routes, and how to deploy your Next.js project on Vercel.",
     live: true,
