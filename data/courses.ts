@@ -11,8 +11,8 @@ const courses: Course[] = [
    */
   {
     id: 'the-beginners-guide-to-nextjs',
-    title: 'Intro to Next.js API and Features',
-    url: 'https://egghead.io/courses/intro-to-next-js-api-and-features-a6a7509f',
+    title: 'Fundamental Next.js API and Patterns',
+    url: 'https://egghead.io/courses/fundamental-next-js-api-and-patterns-a6a7509f',
     description:
       'This course goes beyond just getting started, and will teach you everything you need to know about the fundamentals of Next.js. Next.js gives you the full power of React while also filling in the gaps in one package. It’s optimized and gives you a first class page building experience and just enough structure to keep you productive.',
     live: true,
