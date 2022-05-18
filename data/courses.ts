@@ -11,14 +11,12 @@ const courses: Course[] = [
    */
   {
     id: 'the-beginners-guide-to-nextjs',
-    title: "The Beginner's Guide to Next.js ▲",
-    url: '',
+    title: 'Intro to Next.js API and Features',
+    url: 'https://egghead.io/courses/intro-to-next-js-api-and-features-a6a7509f',
     description:
       "In this course, you will learn about Next.js's features, like data fetching, page rendering, dynamic routes, API routes, and how to deploy your Next.js project on Vercel.",
-    live: false,
-    progress: 90,
-    expectedLaunch: 'May 2022',
-    formId: '2820925',
+    live: true,
+    image: '/assets/images/nextjs-course.png',
   },
   {
     id: 'build-modern-user-interface-with-chakra-ui',
