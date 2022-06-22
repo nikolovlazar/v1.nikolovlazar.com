@@ -25,7 +25,6 @@ import LikeButton from '@/components/like-button';
 import usePostLikes from 'src/hooks/use-post-likes';
 import imageMetadata from '@/utils/plugins/image-metadata';
 import ScrollToTopButton from '@/components/scroll-to-top-button';
-import NewsletterForm from '@/components/newsletter-form';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
@@ -67,7 +66,7 @@ const BlogPostPage = ({
           images: [
             {
               url: `https://res.cloudinary.com/nikolovlazar/image/upload/${encodeURIComponent(
-                `g_north_west,l_text:calsans-semibold.ttf_72:Lazar%20Nikolov,g_north_west,x_20,y_20,co_#EDF2F7,x_330,y_208,x_330,y_208/c_fit,g_north_west,l_c_fit,g_north_west,l_text:calsans-semibold.ttf_48:${title},g_north_west,x_20,y_20,co_#718096,w_771,x_330,y_306,w_771,x_330,y_306`
+                `g_north_west,l_text:calsans-semibold.ttf_72:Lazar%20Nikolov,g_north_west,x_20,y_20,co_#EDF2F7,x_330,y_208,x_330,y_208/c_fit,g_north_west,l_c_fit,g_north_west,l_text:calsans-semibold.ttf_48:${title},g_north_west,x_20,y_20,co_#718096,w_771,x_330,y_306,w_771,x_330,y_306`,
               )}/blog-post-image-template_scisgq.png`,
             },
           ],
@@ -107,7 +106,6 @@ const BlogPostPage = ({
             />
           </HStack>
         )}
-        <NewsletterForm />
       </VStack>
       <ScrollToTopButton />
     </>
