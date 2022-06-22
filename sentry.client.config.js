@@ -17,8 +17,7 @@ Sentry.init({
   denyUrls: ['localhost'],
   ignoreErrors: [
     // ignore hydration issues
-    'does not match server-rendered HTML',
-    'Hydration failed because the initial UI does not match what was rendered on the server',
-    'There was an error while hydrating',
+    'Minified React error #418;',
+    'Minified React error #423;',
   ],
 });
