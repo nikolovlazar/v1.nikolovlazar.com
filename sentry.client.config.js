@@ -15,4 +15,10 @@ Sentry.init({
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so
   // that it will also get attached to your source maps
   denyUrls: ['localhost'],
+  ignoreErrors: [
+    // ignore hydration issues
+    'does not match server-rendered HTML',
+    'Hydration failed because the initial UI does not match what was rendered on the server',
+    'There was an error while hydrating',
+  ],
 });
