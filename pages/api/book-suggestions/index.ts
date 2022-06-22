@@ -1,10 +1,14 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import Airtable from 'airtable';
+import { withSentry, init } from '@sentry/nextjs';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  init({
+    dsn: process.env.SENTRY_DSN,
+    tracesSampleRate: 1.0,
+    denyUrls: ['localhost'],
+  });
+
   if (req.method === 'POST') {
     const booksBase = new Airtable({
       apiKey: process.env.AIRTABLE_API_KEY,
@@ -32,4 +36,6 @@ export default async function handler(
   }
 
   res.status(405).send({});
-}
+};
+
+export default withSentry(handler);

@@ -1,9 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withSentry, init } from '@sentry/nextjs';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  init({
+    dsn: process.env.SENTRY_DSN,
+    tracesSampleRate: 1.0,
+    denyUrls: ['localhost'],
+  });
+
   const { email } = req.body;
 
   if (!email) {
@@ -18,7 +22,7 @@ export default async function handler(
         Authorization: `Token ${process.env.REVUE_API_KEY}`,
         'Content-Type': 'application/json',
       },
-    }
+    },
   );
   const subscribers = await existingSubscribers.json();
 
@@ -45,4 +49,6 @@ export default async function handler(
   return res
     .status(201)
     .json({ error: '', message: 'Thank you for subscribing! 💜' });
-}
+};
+
+export default withSentry(handler);

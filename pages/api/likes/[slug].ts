@@ -1,11 +1,16 @@
-import db from '@/db';
 import { createHash } from 'crypto';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withSentry, init } from '@sentry/nextjs';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+import db from '@/db';
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  init({
+    dsn: process.env.SENTRY_DSN,
+    tracesSampleRate: 1.0,
+    denyUrls: ['localhost'],
+  });
+
   try {
     const slug = req.query.slug.toString();
     const ipAddress =
@@ -81,4 +86,6 @@ export default async function handler(
   } catch (e) {
     return res.status(500).json({ message: e.message });
   }
-}
+};
+
+export default withSentry(handler);

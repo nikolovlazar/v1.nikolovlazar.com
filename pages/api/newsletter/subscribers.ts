@@ -1,9 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { withSentry, init } from '@sentry/nextjs';
 
-export default async function handler(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  init({
+    dsn: process.env.SENTRY_DSN,
+    tracesSampleRate: 1.0,
+    denyUrls: ['localhost'],
+  });
+
   const result = await fetch('https://www.getrevue.co/api/v2/subscribers', {
     method: 'GET',
     headers: {
@@ -18,8 +22,10 @@ export default async function handler(
 
   res.setHeader(
     'Cache-Control',
-    'public, s-maxage=1200, stale-while-revalidate=600'
+    'public, s-maxage=1200, stale-while-revalidate=600',
   );
 
   return res.status(200).json({ count: data.length });
-}
+};
+
+export default withSentry(handler);
