@@ -8,20 +8,6 @@
       "category": "development"
     },
     {
-      "title": "Brave",
-      "description": "Brave is a chromium web browser with built-in privacy settings. Blocks ads and trackers!",
-      "url": "https://brave.com/",
-      "image": "/assets/images/brave.svg",
-      "category": "development"
-    },
-    {
-      "title": "Sizzy",
-      "description": "The browser for developers. It’s a feature rich browser with lots of dev tools.",
-      "url": "https://sizzy.co/",
-      "image": "/assets/images/sizzy.png",
-      "category": "development"
-    },
-    {
       "title": "Warp",
       "description": "A super performant terminal.",
       "url": "https://warp.dev/",
@@ -43,17 +29,17 @@
       "category": "design"
     },
     {
+      "title": "Endel",
+      "description": "A genius app! Endel generates personalized soundscapes that helps you focus, relax, and sleep better. It's also backed by neuroscience!",
+      "url": "https://endel.io/",
+      "image": "/assets/images/endel.png",
+      "category": "productivity"
+    },
+    {
       "title": "Notion",
       "description": "I believe it’s the most popular note taking app right now.",
       "url": "https://notion.so/",
       "image": "/assets/images/notion.svg",
-      "category": "productivity"
-    },
-    {
-      "title": "Obsidian",
-      "description": "Obsidian is your Notion alternative, but with more privacy and no backend.",
-      "url": "https://obsidian.md/",
-      "image": "/assets/images/obsidian.svg",
       "category": "productivity"
     },
     {
