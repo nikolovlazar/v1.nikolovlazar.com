@@ -40,6 +40,16 @@ const moduleExports = {
         destination: 'https://discord.gg/ZFbFqJNawu',
         permanent: true,
       },
+      {
+        source: '/twitch',
+        destination: 'https://twitch.tv/nikolovlazar',
+        permanent: true,
+      },
+      {
+        source: '/twitter',
+        destination: 'https://twitter.com/NikolovLazar',
+        permanent: true,
+      },
     ];
   },
 };
