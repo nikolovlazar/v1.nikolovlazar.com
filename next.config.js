@@ -35,6 +35,11 @@ const moduleExports = {
           'https://codesandbox.io/s/react-slider-example-vn855h?file=/src/slider.tsx',
         permanent: true,
       },
+      {
+        source: '/discord',
+        destination: 'https://discord.gg/ZFbFqJNawu',
+        permanent: true,
+      },
     ];
   },
 };
