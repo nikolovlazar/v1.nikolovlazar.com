@@ -79,10 +79,6 @@ export const searchItems: SearchItemsType = {
       title: 'Books',
       href: '/books',
     },
-    {
-      title: 'Newsletter',
-      href: '/newsletter',
-    },
   ],
   social: [
     {
