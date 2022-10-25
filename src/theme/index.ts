@@ -1,21 +1,26 @@
 import { extendTheme, theme as base, ThemeConfig } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
 
 const config: ThemeConfig = {
   initialColorMode: 'light',
   useSystemColorMode: true,
 };
 
-const purpleRing = (props) => ({
+const purpleRing = {
   _focus: {
-    ringColor: mode('purple.300', 'purple.600')(props),
+    ringColor: 'purple.300',
     ring: 3,
+    _dark: {
+      ringColor: 'purple.600',
+    },
   },
-});
+};
 
-const inputBorder = (props) => ({
+const inputBorder = () => ({
   _focus: {
-    borderColor: mode('purple.300', 'purple.600')(props),
+    borderColor: 'purple.300',
+    _dark: {
+      borderColor: 'purple.600',
+    },
   },
 });
 
@@ -33,40 +38,47 @@ const theme = extendTheme({
   },
   components: {
     Heading: {
-      baseStyle: (props) => ({
-        color: mode('gray.700', 'white')(props),
+      baseStyle: {
+        color: 'gray.700',
         letterSpacing: '1px',
-      }),
+
+        _dark: {
+          color: 'white',
+        },
+      },
     },
     Text: {
-      baseStyle: (props) => ({
-        color: mode('gray.700', 'white')(props),
-      }),
+      baseStyle: {
+        color: 'gray.700',
+        _dark: {
+          color: 'white',
+        },
+      },
     },
     Link: {
-      baseStyle: (props) => ({
-        ...purpleRing(props),
-      }),
+      baseStyle: {
+        ...purpleRing,
+      },
     },
     Button: {
-      baseStyle: (props) => ({
-        ...purpleRing(props),
-      }),
+      baseStyle: {
+        ...purpleRing,
+      },
     },
     Input: {
       variants: {
-        filled: (props) => ({
+        filled: {
           field: {
-            ...inputBorder(props),
+            ...inputBorder,
           },
-        }),
+        },
       },
     },
     Textarea: {
       variants: {
-        filled: (props) => ({
-          ...inputBorder(props),
-        }),
+        filled: {
+          ...inputBorder,
+        },
       },
     },
   },

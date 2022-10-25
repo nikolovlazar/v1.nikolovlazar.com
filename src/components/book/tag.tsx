@@ -1,11 +1,10 @@
-import { Flex, Icon, FlexProps } from "@chakra-ui/react";
-import { ThemeTypings } from "@chakra-ui/styled-system";
-import { IconType } from "react-icons";
-import { HiOutlineHeart, HiCheck } from "react-icons/hi";
-import { BiGlasses } from "react-icons/bi";
-import { FiShoppingBag } from "react-icons/fi";
+import { Flex, Icon, FlexProps, type ThemeTypings } from '@chakra-ui/react';
+import { IconType } from 'react-icons';
+import { HiOutlineHeart, HiCheck } from 'react-icons/hi';
+import { BiGlasses } from 'react-icons/bi';
+import { FiShoppingBag } from 'react-icons/fi';
 
-import { BookState } from "@/types/book";
+import { BookState } from '@/types/book';
 
 type Props = FlexProps & {
   state: BookState;
@@ -13,32 +12,32 @@ type Props = FlexProps & {
 
 const Tag = ({ state, ...flexProps }: Props) => {
   let tagProps: {
-    color?: ThemeTypings["colors"];
+    color?: ThemeTypings['colors'];
     icon?: IconType;
   } = {};
 
   switch (state) {
-    case "Favorite":
+    case 'Favorite':
       tagProps = {
-        color: "red.400",
+        color: 'red.400',
         icon: HiOutlineHeart,
       };
       break;
-    case "Reading":
+    case 'Reading':
       tagProps = {
-        color: "purple.400",
+        color: 'purple.400',
         icon: BiGlasses,
       };
       break;
-    case "Wish":
+    case 'Wish':
       tagProps = {
-        color: "green.400",
+        color: 'green.400',
         icon: FiShoppingBag,
       };
       break;
-    case "Completed":
+    case 'Completed':
       tagProps = {
-        color: "blue.400",
+        color: 'blue.400',
         icon: HiCheck,
       };
       break;
@@ -46,19 +45,19 @@ const Tag = ({ state, ...flexProps }: Props) => {
       break;
   }
 
-  if (state === "") return <></>;
+  if (state === '') return <></>;
 
   return (
     <Flex
-      align="center"
-      justify="center"
+      align='center'
+      justify='center'
       w={5}
       h={5}
       bg={tagProps.color}
-      rounded="full"
+      rounded='full'
       {...flexProps}
     >
-      <Icon as={tagProps.icon} boxSize={3} color="white" />
+      <Icon as={tagProps.icon} boxSize={3} color='white' />
     </Flex>
   );
 };

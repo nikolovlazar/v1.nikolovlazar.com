@@ -67,4 +67,9 @@ const sentryWebpackPluginOptions = {
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 };
 
-module.exports = withSentryConfig(moduleExports, sentryWebpackPluginOptions);
+module.exports = moduleExports; /*
+withSentryConfig(
+  moduleExports,
+  sentryWebpackPluginOptions
+);
+*/

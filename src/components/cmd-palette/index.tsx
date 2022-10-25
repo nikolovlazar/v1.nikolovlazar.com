@@ -140,52 +140,52 @@ const CmdPalette = () => {
           <MotionFlex
             onClick={close}
             variants={backdropVariants}
-            initial="initial"
-            animate="enter"
-            exit="exit"
-            position="fixed"
+            initial='initial'
+            animate='enter'
+            exit='exit'
+            position='fixed'
             inset={0}
-            bg="whiteAlpha.800"
+            bg='whiteAlpha.800'
             _dark={{
               bg: 'blackAlpha.800',
             }}
-            zIndex="tooltip"
-            alignItems="flex-start"
-            justifyContent="center"
+            zIndex='tooltip'
+            alignItems='flex-start'
+            justifyContent='center'
           >
             <MotionVStack
               variants={commandPaletteVariants}
-              initial="initial"
-              animate="enter"
-              exit="exit"
+              initial='initial'
+              animate='enter'
+              exit='exit'
               mt={{ base: 12, md: 24 }}
               mx={2}
               onClick={(e) => e.stopPropagation()}
-              bg="white"
+              bg='white'
               _dark={{
                 bg: 'gray.900',
               }}
-              shadow="2xl"
-              maxW="3xl"
+              shadow='2xl'
+              maxW='3xl'
               maxH={{ base: '40vh', md: 'md' }}
-              overflow="hidden"
-              w="full"
-              rounded="md"
-              borderWidth="1px"
-              borderStyle="solid"
+              overflow='hidden'
+              w='full'
+              rounded='md'
+              borderWidth='1px'
+              borderStyle='solid'
             >
               <Input
                 px={3}
                 py={4}
-                borderBottomWidth="1px"
-                borderBottomStyle="solid"
+                borderBottomWidth='1px'
+                borderBottomStyle='solid'
                 autoFocus
                 onChange={(e) => filterCommands(e.currentTarget.value)}
-                placeholder="Search commands (ex. Change theme)"
-                rounded="none"
-                variant="unstyled"
+                placeholder='Search commands (ex. Change theme)'
+                rounded='none'
+                variant='unstyled'
               />
-              <List overflow="auto" w="full" pb={2} px={2}>
+              <List overflow='auto' w='full' pb={2} px={2}>
                 <MenuDescendantsProvider value={descendants}>
                   {Object.keys(commands).map((section) => (
                     <>
@@ -193,9 +193,9 @@ const CmdPalette = () => {
                         <ListItem key={section}>
                           <Text
                             my={2}
-                            color="gray.500"
-                            fontSize="xs"
-                            textTransform="capitalize"
+                            color='gray.500'
+                            fontSize='xs'
+                            textTransform='capitalize'
                           >
                             {section}
                           </Text>
