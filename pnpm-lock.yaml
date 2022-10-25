@@ -14,6 +14,7 @@ specifiers:
   '@types/react-dom': ^18.0.6
   '@types/unist': ^2.0.6
   '@typescript-eslint/parser': ^5.23.0
+  '@vercel/analytics': ^0.1.1
   airtable: ^0.11.1
   cal-sans: ^1.0.1
   eslint: 8.15.0
@@ -50,6 +51,7 @@ dependencies:
   '@prisma/client': 3.1.1_prisma@3.1.1
   '@sentry/nextjs': 7.16.0_next@13.0.0+react@18.2.0
   '@types/unist': 2.0.6
+  '@vercel/analytics': 0.1.1_react@18.2.0
   airtable: 0.11.5
   cal-sans: 1.0.1
   framer-motion: 6.5.1_biqbaboplfbrettd7655fr4n2y
@@ -2354,6 +2356,14 @@ packages:
       '@typescript-eslint/types': 5.41.0
       eslint-visitor-keys: 3.3.0
     dev: true
+
+  /@vercel/analytics/0.1.1_react@18.2.0:
+    resolution: {integrity: sha512-34on7YtVt/yT8+QX7c5K2bcKYXnax06sQiK2PUdlQ1ABg5699mPdLGOSpS1gF//kR1s9oig4MCJ+N9nOjpaS6g==}
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@xobotyi/scrollbar-width/1.9.5:
     resolution: {integrity: sha512-N8tkAACJx2ww8vFMneJmaAgmjAG1tnVBZJRLRcx061tmsLRZHSEZSLuGWnwPtunsSLvSqXQ2wfp7Mgqg1I+2dQ==}
