@@ -19,10 +19,10 @@ const BlogPostCard = ({
   readingTime,
 }: BlogPost) => {
   return (
-    <LinkBox as="article">
+    <LinkBox as='article'>
       <VStack
-        alignItems="stretch"
-        w="full"
+        alignItems='stretch'
+        w='full'
         p={{ base: 0, md: 4 }}
         _hover={{
           bg: 'gray.100',
@@ -33,33 +33,33 @@ const BlogPostCard = ({
             bg: 'gray.700',
           },
         }}
-        rounded="md"
-        transitionDuration="slow"
-        transitionProperty="all"
-        transitionTimingFunction="ease-out"
+        rounded='md'
+        transitionDuration='slow'
+        transitionProperty='all'
+        transitionTimingFunction='ease-out'
       >
-        <VStack alignItems="flex-start">
-          <Link href={`/blog/${slug}`} passHref>
+        <VStack alignItems='flex-start'>
+          <Link href={`/blog/${slug}`} legacyBehavior passHref>
             <LinkOverlay>
-              <Heading size="md">{title}</Heading>
+              <Heading size='md'>{title}</Heading>
             </LinkOverlay>
           </Link>
           <HStack
             divider={
-              <Text mx={2} color="gray.500">
+              <Text mx={2} color='gray.500'>
                 •
               </Text>
             }
           >
-            <Text color="gray.500" fontSize="sm">
+            <Text color='gray.500' fontSize='sm'>
               {format(date)}
             </Text>
-            <Text color="gray.500" fontSize="sm">
+            <Text color='gray.500' fontSize='sm'>
               {readingTime}
             </Text>
           </HStack>
         </VStack>
-        <Text color="gray.500" fontSize="sm">
+        <Text color='gray.500' fontSize='sm'>
           {description}
         </Text>
       </VStack>
