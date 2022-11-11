@@ -66,31 +66,37 @@ const BlogPostPage = ({
           images: [
             {
               url: `https://res.cloudinary.com/nikolovlazar/image/upload/${encodeURIComponent(
-                `g_north_west,l_text:calsans-semibold.ttf_72:Lazar%20Nikolov,g_north_west,x_20,y_20,co_#EDF2F7,x_330,y_208,x_330,y_208/c_fit,g_north_west,l_c_fit,g_north_west,l_text:calsans-semibold.ttf_48:${title},g_north_west,x_20,y_20,co_#718096,w_771,x_330,y_306,w_771,x_330,y_306`,
+                `g_north_west,l_text:calsans-semibold.ttf_72:Lazar%20Nikolov,g_north_west,x_20,y_20,co_#EDF2F7,x_330,y_208,x_330,y_208/c_fit,g_north_west,l_c_fit,g_north_west,l_text:calsans-semibold.ttf_48:${title},g_north_west,x_20,y_20,co_#718096,w_771,x_330,y_306,w_771,x_330,y_306`
               )}/blog-post-image-template_scisgq.png`,
             },
           ],
         }}
       />
-      <VStack position="relative" alignItems="stretch" w="full" spacing={8}>
-        <VStack alignItems="flex-start" spacing={3}>
-          <Heading as="h1" size="lg">
+      <VStack position='relative' alignItems='stretch' w='full' spacing={8}>
+        <VStack alignItems='flex-start' spacing={3}>
+          <Heading as='h1' size='lg'>
             {title}
           </Heading>
           <HStack
             divider={
-              <Text mx={2} color="gray.500">
+              <Text mx={2} color='gray.500'>
                 •
               </Text>
             }
           >
-            <Text color="gray.500" fontSize="sm">
+            <Text color='gray.500' fontSize='sm'>
               {format(date)}
             </Text>
-            <Text color="gray.500" fontSize="sm">
-              {views ?? <Spinner color="gray.500" size="xs" />} views
-            </Text>
-            <Text color="gray.500" fontSize="sm">
+            <HStack>
+              {!views && <Spinner color='gray.500' size='xs' />}
+              {views && (
+                <Text color='gray.500' fontSize='sm'>
+                  {views} views
+                </Text>
+              )}
+            </HStack>
+
+            <Text color='gray.500' fontSize='sm'>
               {readingTime}
             </Text>
           </HStack>
@@ -98,7 +104,7 @@ const BlogPostPage = ({
         <MDXRemote {...source} components={MDXComponents} />
         <Divider />
         {!isLoading && (
-          <HStack alignItems="center" justifyContent="center">
+          <HStack alignItems='center' justifyContent='center'>
             <LikeButton
               onLike={incrementLikes}
               likes={likes}

@@ -18,6 +18,7 @@ const moduleExports = {
     domains: [
       'img.youtube.com',
       'dl.airtable.com',
+      'v5.airtableusercontent.com',
       'hn.nikolovlazar.com',
       'opengraph.githubassets.com',
     ],
@@ -67,7 +68,4 @@ const sentryWebpackPluginOptions = {
   // https://github.com/getsentry/sentry-webpack-plugin#options.
 };
 
-module.exports = withSentryConfig(
-  moduleExports,
-  sentryWebpackPluginOptions
-);
+module.exports = withSentryConfig(moduleExports, sentryWebpackPluginOptions);

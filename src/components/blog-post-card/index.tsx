@@ -39,11 +39,11 @@ const BlogPostCard = ({
         transitionTimingFunction='ease-out'
       >
         <VStack alignItems='flex-start'>
-          <Link href={`/blog/${slug}`} legacyBehavior passHref>
-            <LinkOverlay>
-              <Heading size='md'>{title}</Heading>
+          <Heading size='md'>
+            <LinkOverlay as={Link} href={`/blog/${slug}`}>
+              {title}
             </LinkOverlay>
-          </Link>
+          </Heading>
           <HStack
             divider={
               <Text mx={2} color='gray.500'>

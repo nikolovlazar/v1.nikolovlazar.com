@@ -12,6 +12,7 @@ import slugify from 'slugify';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import darkTheme from 'prism-react-renderer/themes/nightOwl';
 import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
+import { useId } from 'react';
 
 const ChakraHighlight = chakra(Highlight, {
   shouldForwardProp: (prop) =>
@@ -52,6 +53,7 @@ const TData = (props) => (
 
 const CodeHighlight = ({ children: codeString, className: language }: any) => {
   const theme = useColorModeValue(lightTheme, darkTheme);
+  const codeId = useId();
   if (!language) {
     return (
       <chakra.code
@@ -98,9 +100,14 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
               {tokens.map((line, i) => {
                 const lineProps = getLineProps({ line, key: i });
                 return (
-                  <chakra.div {...lineProps} display='table-row' key={i}>
+                  <chakra.div
+                    {...lineProps}
+                    display='table-row'
+                    key={`${codeId}.${i}`}
+                  >
                     {showLineNumbers && (
                       <chakra.span
+                        key={`${codeId}.${i}.number`}
                         w={8}
                         display='table-cell'
                         textAlign='right'
@@ -118,7 +125,7 @@ const CodeHighlight = ({ children: codeString, className: language }: any) => {
                       return (
                         <chakra.span
                           {...getTokenProps({ token, key })}
-                          key={`${i}.${key}`}
+                          key={`${codeId}.${i}.${key}`}
                         />
                       );
                     })}
