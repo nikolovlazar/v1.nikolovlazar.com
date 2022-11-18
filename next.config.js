@@ -38,7 +38,7 @@ const moduleExports = {
       },
       {
         source: '/discord',
-        destination: 'https://discord.gg/ZFbFqJNawu',
+        destination: 'https://discord.gg/qCPwSQdtPu',
         permanent: true,
       },
       {
