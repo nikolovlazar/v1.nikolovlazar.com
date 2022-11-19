@@ -5,3 +5,4 @@ export const YOUTUBE_CHANNEL =
 export const POLYWORK_PROFILE = 'https://polywork.com/nikolovlazar';
 export const TWITCH_CHANNEL = 'https://twitch.tv/nikolovlazar';
 export const PLAUSIBLE_LINK = 'https://plausible.io/nikolovlazar.com';
+export const MASTODON_PROFILE = 'https://fosstodon.org/@nikolovlazar';
