@@ -9,6 +9,7 @@ import {
   POLYWORK_PROFILE,
   TWITCH_CHANNEL,
   PLAUSIBLE_LINK,
+  MASTODON_PROFILE,
 } from '../../constants';
 import { Link as LinkType } from '@/types/link';
 import VercelCallout from '../vercel-callout';
@@ -116,6 +117,16 @@ const Footer = () => {
               {label}
             </Link>
           ))}
+          <Link
+            as={NextLink}
+            color='gray.500'
+            href={MASTODON_PROFILE}
+            rel='me'
+            isExternal
+            target='_blank'
+          >
+            Mastodon
+          </Link>
         </VStack>
         <VStack alignItems='flex-start'>
           {thirdGroup.map(({ href, label }) => (
