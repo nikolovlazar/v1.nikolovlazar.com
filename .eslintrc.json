@@ -1,8 +1,5 @@
 {
   "extends": "next/core-web-vitals",
   "parser": "@typescript-eslint/parser",
-  "plugins": ["chakra-ui"],
-  "rules": {
-    "chakra-ui/props-order": "error"
-  }
+  "plugins": ["chakra-ui"]
 }
