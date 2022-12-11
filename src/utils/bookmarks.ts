@@ -21,7 +21,7 @@ export const fetchBookmarks = async (page: number = 0) => {
       link,
       title,
       cover,
-      tags,
+      tags
     })
   ));
 
