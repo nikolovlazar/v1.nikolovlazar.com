@@ -54,10 +54,6 @@ const secondGroup = [
     href: POLYWORK_PROFILE,
     label: 'Polywork',
   },
-  {
-    href: TWITCH_CHANNEL,
-    label: 'Twitch',
-  },
 ];
 
 const thirdGroup = [

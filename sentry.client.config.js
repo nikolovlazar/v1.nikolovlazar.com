@@ -16,6 +16,12 @@ Sentry.init({
   // `release` value here - use the environment variable `SENTRY_RELEASE`, so
   // that it will also get attached to your source maps
   denyUrls: ['localhost'],
+  ignoreErrors: [
+    // ignore hydration issues
+    'Minified React error #418;',
+    'Minified React error #423;',
+    'Minified React error #425;',
+  ],
   integrations: [
     new Replay({
       // Capture 10% of all sessions
