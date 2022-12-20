@@ -1,18 +1,10 @@
 import { IconType } from 'react-icons/lib';
-import {
-  SiTwitter,
-  SiGithub,
-  SiYoutube,
-  SiPolywork,
-  SiTwitch,
-} from 'react-icons/si';
+import { SiTwitter, SiGithub, SiYoutube, SiPolywork } from 'react-icons/si';
 import { IoMoon } from 'react-icons/io5';
 
 import {
   GITHUB_PROFILE,
-  PLAUSIBLE_LINK,
   POLYWORK_PROFILE,
-  TWITCH_CHANNEL,
   TWITTER_PROFILE,
   YOUTUBE_CHANNEL,
 } from 'src/constants';
@@ -60,10 +52,6 @@ export const searchItems: SearchItemsType = {
       href: '/talks',
     },
     {
-      title: 'Analytics',
-      href: PLAUSIBLE_LINK,
-    },
-    {
       title: 'Uses',
       href: '/uses',
     },
@@ -100,11 +88,6 @@ export const searchItems: SearchItemsType = {
       title: 'Polywork',
       icon: SiPolywork,
       href: POLYWORK_PROFILE,
-    },
-    {
-      title: 'Twitch',
-      icon: SiTwitch,
-      href: TWITCH_CHANNEL,
     },
   ],
   theme: [

@@ -7,8 +7,6 @@ import {
   GITHUB_PROFILE,
   YOUTUBE_CHANNEL,
   POLYWORK_PROFILE,
-  TWITCH_CHANNEL,
-  PLAUSIBLE_LINK,
   MASTODON_PROFILE,
 } from '../../constants';
 import { Link as LinkType } from '@/types/link';
@@ -30,10 +28,6 @@ const firstGroup: LinkType[] = [
   {
     href: '/talks',
     label: 'Talks',
-  },
-  {
-    href: PLAUSIBLE_LINK,
-    label: 'Analytics',
   },
 ];
 
