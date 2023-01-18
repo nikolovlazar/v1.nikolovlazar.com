@@ -24,8 +24,8 @@ const IndexPage = ({ videos, posts }: Props) => {
       </Head>
       <Hero />
       <CoursesSection courses={courses} />
-      <BlogpostsSection posts={posts} />
-      <VideosSection videos={videos} />
+      {/* <BlogpostsSection posts={posts} />
+      <VideosSection videos={videos} /> */}
     </>
   );
 };
