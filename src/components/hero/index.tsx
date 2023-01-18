@@ -63,12 +63,10 @@ const Hero = () => {
         <Text as='h2' lineHeight='175%'>
           I’m a full-stack engineer, a designer, and a content creator. I work
           at <ExternalLink href='https://sentry.io'>Sentry.io</ExternalLink> as
-          a <strong>Developer Advocate</strong>, and I’m a{' '}
-          <strong>core member</strong> at{' '}
-          <ExternalLink href='https://chakra-ui.com'>Chakra UI</ExternalLink>.
-          I’m also an{' '}
+          a <strong>Developer Advocate</strong>, and I’m an{' '}
           <ExternalLink href='https://egghead.io'>egghead.io</ExternalLink>{' '}
-          <strong>instructor</strong>.
+          <strong>instructor</strong>. I do regular live streams on my{' '}
+          <ExternalLink href={YOUTUBE_CHANNEL}>YouTube channel</ExternalLink>
         </Text>
         <Stack direction={{ base: 'column', md: 'row' }} spacing={3}>
           {socialLinks.map(({ href, label, color }) => (
