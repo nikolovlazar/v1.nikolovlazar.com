@@ -1,24 +1,14 @@
 {
   "talks": [
     {
-      "title": "Frontend.horse: Building Layouts Fast with Chakra UI",
-      "description": "In this episode, we'll learn how to use Chakra UI to build pages with robust and customizable components!",
-      "url": "https://www.youtube.com/watch?v=fiqdtIQzIVo"
+      "title": "Android Worldwide: Mobile Application Monitoring 101",
+      "description": "An intro to Mobile Application Monitoring and all of its aspects, and how you can use Sentry to monitor your mobile apps.",
+      "url": "https://www.youtube.com/watch?v=tbK_rZ90FFw"
     },
     {
-      "title": "React Finland - Vodcast 5 - Design tools",
-      "description": "In the fifth React Finland Vodcast, we'll cover design tools with Laura Järvinen, Margarita Roi, and Lazar Nikolov.",
-      "url": "https://www.youtube.com/watch?v=AuwpOsrzHC8"
-    },
-    {
-      "title": "Redwood.js Launch Week: Partner Office Hours",
-      "description": "Esther and I gave a demo of the Chakra UI + Redwood.js integration at Redwood's Launch Week: Partner Office Hours event.",
-      "url": "https://www.youtube.com/watch?v=YIZvEFAl454&t=2665s"
-    },
-    {
-      "title": "Intro to building UI Machines with Zag.js (Macedonian)",
-      "description": "I gave a talk on building UI Machines with Zag.js at the BeerJS meetup in Skopje. The talk is in Macedonian.",
-      "url": "https://www.youtube.com/watch?v=WZerO8ztIvY"
+      "title": "GitHub Open Source Friday: Build Your Own Design System with Chakra UI",
+      "description": "Watch Lazar Nikolov (DevRel and Core Maintainer at Chakra UI) and Segun Adebayo (creator of Chakra UI) demonstrate how to leverage Chakra UI to build a design system and override components in Chakra UI.",
+      "url": "https://www.youtube.com/watch?v=epJuxo8FKFA"
     },
     {
       "title": "Intro to building UI Machines with Zag.js (English)",
@@ -26,9 +16,24 @@
       "url": "https://www.youtube.com/watch?v=mNOT9SW3Vbs"
     },
     {
-      "title": "GitHub Open Source Friday: Build Your Own Design System with Chakra UI",
-      "description": "Watch Lazar Nikolov (DevRel and Core Maintainer at Chakra UI) and Segun Adebayo (creator of Chakra UI) demonstrate how to leverage Chakra UI to build a design system and override components in Chakra UI.",
-      "url": "https://www.youtube.com/watch?v=epJuxo8FKFA"
+      "title": "Intro to building UI Machines with Zag.js (Macedonian)",
+      "description": "I gave a talk on building UI Machines with Zag.js at the BeerJS meetup in Skopje. The talk is in Macedonian.",
+      "url": "https://www.youtube.com/watch?v=WZerO8ztIvY"
+    },
+    {
+      "title": "Redwood.js Launch Week: Partner Office Hours",
+      "description": "Esther and I gave a demo of the Chakra UI + Redwood.js integration at Redwood's Launch Week: Partner Office Hours event.",
+      "url": "https://www.youtube.com/watch?v=YIZvEFAl454&t=2665s"
+    },
+    {
+      "title": "React Finland - Vodcast 5 - Design tools",
+      "description": "In the fifth React Finland Vodcast, we'll cover design tools with Laura Järvinen, Margarita Roi, and Lazar Nikolov.",
+      "url": "https://www.youtube.com/watch?v=AuwpOsrzHC8"
+    },
+    {
+      "title": "Frontend.horse: Building Layouts Fast with Chakra UI",
+      "description": "In this episode, we'll learn how to use Chakra UI to build pages with robust and customizable components!",
+      "url": "https://www.youtube.com/watch?v=fiqdtIQzIVo"
     }
   ]
 }
