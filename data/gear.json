@@ -29,13 +29,6 @@
       "category": "audio"
     },
     {
-      "title": "SteelSeries Arctis 3 Bluetooth",
-      "description": "One of my favorite headphones. So comfortable, I can wear them all day.",
-      "url": "https://steelseries.com/gaming-headsets/arctis-3-bluetooth",
-      "image": "/assets/images/arctis-3.png",
-      "category": "audio"
-    },
-    {
       "title": "RØDE NT-USB",
       "description": "A great beginner USB microphone.",
       "url": "http://www.rode.com/microphones/nt-usb",
@@ -44,7 +37,7 @@
     },
     {
       "title": "Audio Technica ATR2100X-USB",
-      "description": "A welcoming gift from egghead.io. Those guys care so much ❤️",
+      "description": "A welcoming gift from egghead.io ❤️",
       "url": "https://www.audio-technica.com/en-us/atr2100x-usb",
       "image": "/assets/images/atr2100x.png",
       "category": "audio"
@@ -54,6 +47,13 @@
       "description": "10 core CPU | 32 core GPU | 32GB RAM | 1TB SSD",
       "url": "https://www.apple.com/macbook-pro-14-and-16//",
       "image": "/assets/images/mbp.png",
+      "category": "computing"
+    },
+    {
+      "title": "LG Ultrafine 27UQ850-W",
+      "description": "A really nice 27” 4K monitor with 98% P3 color gamut. It's a great monitor for photographers, streamers, and graphic designers.",
+      "url": "http://www.rode.com/microphones/nt-usb",
+      "image": "/assets/images/lg-27uq850-w.png",
       "category": "computing"
     },
     {
@@ -85,32 +85,32 @@
       "category": "video"
     },
     {
-      "title": "2 x Cheap Ringlights",
-      "description": "Didn’t want to spend 💰 on lights, but these turned out pretty nice actually.",
-      "url": "https://www.amazon.com/Dimmable-Ringlight-Photography-Compatible-UPGRADED/dp/B07W66QFPR/ref=sr_1_4?dchild=1&keywords=ring+light&qid=1632076717&sr=8-4",
-      "image": "/assets/images/ringlights.png",
-      "category": "video"
-    },
-    {
       "title": "Subtel PW20 7.3 V Power Adapter",
-      "description": "This is a phantom battery adapter for my a6300. It makes it think that it’s a battery, so you can use it for longer time.",
+      "description": "This is a phantom battery adapter for my a6300. It makes it think that it's a battery, so you can use it for longer time.",
       "url": "https://www.subtel.de/en/Power-supply-for-Sony-Alpha-A6000-A6300-A6500-A5000-A5100-Alpha-7-A7-A7s-A7II-Sony-RX10-III-915664.html",
       "image": "/assets/images/subtel-power-adapter.png",
       "category": "video"
     },
     {
-      "title": "HedraDesk Standing Walnut",
-      "description": "A beautiful standing desk made out of pure walnut. It can memorize 3 heights, and it even has a timer!",
-      "url": "https://hedradesk.mk",
-      "image": "/assets/images/hedradesk.png",
-      "category": "misc"
+      "title": "Desview T3 Teleprompter",
+      "description": "A decent teleprompter that supports wide lenses. Also comes with a bluetooth remote!",
+      "url": "https://www.desview.net/products/desview-t3-teleprompter-third-generation-teleprompter-for-cellphone-tablet-dslr.html",
+      "image": "/assets/images/desview-t3.png",
+      "category": "video"
     },
     {
-      "title": "Xiaomi WalkingPad A1 Pro",
-      "description": "A minimalist, foldable, slim walking treadmill that sits under my desk. I raise my desk, unfold the treadmill, and go full Linus Torvalds! 🚶",
-      "url": "https://walkingpadofficial.com/products/walkingpad-treadmill-upgraded-a1-pro",
-      "image": "/assets/images/xiaomi-walkingpad-a1-pro.png",
-      "category": "misc"
+      "title": "MotionGrey Ergo2 Standing Desk",
+      "description": "A nice and budget friendly standing desk. I've got the 55x24 version.",
+      "url": "https://motiongrey.com/products/motion-ergo2-series-single-motor-standing-desk-with-tabletop?variant=40863946571869",
+      "image": "/assets/images/ergo2.png",
+      "category": "furniture"
+    },
+    {
+      "title": "MotionGrey M Series High Back Chair",
+      "description": "My last chair was a gaming chair. I'll never buy a gaming chair again. I got this one along with the standing desk. So far it's a great chair.",
+      "url": "https://motiongrey.com/products/motion-m-series-high-back-ergonomic-office-chair",
+      "image": "/assets/images/m-series-high-back.png",
+      "category": "furniture"
     }
   ]
 }
