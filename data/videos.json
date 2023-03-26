@@ -1,19 +1,34 @@
 {
   "videos": [
     {
-      "title": "Getting Started with Chakra UI",
-      "description": "A simple Getting Started with Chakra UI video that showcases how to create a new Next JS app, install and setup Chakra UI. As a demo I'm creating a simple Login form.",
-      "url": "https://www.youtube.com/watch?v=wI2vqXsjsIo"
+      "title": "(Sentry) New Performance Issues",
+      "description": "We've released new Performance Issues for Frontend, Backend, and Mobile recently. N+1 API Calls, Large Render-blocking Assets, and Slow Database Queries are just a few of them.",
+      "url": "https://www.youtube.com/watch?v=bnEtQeFBsoI&list=PLHQY5AFuyYYXshLkf4u71EpMcwW8tnxY2"
     },
     {
-      "title": "Design vs Dev Challenge #2 - Afrosonic Dashboard Concept",
+      "title": "(Sentry) Jetpack Compose AMA | Teaser",
+      "description": "A teaser video for the upcoming Jetpack Compose AMA with the Sentry team.",
+      "url": "https://www.youtube.com/watch?v=iQ-7C_8O_LE&list=PLHQY5AFuyYYXshLkf4u71EpMcwW8tnxY2"
+    },
+    {
+      "title": "(Sentry) Mobile: The Future is Declarative",
+      "description": "A thought leadership piece of how the future of mobile development is shaping up to be fully declarative.",
+      "url": "https://www.youtube.com/watch?v=o5GXC-1wVvU&list=PLHQY5AFuyYYXshLkf4u71EpMcwW8tnxY2"
+    },
+    {
+      "title": "(Chakra UI) Design vs Dev Challenge #2 - Afrosonic Dashboard Concept",
       "description": "Welcome to the second Design vs Dev Challenge video! Since a lot of you loved the previous challenge, I decided to make this one a bit more complex and fun!",
       "url": "https://www.youtube.com/watch?v=l30P02RZ7Dk"
     },
     {
-      "title": "Design vs Dev Challenge #1 - Chat App",
+      "title": "(Chakra UI) Design vs Dev Challenge #1 - Chat App",
       "description": "Welcome to the first Design vs Dev Challenge video! In this series we're going to rebuild various Dribbble shots using Chakra UI. If you want to see a certain Dribbble shot rebuilt, share the link in the comments below.",
       "url": "https://www.youtube.com/watch?v=wGhZMOInL18"
+    },
+    {
+      "title": "(Chakra UI) Getting Started with Chakra UI",
+      "description": "A simple Getting Started with Chakra UI video that showcases how to create a new Next JS app, install and setup Chakra UI. As a demo I'm creating a simple Login form.",
+      "url": "https://www.youtube.com/watch?v=wI2vqXsjsIo"
     }
   ]
 }

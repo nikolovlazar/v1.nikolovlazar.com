@@ -5,11 +5,12 @@ import Hero from '@/components/hero';
 import CoursesSection from '@/components/courses-section';
 import { readData } from '@/utils/read-data';
 import { Video } from '@/types/video';
-import VideosSection from '@/components/videos-section';
 import courses from '@/data/courses';
 import { getRecentBlogPosts } from '@/utils/get-blog-posts';
 import { BlogPost } from '@/types/blog-post';
+import NewsletterForm from '@/components/newsletter-form';
 import BlogpostsSection from '@/components/blogposts-section';
+import VideosSection from '@/components/videos-section';
 
 type Props = {
   videos: Video[];
@@ -24,18 +25,19 @@ const IndexPage = ({ videos, posts }: Props) => {
       </Head>
       <Hero />
       <CoursesSection courses={courses} />
-      {/* <BlogpostsSection posts={posts} />
-      <VideosSection videos={videos} /> */}
+      <BlogpostsSection posts={posts} />
+      <NewsletterForm />
+      <VideosSection videos={videos} />
     </>
   );
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
   const { videos } = await readData<{ videos: Video[] }>('data/videos.json');
-  const posts = await getRecentBlogPosts(3);
+  const posts = await getRecentBlogPosts(5);
 
   const props: Props = {
-    videos,
+    videos: videos.slice(0, 4),
     posts,
   };
 

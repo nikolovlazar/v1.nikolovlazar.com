@@ -10,8 +10,7 @@
 - **Styling**: [Chakra UI](https://chakra-ui.com/)
 - **Services**:
   - [Raindrop](https://raindrop.io/) for Bookmarks
-  - [ConvertKit](https://convertkit.com/) for Course Subscriptions
-  - [Revue](https://www.getrevue.co/) for Newsletter
+  - [ConvertKit](https://convertkit.com/) for Newsletter and Course Subscriptions
   - [AirTable](https://airtable.com/) for Books
   - [Plausible](https://plausible.io/) for Analytics
 

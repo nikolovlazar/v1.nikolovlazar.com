@@ -27,54 +27,54 @@ type Props = {
 const TalksPage = ({ talks }: Props) => {
   return (
     <>
-      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
-        <Heading size="md">Talks.</Heading>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
+        <Heading size='md'>Talks.</Heading>
         <Text>A list of my talks and guest appearances.</Text>
       </VStack>
       <SimpleGrid
         rowGap={8}
         columnGap={12}
-        w="full"
+        w='full'
         columns={{ base: 1, md: 2 }}
         spacing={6}
       >
         {talks.map((video) => (
-          <GridItem key={video.url} as="article">
+          <GridItem key={video.url} as='article'>
             <VideoCard {...video} />
           </GridItem>
         ))}
       </SimpleGrid>
       <Divider />
-      <Flex alignItems="center" direction="column">
+      <Flex alignItems='center' direction='column'>
         <Box
           w={24}
           h={24}
           p={6}
-          bg="purple.500"
+          bg='purple.500'
           _dark={{ bg: 'purple.200' }}
-          rounded="full"
+          rounded='full'
         >
           <Icon
             as={HiMicrophone}
             boxSize={12}
-            color="white"
+            color='white'
             _dark={{ color: 'gray.800' }}
           />
         </Box>
-        <Heading mt={12} textAlign="center">
+        <Heading mt={12} textAlign='center'>
           Invite me to speak at your next event
         </Heading>
-        <Text mt={6} textAlign="center">
-          If you&apos;re looking for speakers about Web Dev, State Machines, or
-          Open Source, I&apos;m open for invitations!
+        <Text mt={6} textAlign='center'>
+          If you&apos;re looking for speakers about web dev related topics,
+          I&apos;m open for invitations!
         </Text>
         <Button
-          as="a"
+          as='a'
           mt={12}
-          colorScheme="purple"
-          href="mailto:hello+talks@nikolovlazar.com"
+          colorScheme='purple'
+          href='mailto:hello+talks@nikolovlazar.com'
           leftIcon={<Icon as={RiMailAddLine} />}
-          size="lg"
+          size='lg'
         >
           Invite me to speak
         </Button>

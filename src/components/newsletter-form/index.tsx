@@ -52,17 +52,17 @@ const NewsletterForm = () => {
 
   return (
     <VStack
-      alignItems="flex-start"
-      w="full"
+      alignItems='flex-start'
+      w='full'
       p={{ base: 4, md: 6 }}
-      bg="gray.50"
+      bg='gray.50'
       _dark={{
         bg: 'gray.700',
       }}
-      rounded="md"
+      rounded='md'
       spacing={3}
     >
-      <Heading size="md">Subscribe to my newsletter ✉️</Heading>
+      <Heading size='md'>Subscribe to my newsletter ✉️</Heading>
       <Text>
         Get emails from me about web development, content creation, and whenever
         I publish new content.
@@ -70,43 +70,43 @@ const NewsletterForm = () => {
       {form.state !== Form.Success && form.state !== Form.Error && (
         <>
           <chakra.form
-            name="subscribe-form"
-            target="_blank"
-            w="full"
+            name='subscribe-form'
+            target='_blank'
+            w='full'
             onSubmit={subscribe}
           >
-            <InputGroup w="full">
+            <InputGroup w='full'>
               <Input
                 disabled={form.state === Form.Loading}
-                name="email"
-                placeholder="email@example.com"
-                type="email"
-                variant="filled"
+                name='email'
+                placeholder='email@example.com'
+                type='email'
+                variant='filled'
               />
               <InputRightElement>
                 <IconButton
-                  aria-label="Subscribe"
+                  aria-label='Subscribe'
                   icon={<Icon as={HiOutlineMail} />}
                   isLoading={form.state === Form.Loading}
-                  name="subscribe"
-                  size="sm"
-                  type="submit"
+                  name='subscribe'
+                  size='sm'
+                  type='submit'
                 />
               </InputRightElement>
             </InputGroup>
           </chakra.form>
-          <Text color="gray.500" fontSize="sm" _dark={{ color: 'gray.400' }}>
+          <Text color='gray.500' fontSize='sm' _dark={{ color: 'gray.400' }}>
             Join {data?.count}+ subscribers
           </Text>
         </>
       )}
       {form.state === Form.Success && (
-        <Text color="green.500" size="sm">
+        <Text color='green.500' size='sm'>
           {form.message}
         </Text>
       )}
       {form.state === Form.Error && (
-        <Text color="red.500" size="sm">
+        <Text color='red.500' size='sm'>
           {form.message} 😕
         </Text>
       )}
