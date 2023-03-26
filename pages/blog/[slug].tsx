@@ -25,6 +25,7 @@ import LikeButton from '@/components/like-button';
 import usePostLikes from 'src/hooks/use-post-likes';
 import imageMetadata from '@/utils/plugins/image-metadata';
 import ScrollToTopButton from '@/components/scroll-to-top-button';
+import NewsletterForm from '@/components/newsletter-form';
 
 type Props = BlogPost & {
   source: MDXRemoteSerializeResult;
@@ -112,6 +113,7 @@ const BlogPostPage = ({
             />
           </HStack>
         )}
+        <NewsletterForm />
       </VStack>
       <ScrollToTopButton />
     </>

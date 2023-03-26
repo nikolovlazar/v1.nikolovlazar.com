@@ -1,5 +1,5 @@
-import { ChangeEventHandler, useState } from "react";
-import { GetStaticProps } from "next";
+import { ChangeEventHandler, useState } from 'react';
+import { GetStaticProps } from 'next';
 import {
   Heading,
   Text,
@@ -10,13 +10,14 @@ import {
   Icon,
   List,
   ListItem,
-} from "@chakra-ui/react";
-import { NextSeo } from "next-seo";
-import { HiOutlineSearch } from "react-icons/hi";
+} from '@chakra-ui/react';
+import { NextSeo } from 'next-seo';
+import { HiOutlineSearch } from 'react-icons/hi';
 
-import { BlogPost } from "@/types/blog-post";
-import { getBlogPosts } from "@/utils/get-blog-posts";
-import BlogPostCard from "@/components/blog-post-card";
+import { BlogPost } from '@/types/blog-post';
+import { getBlogPosts } from '@/utils/get-blog-posts';
+import BlogPostCard from '@/components/blog-post-card';
+import NewsletterForm from '@/components/newsletter-form';
 
 type Props = {
   posts: BlogPost[];
@@ -37,25 +38,25 @@ const Blog = ({ posts }: Props) => {
 
   return (
     <>
-      <NextSeo title="Blog - Lazar Nikolov" />
-      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
-        <Heading size="md">Blog.</Heading>
-        <Text fontSize="md">
+      <NextSeo title='Blog - Lazar Nikolov' />
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
+        <Heading size='md'>Blog.</Heading>
+        <Text fontSize='md'>
           Web development, with a focus on the React ecosystem. I’ve written a
           total of {posts.length} articles.
         </Text>
         <InputGroup>
-          <InputLeftElement pointerEvents="none">
-            <Icon as={HiOutlineSearch} color="gray.400" />
+          <InputLeftElement pointerEvents='none'>
+            <Icon as={HiOutlineSearch} color='gray.400' />
           </InputLeftElement>
           <Input
             onChange={onSearch}
-            placeholder="Search blog posts"
-            variant="filled"
+            placeholder='Search blog posts'
+            variant='filled'
           />
         </InputGroup>
       </VStack>
-      <List w="full" spacing={2}>
+      <List w='full' spacing={2}>
         {displayPosts.map((post) => (
           <ListItem key={post.slug}>
             <BlogPostCard {...post} />
@@ -63,6 +64,7 @@ const Blog = ({ posts }: Props) => {
         ))}
       </List>
       {displayPosts.length === 0 && <Text>No articles for that query</Text>}
+      <NewsletterForm />
     </>
   );
 };
