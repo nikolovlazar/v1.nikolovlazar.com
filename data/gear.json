@@ -31,7 +31,7 @@
     {
       "title": "RØDE NT-USB",
       "description": "A great beginner USB microphone.",
-      "url": "http://www.rode.com/microphones/nt-usb",
+      "url": "https://www.rode.com/microphones/nt-usb",
       "image": "/assets/images/rode.png",
       "category": "audio"
     },
@@ -52,8 +52,22 @@
     {
       "title": "LG Ultrafine 27UQ850-W",
       "description": "A really nice 27” 4K monitor with 98% P3 color gamut. It's a great monitor for photographers, streamers, and graphic designers.",
-      "url": "http://www.rode.com/microphones/nt-usb",
+      "url": "https://www.lg.com/hk_en/monitor/lg-27uq850-w",
       "image": "/assets/images/lg-27uq850-w.png",
+      "category": "computing"
+    },
+    {
+      "title": "Keychron Q1 Version 2",
+      "description": "This is my first mechanical keyboard. It's a Keychron Q1 Version 2 with Gateron G Pro Red switches. I got the Carbon Black - A color.",
+      "url": "https://www.keychron.com/products/keychron-q1?variant=39898878705753",
+      "image": "/assets/images/keychron-q1.png",
+      "category": "computing"
+    },
+    {
+      "title": "Logitech MX Master 3s for Mac",
+      "description": "A great mouse for Mac users. It doesn't charge upside down 😅, and you can instantly switch between computers!",
+      "url": "https://www.logitech.com/en-ca/products/mice/mx-master-3s-mac-bluetooth-mouse.910-006569.html",
+      "image": "/assets/images/mx-master-3s.png",
       "category": "computing"
     },
     {
