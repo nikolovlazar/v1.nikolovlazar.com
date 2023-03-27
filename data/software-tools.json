@@ -29,13 +29,6 @@
       "category": "design"
     },
     {
-      "title": "Endel",
-      "description": "A genius app! Endel generates personalized soundscapes that helps you focus, relax, and sleep better. It's also backed by neuroscience!",
-      "url": "https://endel.io/",
-      "image": "/assets/images/endel.png",
-      "category": "productivity"
-    },
-    {
       "title": "Notion",
       "description": "I believe it’s the most popular note taking app right now.",
       "url": "https://notion.so/",
@@ -68,6 +61,13 @@
       "description": "I also use DaVinci Resolve for “heavier” video editing.",
       "url": "https://www.blackmagicdesign.com/products/davinciresolve/",
       "image": "/assets/images/davinci.png",
+      "category": "video"
+    },
+    {
+      "title": "Premiere Pro",
+      "description": "I'm moving towards Premiere Pro for video editing.",
+      "url": "https://www.adobe.com/ca/products/premiere.html",
+      "image": "/assets/images/premiere-pro.svg",
       "category": "video"
     }
   ]
