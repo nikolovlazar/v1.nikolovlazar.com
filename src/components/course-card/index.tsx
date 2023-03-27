@@ -12,12 +12,12 @@ import {
   CircularProgressLabel,
   useBreakpointValue,
   useColorModeValue as mode,
+  Image,
 } from '@chakra-ui/react';
 
 import { Course } from '@/types/course';
 import ExternalLink from '../external-link';
 import { FiArrowUpRight } from 'react-icons/fi';
-import Image from '../image';
 
 type Props = Course;
 

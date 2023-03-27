@@ -9,10 +9,10 @@ import {
   LinkOverlay,
   Flex,
   Icon,
+  Image,
 } from '@chakra-ui/react';
 
 import { Video } from '@/types/video';
-import Image from '../image';
 import { HiPlay } from 'react-icons/hi';
 import Link from '../link';
 

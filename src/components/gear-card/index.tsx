@@ -6,13 +6,12 @@ import {
   Text,
   LinkBox,
   LinkOverlay,
-  AspectRatio,
+  Image,
   Icon,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
-import Image from '@/components/image';
 import { Gear } from '@/types/gear';
 
 const GearCard = ({ image, title, description, url }: Gear) => {

@@ -9,11 +9,11 @@ import {
   AspectRatio,
   Icon,
   useBreakpointValue,
+  Image,
 } from '@chakra-ui/react';
 import { FiArrowUpRight } from 'react-icons/fi';
 
 import { Tool } from '@/types/tool';
-import Image from '../image';
 
 const ToolCard = ({ image, title, description, url }: Partial<Tool>) => {
   return (

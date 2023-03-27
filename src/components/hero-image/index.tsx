@@ -1,6 +1,5 @@
-import { Box, AspectRatio, Flex } from '@chakra-ui/react';
+import { Box, AspectRatio, Flex, Image } from '@chakra-ui/react';
 
-import Image from '@/components/image';
 import StatusIndicator from '../status-indicator';
 
 const HeroImage = () => {
