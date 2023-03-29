@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (_: NextApiRequest, res: NextApiResponse) => {
+// ConvertKit subscription API
+// NOT BEING USED IN THE APP!!
+async (_: NextApiRequest, res: NextApiResponse) => {
   const result = await fetch(
     `https://api.convertkit.com/v3/subscribers?api_secret=${process.env.CONVERTKIT_API_SECRET}`
   );

@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+// ConvertKit subscription API
+// NOT BEING USED IN THE APP!!
+async (req: NextApiRequest, res: NextApiResponse) => {
   const { email } = req.body;
 
   if (!email) {
