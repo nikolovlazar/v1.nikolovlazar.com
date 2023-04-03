@@ -14,6 +14,7 @@ const oldBlogPosts = [
 
 const moduleExports = {
   swcMinify: true,
+  hideSourceMaps: true,
   images: {
     domains: [
       'img.youtube.com',
