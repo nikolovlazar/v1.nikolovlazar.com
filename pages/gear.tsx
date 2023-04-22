@@ -14,20 +14,22 @@ type Props = {
 const GearPage = ({ gear, categories }: Props) => {
   return (
     <>
-      <VStack as="section" alignItems="flex-start" w="full" spacing={3}>
-        <Heading size="md">Gear.</Heading>
+      <VStack as='section' alignItems='flex-start' w='full' spacing={3}>
+        <Heading size='md'>Gear.</Heading>
         <Text>
-          This is my hardware list. <strong>Not affiliate links</strong>. To see
-          my software tools, check out the <Link href="/uses">Uses</Link> page.
+          This is my hardware list. <strong>Most are affiliate links</strong>.
+          If you click and buy one of my gear a small ka-ching will happen in my
+          bank account. To see my software tools, check out the{' '}
+          <Link href='/uses'>Uses</Link> page.
         </Text>
       </VStack>
-      <List alignItems="stretch" w="full" spacing={12}>
+      <List alignItems='stretch' w='full' spacing={12}>
         {categories.map((category) => (
-          <ListItem key={category} alignItems="flex-start">
-            <Heading textTransform="capitalize" size="md">
+          <ListItem key={category} alignItems='flex-start'>
+            <Heading textTransform='capitalize' size='md'>
               {category}.
             </Heading>
-            <List alignItems="stretch" w="full">
+            <List alignItems='stretch' w='full'>
               {gear[category].map((gear) => (
                 <ListItem key={gear.url}>
                   <GearCard {...gear} />
