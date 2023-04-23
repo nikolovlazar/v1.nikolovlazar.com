@@ -1,6 +1,6 @@
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/nikolovlazar/nikolovlazar.com)
 
-# nikolovlazar.com
+# V1 nikolovlazar.com
 
 - **Framework**: [Next.js](https://nextjs.org/)
 - **Database**: [PlanetScale](https://planetscale.com)
@@ -13,6 +13,8 @@
   - [ConvertKit](https://convertkit.com/) for Newsletter and Course Subscriptions
   - [AirTable](https://airtable.com/) for Books
   - [Plausible](https://plausible.io/) for Analytics
+  
+> If you're looking for V2: https://github.com/nikolovlazar/v2-nikolovlazar.com
 
 ## Running Locally
 
