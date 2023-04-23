@@ -63,7 +63,7 @@ const BlogPostPage = ({
         openGraph={{
           description,
           title: `${title} - Lazar Nikolov`,
-          url: `https://nikolovlazar.com/blog/${slug}`,
+          url: `https://v1.nikolovlazar.com/blog/${slug}`,
           images: [
             {
               url: `https://res.cloudinary.com/nikolovlazar/image/upload/${encodeURIComponent(

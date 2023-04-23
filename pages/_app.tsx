@@ -21,14 +21,14 @@ const App = ({ Component, pageProps }: AppProps) => {
           handle: "@NikolovLazar",
         }}
         openGraph={{
-          url: "https://nikolovlazar.com",
+          url: "https://v1.nikolovlazar.com",
           title: "Lazar Nikolov - Developer, designer, course creator.",
           description:
             "Full-stack Engineer, UI Designer, and Open Source Advocate.",
           locale: "en_US",
           images: [
             {
-              url: "https://nikolovlazar.com/assets/images/social.png",
+              url: "https://v1.nikolovlazar.com/assets/images/social.png",
               width: 1200,
               height: 630,
               alt: "Lazar Nikolov",
