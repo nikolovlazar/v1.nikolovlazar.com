@@ -1,4 +1,4 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/nikolovlazar/nikolovlazar.com)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/nikolovlazar/v1.nikolovlazar.com)
 
 # V1 nikolovlazar.com
 
@@ -13,13 +13,13 @@
   - [ConvertKit](https://convertkit.com/) for Newsletter and Course Subscriptions
   - [AirTable](https://airtable.com/) for Books
   - [Plausible](https://plausible.io/) for Analytics
-  
+
 > If you're looking for V2: https://github.com/nikolovlazar/v2-nikolovlazar.com
 
 ## Running Locally
 
 ```bash
-$ git clone https://github.com/nikolovlazar/nikolovlazar.com.git
+$ git clone https://github.com/nikolovlazar/v1.nikolovlazar.com.git
 $ cd nikolovlazar.com
 $ yarn
 $ yarn dev
